@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="container">
+
+        <ul id="names">
+            <li><span id="orange">Aklali Metals</span></li>
+            <li><span id="yellow">Alkaline Earth Metals</span></li>
+            <li><span id="lanthanoidColor">Lanthanoids</span></li>
+            <li><span id="aktinoids">Aktinoids</span></li>
+            <li><span id="pink">Transition Metals</span></li>
+            <li><span id="aqua">Post-Transition Metals</span></li>
+            <li><span id="aqua-green">Metalloids</span></li>
+            <li><span id="green">Other Nonmetals</span></li>
+            <li><span id="blue">Noble Gasses</span></li>
+            <li ><span id="white">Unknown</span></li>
+        </ul>
+
+        <div id="blocks">
+
+
+            
+            <!-- ///////////////////// Set One ///////////////////// -->
+            <div id="h"  class="item green" onclick="changevid(this.id)" klmn="1"  ><span class="num">1</span><span>H</span><span class="fname">Hydrogen</span></div>
+            <div  class="item hide"></div>
+            <div  class="item hide"></div>
+            <div  class="item hide"></div>
+            <div  class="item hide"></div>
+            <div  class="item hide"></div>
+            <div  class="item hide"></div>
+            <div  class="item hide"></div>
+            <div  class="item hide"></div>
+            <div  class="item hide"></div>
+            <div  class="item hide"></div>
+            <div  class="item hide"></div>
+            <div  class="item hide"></div>
+            <div  class="item hide"></div>
+            <div  class="item hide"></div>
+            <div  class="item hide"></div>
+            <div  class="item hide"></div>
+            <div id="he"  class="item blue" onclick="changevid(this.id)"    ><span class="num">2</span><span>He</span><span class="fname">Helium</span></div>
+
+
+
+
+            <!-- ///////////////////// Set two ///////////////////// -->
+            <div id="li"  class="item orange" onclick="changevid(this.id)"    ><span class="num">3</span><span>Li</span><span class="fname">Lithium</span></div>
+            <div id="be"  class="item yellow" onclick="changevid(this.id)"    ><span class="num">4</span><span>Be</span><span class="fname">Beryllium</span></div>
+            <div id=""    class="item hide"></div>
+            <div id=""    class="item hide"></div>
+            <div id=""    class="item hide"></div>
+            <div id=""    class="item hide"></div>
+            <div id=""    class="item hide"></div>
+            <div id=""    class="item hide"></div>
+            <div id=""    class="item hide"></div>
+            <div id=""    class="item hide"></div>
+            <div id=""    class="item hide"></div>
+            <div id=""    class="item hide"></div>
+            <div id="b"   class="item aqua-green" onclick="changevid(this.id)"    ><span class="num">5</span><span>B</span><span class="fname">Boron</span></div>
+            <div id="c"   class="item green" onclick="changevid(this.id)"   ><span class="num">6</span><span>C</span><span class="fname">Carbon</span></div>
+            <div id="n"   class="item green" onclick="changevid(this.id)"   ><span class="num">7</span><span>N</span><span class="fname">Nitrogen</span></div>
+            <div id="o"   class="item green" onclick="changevid(this.id)"   ><span class="num">8</span><span>O</span><span class="fname">Oxygen</span></div>
+            <div id="f"   class="item green" onclick="changevid(this.id)"   ><span class="num">9</span><span>F</span><span class="fname">Flourine</span></div>
+            <div id="ne"  class="item blue" onclick="changevid(this.id)"    ><span class="num">10</span><span>Ne</span><span class="fname">Neon</span></div>
+
+
+
+
+
+            <!-- ///////////////////// Set three ///////////////////// -->
+            <div id="na"  class="item orange" onclick="changevid(this.id)"   ><span class="num">11</span><span>Na</span><span class="fname">Sodium</span></div>
+            <div id="mg"  class="item yellow" onclick="changevid(this.id)"   ><span class="num">12</span><span>Mg</span><span class="fname">Magnesium</span></div>
+            <div id=""    class="item hide"></div>
+            <div id=""    class="item hide"></div>
+            <div id=""    class="item hide"></div>
+            <div id=""    class="item hide"></div>
+            <div id=""    class="item hide"></div>
+            <div id=""    class="item hide"></div>
+            <div id=""    class="item hide"></div>
+            <div id=""    class="item hide"></div>
+            <div id=""    class="item hide"></div>
+            <div id=""    class="item hide"></div>
+            <div id="al"  class="item aqua" onclick="changevid(this.id)"   ><span class="num">13</span><span>Al</span><span class="fname">Aluminium</span></div>
+            <div id="si"  class="item aqua-green" onclick="changevid(this.id)"    ><span class="num">14</span><span>Si</span><span class="fname">Silicon</span></div>
+            <div id="p"   class="item green" onclick="changevid(this.id)"   ><span class="num">15</span><span>P</span><span class="fname">Phosphorus</span></div>
+            <div id="s"   class="item green" onclick="changevid(this.id)"   ><span class="num">16</span><span>S</span><span class="fname">Sulphur</span></div>
+            <div id="cl"  class="item green" onclick="changevid(this.id)"   ><span class="num">17</span><span>Cl</span><span class="fname">Chlorine</span></div>
+            <div id="ar"  class="item blue" onclick="changevid(this.id)"    ><span class="num">18</span><span>Ar</span><span class="fname">Argon</span></div>
+
+
+
+
+
+            <!-- ///////////////////// Set four ///////////////////// -->
+            <div id="k"   class="item orange" onclick="changevid(this.id)"  ><span class="num">19</span><span>K</span><span class="fname">Potassium</span></div>
+            <div id="ca"  class="item yellow" onclick="changevid(this.id)"  ><span class="num">20</span><span>Ca</span><span class="fname">Calcium</span></div>
+            <div id="sc"  class="item pink" onclick="changevid(this.id)"    ><span class="num">21</span><span>Sc</span><span class="fname">Scandium</span></div>
+            <div id="ti"  class="item pink" onclick="changevid(this.id)"    ><span class="num">22</span><span>Ti</span><span class="fname">Titanium</span></div>
+            <div id="v"   class="item pink" onclick="changevid(this.id)"    ><span class="num">23</span><span>V</span><span class="fname">Vanadium</span></div>
+            <div id="cr"  class="item pink" onclick="changevid(this.id)"    ><span class="num">24</span><span>Cr</span><span class="fname">Chromium</span></div>
+            <div id="mn"  class="item pink" onclick="changevid(this.id)"    ><span class="num">25</span><span>Mn</span><span class="fname">Manganese</span></div>
+            <div id="fe"  class="item pink" onclick="changevid(this.id)"    ><span class="num">26</span><span>Fe</span><span class="fname">Iron</span></div>
+            <div id="co"  class="item pink" onclick="changevid(this.id)"    ><span class="num">27</span><span>Co</span><span class="fname">Cobalt</span></div>
+            <div id="ni"  class="item pink" onclick="changevid(this.id)"    ><span class="num">28</span><span>Ni</span><span class="fname">Nickel</span></div>
+            <div id="cu"  class="item pink" onclick="changevid(this.id)"    ><span class="num">29</span><span>Cu</span><span class="fname">Copper</span></div>
+            <div id="zn"  class="item pink" onclick="changevid(this.id)"    ><span class="num">30</span><span>Zn</span><span class="fname">Zinc</span></div>
+            <div id="ga"  class="item aqua" onclick="changevid(this.id)"    ><span class="num">31</span><span>Ga</span><span class="fname">Gallium</span></div>
+            <div id="ge"  class="item aqua-green" onclick="changevid(this.id)"    ><span class="num">32</span><span>Ge</span><span class="fname">Germanium</span></div>
+            <div id="as"  class="item aqua-green" onclick="changevid(this.id)"    ><span class="num">33</span><span>As</span><span class="fname">Arsenic</span></div>
+            <div id="se"  class="item green" onclick="changevid(this.id)"    ><span class="num">34</span><span>Se</span><span class="fname">Selenium</span></div>
+            <div id="br"  class="item green" onclick="changevid(this.id)"    ><span class="num">35</span><span>Br</span><span class="fname">Bromine</span></div>
+            <div id="kr"  class="item blue" onclick="changevid(this.id)"   ><span class="num">36</span><span>Kr</span><span class="fname">Krypton</span></div>
+
+
+
+
+
+
+            <!-- ///////////////////// Set five ///////////////////// -->
+            <div id="rb"  class="item orange" onclick="changevid(this.id)"   ><span class="num">37</span><span>Rb</span><span class="fname">Rubdium</span></div>
+            <div id="sr"  class="item yellow" onclick="changevid(this.id)"  ><span class="num">38</span><span>Sr</span><span class="fname">Strontium</span></div>
+            <div id="y"   class="item pink" onclick="changevid(this.id)"   ><span class="num">39</span><span>Y</span><span class="fname">Yttrium</span></div>
+            <div id="zr"  class="item pink" onclick="changevid(this.id)"   ><span class="num">40</span><span>Zr</span><span class="fname">Zirconium</span></div>
+            <div id="nb"  class="item pink" onclick="changevid(this.id)"   ><span class="num">41</span><span>Nb</span><span class="fname">Niobium</span></div>
+            <div id="mo"  class="item pink" onclick="changevid(this.id)"   ><span class="num">42</span><span>Mo</span><span class="fname">Molybdenum</span></div>
+            <div id="tc"  class="item pink" onclick="changevid(this.id)"   ><span class="num">43</span><span>Tc</span><span class="fname">Technetium</span></div>
+            <div id="ru"  class="item pink" onclick="changevid(this.id)"   ><span class="num">44</span><span>Ru</span><span class="fname">Ruthenium</span></div>
+            <div id="rh"  class="item pink" onclick="changevid(this.id)"   ><span class="num">45</span><span>Rh</span><span class="fname">Rhodium</span></div>
+            <div id="pd"  class="item pink" onclick="changevid(this.id)"   ><span class="num">46</span><span>Pd</span><span class="fname">Palladium</span></div>
+            <div id="ag"  class="item pink" onclick="changevid(this.id)"   ><span class="num">47</span><span>Ag</span><span class="fname">Silver</span></div>
+            <div id="cd"  class="item pink" onclick="changevid(this.id)"   ><span class="num">48</span><span>Cd</span><span class="fname">Cadmium</span></div>
+            <div id="in"  class="item aqua" onclick="changevid(this.id)"   ><span class="num">49</span><span>In</span><span class="fname">Indium</span></div>
+            <div id="sn"  class="item aqua" onclick="changevid(this.id)"   ><span class="num">50</span><span>Sn</span><span class="fname">Tin</span></div>
+            <div id="sb"  class="item aqua-green" onclick="changevid(this.id)"    ><span class="num">51</span><span>Sb</span><span class="fname">Antimony</span></div>
+            <div id="te"  class="item aqua-green" onclick="changevid(this.id)"    ><span class="num">52</span><span>Te</span><span class="fname">Tellurium</span></div>
+            <div id="i"   class="item green" onclick="changevid(this.id)"   ><span class="num">53</span><span>I</span><span class="fname">Iodine</span></div>
+            <div id="xe"  class="item blue" onclick="changevid(this.id)"    ><span class="num">54</span><span>Xe</span><span class="fname">Xenom</span></div>
+
+
+
+
+
+            <!-- ///////////////////// Set six ///////////////////// -->
+            <div id="cs"  class="item orange" onclick="changevid(this.id)"   ><span class="num">55</span><span>Cs</span><span class="fname">Caesium</span></div>
+            <div id="ba"  class="item yellow" onclick="changevid(this.id)"   ><span class="num">56</span><span>Ba</span><span class="fname">Barium</span></div>
+            <div id=""    class="item hide"></div>
+            <div id="hf"  class="item pink" onclick="changevid(this.id)"   ><span class="num">72</span><span>Hf</span><span class="fname">Hafnium</span></div>
+            <div id="ta"  class="item pink" onclick="changevid(this.id)"   ><span class="num">73</span><span>Ta</span><span class="fname">Tantalum</span></div>
+            <div id="w"   class="item pink" onclick="changevid(this.id)"   w ><span class="num">74</span><span>W</span><span class="fname">Tungsten</span></div>
+            <div id="re"  class="item pink" onclick="changevid(this.id)"   ><span class="num">75</span><span>Re</span><span class="fname">Rhenium</span></div>
+            <div id="os"  class="item pink" onclick="changevid(this.id)"   ><span class="num">76</span><span>Os</span><span class="fname">Osmium</span></div>
+            <div id="ir"  class="item pink" onclick="changevid(this.id)"   ><span class="num">77</span><span>Ir</span><span class="fname">Irdium</span></div>
+            <div id="pt"  class="item pink" onclick="changevid(this.id)"   ><span class="num">78</span><span>Pt</span><span class="fname">Platinum</span></div>
+            <div id="au"  class="item pink" onclick="changevid(this.id)"   ><span class="num">79</span><span>Au</span><span class="fname">Gold</span></div>
+            <div id="hg"  class="item pink" onclick="changevid(this.id)"   ><span class="num">80</span><span>Hg</span><span class="fname">Mercury</span></div>
+            <div id="tl"  class="item aqua" onclick="changevid(this.id)"   ><span class="num">81</span><span>Tl</span><span class="fname">Thallium</span></div>
+            <div id="pb"  class="item aqua" onclick="changevid(this.id)"   ><span class="num">82</span><span>Pb</span><span class="fname">Lead</span></div>
+            <div id="bi"  class="item aqua" onclick="changevid(this.id)"   ><span class="num">83</span><span>Bi</span><span class="fname">Bismuth</span></div>
+            <div id="po"  class="item aqua" onclick="changevid(this.id)"   ><span class="num">84</span><span>Po</span><span class="fname">Polonium</span></div>
+            <div id="at"  class="item aqua-green" onclick="changevid(this.id)"   ><span class="num">85</span><span>At</span><span class="fname">Astatine</span></div>
+            <div id="rn"  class="item blue" onclick="changevid(this.id)"    ><span class="num">86</span><span>Rn</span><span class="fname">Radon</span></div>
+
+
+
+            <!-- ///////////////////// Set seven ///////////////////// -->
+            <div id="fr"  class="item orange" onclick="changevid(this.id)"    ><span class="num">87</span><span>Fr</span><span class="fname">Francium</span></div>
+            <div id="ra"  class="item yellow" onclick="changevid(this.id)"    ><span class="num">88</span><span>Ra</span><span class="fname">Radium</span></div>
+            <div id=""    class="item hide"></div>
+            <div id="rf"  class="item pink" onclick="changevid(this.id)"   ><span class="num">104</span><span>Rf</span><span class="fname">Rutherfordium</span></div>
+            <div id="db"  class="item pink" onclick="changevid(this.id)"   ><span class="num">105</span><span>Db</span><span class="fname">Dubnium</span></div>
+            <div id="sg"  class="item pink" onclick="changevid(this.id)"   ><span class="num">106</span><span>Sg</span><span class="fname">Seaborgnium</span></div>
+            <div id="bh"  class="item pink" onclick="changevid(this.id)"   ><span class="num">107</span><span>Bh</span><span class="fname">Bohrium</span></div>
+            <div id="hs"  class="item pink" onclick="changevid(this.id)"   ><span class="num">108</span><span>Hs</span><span class="fname">Hassium</span></div>
+            <div id="mt"  class="item white" onclick="changevid(this.id)"    ><span class="num">109</span><span>Mt</span><span class="fname">Meitnerium</span></div>
+            <div id="ds"  class="item white" onclick="changevid(this.id)"    ><span class="num">110</span><span>Ds</span><span class="fname">Darmstadium</span></div>
+            <div id="rg"  class="item white" onclick="changevid(this.id)"    ><span class="num">111</span><span>Rg</span><span class="fname">Roentgenium</span></div>
+            <div id="cn"  class="item pink" onclick="changevid(this.id)"   ><span class="num">112</span><span>Cn</span><span class="fname">Copernicium</span></div>
+            <div id="nh"  class="item white" onclick="changevid(this.id)"   ><span class="num">113</span><span>Nh</span><span class="fname">Nihonium</span></div>
+            <div id="fl"  class="item aqua" onclick="changevid(this.id)"    ><span class="num">114</span><span>Fl</span><span class="fname">Flerovium</span></div>
+            <div id="mc"  class="item white" onclick="changevid(this.id)"   ><span class="num">115</span><span>Mc</span><span class="fname">Moscovium</span></div>
+            <div id="lv"  class="item white" onclick="changevid(this.id)"   ><span class="num">116</span><span>Lv</span><span class="fname">Livermorium</span></div>
+            <div id="ts"  class="item white" onclick="changevid(this.id)"   ><span class="num">117</span><span>Ts</span><span class="fname">Tennessine</span></div>
+            <div id="og"  class="item white" onclick="changevid(this.id)"   ><span class="num">118</span><span>Og</span><span class="fname">Ognasson</span></div>
+
+        </div>
+
+        <div id="blocks2Container">
+            <div></div>
+            <div id="blocks2">
+                <div id="la" class="item lanthanoidColor" onclick="changevid(this.id)"><span class="num">57</span><span>la</span><span class="fname">Lanthanum</span></div>
+                <div id="ce" class="item lanthanoidColor" onclick="changevid(this.id)"><span class="num">58</span><span>ce</span><span class="fname">Cerium</span></div>
+                <div id="pr" class="item lanthanoidColor" onclick="changevid(this.id)"><span class="num">59</span><span>pr</span><span class="fname">Praseodymium</span></div>
+                <div id="nd" class="item lanthanoidColor" onclick="changevid(this.id)"><span class="num">60</span><span>nd</span><span class="fname">Neodymium</span></div>
+                <div id="pm" class="item lanthanoidColor" onclick="changevid(this.id)"><span class="num">61</span><span>pm</span><span class="fname">Promethium</span></div>
+                <div id="sm" class="item lanthanoidColor" onclick="changevid(this.id)"><span class="num">62</span><span>sm</span><span class="fname">Samarium</span></div>
+                <div id="eu" class="item lanthanoidColor" onclick="changevid(this.id)"><span class="num">63</span><span>eu</span><span class="fname">Europium</span></div>
+                <div id="gd" class="item lanthanoidColor" onclick="changevid(this.id)"><span class="num">64</span><span>gd</span><span class="fname">Gadolinium</span></div>
+                <div id="tb" class="item lanthanoidColor" onclick="changevid(this.id)"><span class="num">65</span><span>tb</span><span class="fname">Terbium</span></div>
+                <div id="dy" class="item lanthanoidColor" onclick="changevid(this.id)"><span class="num">66</span><span>dy</span><span class="fname">Dysprosium</span></div>
+                <div id="ho" class="item lanthanoidColor" onclick="changevid(this.id)"><span class="num">67</span><span>ho</span><span class="fname">Holmium</span></div>
+                <div id="er" class="item lanthanoidColor" onclick="changevid(this.id)"><span class="num">68</span><span>er</span><span class="fname">Erbium</span></div>
+                <div id="tm" class="item lanthanoidColor" onclick="changevid(this.id)"><span class="num">69</span><span>tm</span><span class="fname">Thulium</span></div>
+                <div id="yb" class="item lanthanoidColor" onclick="changevid(this.id)"><span class="num">70</span><span>yb</span><span class="fname">Ytterbium</span></div>
+                <div id="lu" class="item lanthanoidColor" onclick="changevid(this.id)"><span class="num">71</span><span>lu</span><span class="fname">Lutetium</span></div>
+                <div id="ac" class="item aktinoids" onclick="changevid(this.id)"><span class="num">89</span><span>ac</span><span class="fname">Actinium</span></div>
+                <div id="th" class="item aktinoids" onclick="changevid(this.id)"><span class="num">90</span><span>th</span><span class="fname">Thorium</span></div>
+                <div id="pa" class="item aktinoids" onclick="changevid(this.id)"><span class="num">91</span><span>pa</span><span class="fname">Protactinium</span></div>
+                <div id="u"  class="item aktinoids" onclick="changevid(this.id)"><span class="num" >92</span><span>u</span><span class="fname">Uranium</span></div>
+                <div id="np" class="item aktinoids" onclick="changevid(this.id)"><span class="num">93</span><span>np</span><span class="fname">Neptunium</span></div>
+                <div id="pu" class="item aktinoids" onclick="changevid(this.id)"><span class="num">94</span><span>pu</span><span class="fname">Plutonium</span></div>
+                <div id="am" class="item aktinoids" onclick="changevid(this.id)"><span class="num">95</span><span>am</span><span class="fname">Americium</span></div>
+                <div id="cm" class="item aktinoids" onclick="changevid(this.id)"><span class="num">96</span><span>cm</span><span class="fname">Curium</span></div>
+                <div id="bk" class="item aktinoids" onclick="changevid(this.id)"><span class="num">97</span><span>bk</span><span class="fname">Berkelium</span></div>
+                <div id="cf" class="item aktinoids" onclick="changevid(this.id)"><span class="num">98</span><span>cf</span><span class="fname">Californium</span></div>
+                <div id="es" class="item aktinoids" onclick="changevid(this.id)"><span class="num">99</span><span>es</span><span class="fname">Einsteinium</span></div>
+                <div id="fm" class="item aktinoids" onclick="changevid(this.id)"><span class="num">100</span><span>fm</span><span class="fname">Fermium</span></div>
+                <div id="md" class="item aktinoids" onclick="changevid(this.id)"><span class="num">101</span><span>md</span><span class="fname">Mendelevium</span></div>
+                <div id="no" class="item aktinoids" onclick="changevid(this.id)"><span class="num">102</span><span>no</span><span class="fname">Nobelium</span></div>
+                <div id="lr" class="item aktinoids" onclick="changevid(this.id)"><span class="num">103</span><span>lr</span><span class="fname">Lawrencium</span></div>
+                
+            </div>
+            <div></div>
+            
+        </div>
+
+    </div>
+
+
+    <section id="selectionContainer">
+    
+        <div id="selectedBlock" class="" >
+            <span id="selectedNum"></span>
+            <span id="selectedElement"></span>
+            <span id="selectedName"></span>
+            <span id="selectedKLMN" style="display: flex; flex-direction: column;"></span>
+        </div>
+
+        <div id="video">
+            <video id="videoChange" width="320" height="250" loop  autoplay muted >
+                <source id="videoSource" src="" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+        
+        </div>
+
+    </section>
+    
+</body>
+</html>
+
+
+<script src="jquery-3.6.0.js"></script>
+<script>
+
+
+    var currentWidth = 0;
+    
+    function arrangement(){
+        left = 0
+        $("#names").css({"left" : left})
+        if(screen.width>=900)
+        {
+            $(".num").css({"visibility" : "visible"})
+            $(".num").css({"font-size" : "15px"})
+        }
+        else
+            $(".num").css({"visibility" : "hidden"})
+            
+        if($(".item").css('width').split('p')[0] <= 50)
+        {
+            $(".item").css({"height" : $(".item").css('width')})
+            $(".item").css({"height" : $(".item").css('width')})
+        }
+        else
+        {
+
+            var length = (screen.width - 10)/18;
+            $(".item").css({"height" : '60px'})
+            $("#container").css({"grid-template-columns" : "repeat(18 , "+length+"px)"})
+        }
+    }
+
+
+ 
+// var videobutton = document.getElementById("videolink1");
+ 
+// videobutton.addEventListener("click", function(event) {
+
+// }, false);
+ 
+
+    function changevid(id)
+    {
+        var newmp4 = ("gif/" + id +".mp4");        
+        // console.log(id);
+        console.log(newmp4);
+        $('#videoChange').get(0).pause();
+        $('#videoChange').attr('src', newmp4);
+        $('#videoChange').get(0).load();
+        $('#videoChange').get(0).play();
+        console.log($("#videoChange").attr("src"));       
+
+        $("#selectedBlock").attr("class" , $("#"+id).attr("class").split("item")[1]);
+        $("#selectedNum").text($($("#"+id).children()[0]).text())
+        $("#selectedElement").text($($("#"+id).children()[1]).text())
+        $("#selectedName").text($($("#"+id).children()[2]).text())
+        $("#selectedKLMN").text("")
+
+        for(let i=0 ; i<universalList[id].length ; i++)
+        {
+            $("#selectedKLMN").text(
+                $("#selectedKLMN").text() + universalList[id][i] + " "
+            )
+        }
+
+        
+        // console.log($("#"+id).children())
+        // console.log($($("#"+id).children()[1]).text())
+        // console.log($($("#"+id).children()[2]).text())
+
+    }
+
+    $(document).ready(function(){
+        arrangement()
+
+        $(window).resize(function(){
+            arrangement()
+        })
+
+        // Seprate
+
+        var focused = false;
+        document.onclick = function(e){
+            console.log($(e.target).attr("id"))
+            // console.log(e.target.);
+            var counter = 0;
+            var colors = ['orange' , 'yellow' , 'pink' , 'aqua' , 'aqua-green' , 'green' , 'blue' , 'white' , 'lanthanoidColor' , 'aktinoids']
+            function checkId(id)
+            {
+                for(let i=0 ; i<colors.length ; i++)
+                    if(colors[i] == e.target.id)
+                        return true;
+                return false;
+            }
+            
+            if(checkId(e.target.id))
+            {
+                for(let i=0 ; i<colors.length ; i++)
+                {
+                    if(colors[i] != e.target.id)
+                    {
+                        $("."+colors[i]).css({"opacity" : '0.2'})
+                        focused = true;
+                    }
+                    else
+                        $("."+colors[i]).css({"opacity" : '1'})
+                }
+            }
+            else if(focused == true)
+            {
+                for(let i=0 ; i<colors.length ; i++)
+                {
+                    $("."+colors[i]).css({"opacity" : '1'})
+                }
+                focused == false;
+            }
+
+            
+            
+            
+        }
+        // Seprate
+        
+    })
+
+
+    var universalList = {
+        'h' : [1],
+        'he':[2],
+        'li':[2,1],
+        'be' : [2,2],
+        'b' : [2,3],
+        'c' : [2,4],
+        'n' : [2,5],
+        'o' : [2,6],
+        'f' : [2,7],
+        'ne' : [2,8],
+        'na' : [2,8,1],
+        'mg' : [2,8,2],
+        'al' : [2,8,3],
+        'si' : [2,8,4],
+        'p' : [2,8,5],
+        's' : [2,8,6],
+        'cl' : [2,8,7],
+        'ar' : [2,8,8],
+        'k' : [2,8,8,1],
+        'ca' : [2,8,8,2],
+        'sc' : [2,8,9,2],
+        'ti' : [2,8,10,2],
+        'v' : [2,8,11,2],
+        'cr' : [2,8,13,1],
+        'mn' : [2,8,13,2],
+        'fe' : [2,8,14,2],
+        'co' : [2,8,15,2],
+        'ni' : [2,8,16,2],
+        'cu' : [2,8,18,1],
+        'zn' : [2,8,18,2],
+        'ga' : [2,8,18,3],
+        'ge' : [2,8,18,4],
+        'as' : [2,8,18,5],
+        'se' : [2,8,18,6],
+        'br' : [2,8,18,7],
+        'kr' : [2,8,18,8],
+        'rb' : [2,8,18,8,1],
+        'sr' : [2,8,18,8,2],
+        'y' : [2,8,18,9,2],
+        'zr' : [2,8,18,10,2],
+        'nb' : [2,8,18,12,1],
+        'mo' : [2,8,18,13,1],
+        'tc' : [2,8,18,13,2],
+        'ru' : [2,8,18,15,1],
+        'rh' : [2,8,18,16,1],
+        'pd' : [2,8,18,18],
+        'ag' : [2,8,18,18,1],
+        'cd' : [2,8,18,18,2],
+        'in' : [2,8,18,18,3],
+        'sn' : [2,8,18,18,4],
+        'sb' : [2,8,18,18,5],
+        'te' : [2,8,18,18,6],
+        'i' : [2,8,18,18,7],
+        'xe' : [2,8,18,18,8],
+        'cs' : [2,8,18,18,1],
+        'ba' : [2,8,18,18,2],
+        'hf' : [2,8,18,32,10,2],
+        'ta' : [2,8,18,32,11,2],
+        'w' : [2,8,18,32,12,2],
+        're' : [2,8,18,32,13,2],
+        'os' : [2,8,18,32,14,2],
+        'ir' : [2,8,18,32,15,2],
+        'pt' : [2,8,18,32,16,2],
+        'au' : [2,8,18,32,17,2],
+        'hg' : [2,8,18,32,18,2],
+        'tl' : [2,8,18,32,18,3],
+        'pb' : [2,8,18,32,18,4],
+        'bi' : [2,8,18,32,18,5],
+        'po' : [2,8,18,32,18,6],
+        'at' : [2,8,18,32,18,7],
+        'rn' : [2,8,18,32,18,8],
+        'fr' : [2,8,18,32,18,1],
+        'ra' : [2,8,18,32,18,2],
+        'rf' : [2,8,18,32,32,10,2],
+        'db' : [2,8,18,32,32,11,2],
+        'sg' : [2,8,18,32,32,12,2],
+        'bh' : [2,8,18,32,32,13,2],
+        'hs' : [2,8,18,32,32,14,2],
+        'mt' : [2,8,18,32,32,15,2],
+        'ds' : [2,8,18,32,32,16,2],
+        'rg' : [2,8,18,32,32,17,2],
+        'cn' : [2,8,18,32,32,18,2],
+        'nh' : [2,8,18,32,32,18,3],
+        'fl' : [2,8,18,32,32,18,4],
+        'mc' : [2,8,18,32,32,18,5],
+        'lv' : [2,8,18,32,32,18,6],
+        'ts' : [2,8,18,32,32,18,7],
+        'og' : [2,8,18,32,32,18,8],
+        'la':[2,8,18,18,9,2],
+        'ce':[2,8,18,19,9,2],
+        'pr':[2,8,18,21,8,2],
+        'nd':[2,8,18,22,8,2],
+        'pm':[2,8,18,23,8,2],
+        'sm':[2,8,18,24,8,2],
+        'eu':[2,8,18,25,8,2],
+        'gd':[2,8,18,25,9,2],
+        'tb':[2,8,18,27,8,2],
+        'dy':[2,8,18,28,8,2],
+        'ho':[2,8,18,29,8,2],
+        'er':[2,8,18,30,8,2],
+        'tm':[2,8,18,31,8,2],
+        'yb':[2,8,18,32,8,2],
+        'lu':[2,8,18,32,9,2],
+        'ac':[2,8,18,32,18,9,2],
+        'th':[2,8,18,32,18,10,2],
+        'pa':[2,8,18,32,20,9,2],
+        'u':[2,8,18,32,21,9,2],
+        'u':[2,8,18,32,21,9,2],
+        'np':[2,8,18,32,22,9,2],
+        'pu':[2,8,18,32,24,8,2],
+        'am':[2,8,18,32,25,8,2],
+        'cm':[2,8,18,32,25,9,2],
+        'bk':[2,8,18,32,27,8,2],
+        'cf':[2,8,18,32,28,8,2],
+        'es':[2,8,18,32,29,8,2],
+        'fm':[2,8,18,32,30,8,2],
+        'md':[2,8,18,32,31,8,2],
+        'no':[2,8,18,32,32,8,2],
+        'lr':[2,8,18,32,32,8,3],
+
+    }
+    
+
+</script>
