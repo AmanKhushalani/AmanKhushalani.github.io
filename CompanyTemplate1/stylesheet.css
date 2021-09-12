@@ -2,3 +2,10 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+#navbtn:active , #navbtn:focus{
+    box-shadow: none;
+}
+#navbtn:hover{
+    transition: all 200ms ease;
+    border: 3px solid blue;
+}
