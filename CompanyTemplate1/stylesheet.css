@@ -1,3 +1,4 @@
+
 body::-webkit-scrollbar {
     display: none;
 }
@@ -25,7 +26,7 @@ body::-webkit-scrollbar {
 
 
 
-@media screen and (min-width:768px)
+@media screen and (min-width:992px)
 {
     
     #slideContent , #slideContentInner{
@@ -53,11 +54,59 @@ body::-webkit-scrollbar {
     }
 }
 
-@media screen and (min-width:10px)  and (max-width:767px)
+@media screen and (min-width:10px)  and (max-width:992px)
 {
     #slideContentInner{
         background-color: rgb(241 237 237);
         border-radius: 20px;
-        margin-bottom: 10px;
-    }   
+    }
+    #slideImg{
+        margin-bottom: 20px !important;
+    }
+}
+
+#clideCOntentInner{
+    z-index: 3;
+}
+
+#btn2{
+    position: relative;
+    right: 0%;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: #0d6efd;
+    z-index: 4;
+}
+
+#btn1{
+    position: relative;
+    left: 0%;   
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: #0d6efd;
+    z-index: 4;
+}
+
+
+#myMail{
+    text-decoration: none;
+}
+#myMail:hover{
+    text-decoration: underline;
+}
+
+
+#formerForm input:hover{
+    transition: 200ms all ease;
+}
+
+.links:hover{
+    cursor: pointer !important;
+    transition: 200ms all ease;
+    color: #0d6efd !important;
+    text-decoration: underline !important;
 }
