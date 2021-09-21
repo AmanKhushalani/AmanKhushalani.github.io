@@ -267,17 +267,17 @@
 		}
 		
 		var obj = document.getElementById("skillsContainer").getBoundingClientRect();
-		if(obj.y+200 < screen.height && done1==false)
+		if(obj.y+50 < screen.height && done1==false)
 			animateSkills()
 
-		if(document.getElementById("slider").getBoundingClientRect().y+200 < screen.height && done2 == false)
+		if(document.getElementById("slider").getBoundingClientRect().y+50 < screen.height && done2 == false)
 		{
 			$("#slideImg").addClass("animate__fadeInLeft");
 			$("#slideContentInner").addClass("animate__fadeInRight");
 			done2 = true;
 		}
 		
-		if(document.getElementById("former").getBoundingClientRect().y+200 < screen.height)
+		if(document.getElementById("former").getBoundingClientRect().y+50 < screen.height)
 		{
 			$("#formerImg").addClass("animate__fadeInLeft");
 			$("#formerForm").addClass("animate__fadeInRight");
@@ -286,18 +286,18 @@
 		window.onscroll =  function()
     	{
 			var obj = document.getElementById("skillsContainer").getBoundingClientRect();
-			if(obj.y+200 < screen.height  && done1==false)
+			if(obj.y+50 < screen.height  && done1==false)
 				animateSkills()
 			
 
-			if(document.getElementById("slider").getBoundingClientRect().y+200 < screen.height && done2 == false)
+			if(document.getElementById("slider").getBoundingClientRect().y+50 < screen.height && done2 == false)
 			{
 				$("#slideImg").addClass("animate__fadeInLeft");
 				$("#slideContentInner").addClass("animate__fadeInRight");
 				done2 = true;
 			}
 
-			if(document.getElementById("former").getBoundingClientRect().y+200 < screen.height)
+			if(document.getElementById("former").getBoundingClientRect().y+50 < screen.height)
 			{
 				$("#formerImg").addClass("animate__fadeInLeft");
 				$("#formerForm").addClass("animate__fadeInRight");
