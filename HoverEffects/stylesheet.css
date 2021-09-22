@@ -57,6 +57,10 @@ body{
     cursor: pointer;
 }
 
+.download{
+    color: aqua;
+}
+
 #button1{
     text-decoration: none;
     color: aqua;
