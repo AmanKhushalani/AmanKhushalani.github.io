@@ -1,0 +1,278 @@
+:root{
+    --color : rgb(3, 3, 21);
+}
+
+#button13{
+    text-decoration: none;
+    border: 2px solid aqua;
+    color: aqua;
+    font-size: 30px;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    perspective: 700px;
+    transition: all 800ms ease;
+}
+
+#button13:before{
+    content: 'Text Here';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    background-color: aqua;
+    opacity: 0;
+    color: var(--color);
+    transform: translateZ(900px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 800ms ease;
+}
+
+#button13:hover:before{
+    opacity: 1;
+    transform: translateZ(0px);
+}
+
+
+#button14{
+    text-decoration: none;
+    border: 2px solid aqua;
+    color: aqua;
+    font-size: 30px;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    perspective: 700px;
+    transition: all 800ms ease;
+}
+
+#button14:before{
+    content: 'Text Here';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    background-color: aqua;
+    color: var(--color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 800ms ease;
+}
+
+#button14:hover:before{
+    opacity: 0;
+    transform: translateZ(900px);
+}
+
+
+
+
+#button15{
+    text-decoration: none;
+    border: 2px solid aqua;
+    color: aqua;
+    font-size: 30px;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    perspective: 700px;
+    transition: all 800ms ease;
+    display: flex;
+    flex-direction: column;
+    transition: all 700ms;
+}
+
+.falldown{
+    position: absolute;
+    z-index: -1;
+    width: 25%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: aqua;
+    transform: translateY(-100%);
+    transition: all 500ms;
+}
+
+
+.falldown:nth-child(2){
+    left: 25%;
+    transition-delay: 0.2s;
+}
+.falldown:nth-child(3){
+    left: 50%;
+    transition-delay: 0.4s;
+}
+.falldown:nth-child(4){
+    left: 75%;
+    transition-delay: 0.6s;
+}
+
+#button15:hover .falldown{
+    transform: translate(0);
+}
+#button15:hover{
+    color: var(--color);
+}
+
+
+
+
+#button16{
+    text-decoration: none;
+    border: 2px solid aqua;
+    color: aqua;
+    font-size: 30px;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    perspective: 700px;
+    transition: all 800ms ease;
+    display: flex;
+    flex-direction: column;
+    transition: all 700ms;
+}
+
+.fallup{
+    position: absolute;
+    z-index: -1;
+    width: 25%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: aqua;
+    transform: translateY(100%);
+    transition: all 500ms;
+}
+
+
+.fallup:nth-child(2){
+    left: 25%;
+    transition-delay: 0.2s;
+}
+.fallup:nth-child(3){
+    left: 50%;
+    transition-delay: 0.4s;
+}
+.fallup:nth-child(4){
+    left: 75%;
+    transition-delay: 0.6s;
+}
+
+#button16:hover .fallup{
+    transform: translate(0);
+}
+#button16:hover{
+    color: var(--color);
+}
+
+
+
+#button17{
+    text-decoration: none;
+    border: 2px solid aqua;
+    color: aqua;
+    font-size: 30px;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    perspective: 700px;
+    transition: all 800ms ease;
+    display: flex;
+    flex-direction: column;
+    transition: all 700ms;
+}
+
+#button17 span{
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background-color: aqua;
+    transition: all 0.5s;
+    transform-origin: left;
+    transform: scaleX(0);
+}
+
+#button17 span:nth-child(2){
+    top: 25%;
+    transition-delay: 0.15s;
+}
+#button17 span:nth-child(3){
+    top: 50%;
+    transition-delay: 0.30s;
+}
+#button17 span:nth-child(4){
+    top: 75%;
+    transition-delay: 0.45s;
+}
+
+#button17:hover{
+    color: var(--color);
+}
+#button17:hover span{
+    transform: scaleX(1);
+}
+
+
+
+#button18{
+    text-decoration: none;
+    border: 2px solid aqua;
+    color: aqua;
+    font-size: 30px;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    perspective: 700px;
+    transition: all 800ms ease;
+    display: flex;
+    flex-direction: column;
+    transition: all 700ms;
+}
+
+#button18 span{
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background-color: aqua;
+    transition: all 0.5s;
+    transform-origin: right;
+    transform: scaleX(0);
+}
+
+#button18 span:nth-child(2){
+    top: 25%;
+    transition-delay: 0.15s;
+}
+#button18 span:nth-child(3){
+    top: 50%;
+    transition-delay: 0.30s;
+}
+#button18 span:nth-child(4){
+    top: 75%;
+    transition-delay: 0.45s;
+}
+
+#button18:hover{
+    color: var(--color);
+}
+#button18:hover span{
+    transform: scaleX(1);
+}

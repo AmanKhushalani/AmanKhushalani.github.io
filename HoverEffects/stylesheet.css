@@ -61,35 +61,3 @@ body{
     color: aqua;
 }
 
-#button1{
-    text-decoration: none;
-    color: aqua;
-    border: 2px solid aqua;
-    font-size: 30px;
-    padding: 10px;
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    transition: all 500ms ease;
-}
-
-#button1::before{
-    content: '';
-    position: absolute;
-    background-color: aqua;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform: translateX(-100%);
-    transition: all 500ms ease;
-}
-
-#button1:hover::before{
-    transform: translateX(0);
-}
-#button1:hover{
-    color: var(--color);
-    transform: translateX(0);
-}

@@ -1,0 +1,219 @@
+:root{
+    --color : rgb(3, 3, 21);
+}
+
+#button8{
+    text-decoration: none;
+    border: 2px solid aqua;
+    color: aqua;
+    font-size: 30px;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 800ms ease;
+}
+
+#button8:before , #button8:after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    color: var(--color);
+    background-color: aqua;
+    transition: all 800ms ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#button8:before{
+    transform: rotateX(90deg);
+}
+#button8:after{
+    transform: rotateY(90deg);
+}
+
+
+#button8:hover:before{
+    transform: rotateX(0);
+}
+#button8:hover:after{
+    transform: rotateY(0);
+}
+#button8:hover{
+    color: var(--color);
+}
+
+
+
+#button9{
+    text-decoration: none;
+    border: 2px solid aqua;
+    color: aqua;
+    font-size: 30px;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 800ms ease;
+}
+
+#button9:before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    left: 0;
+    background-color: aqua;
+    transform:  translateX(-70%) rotate(-140deg);
+    transition: all 500ms ease;
+}
+
+#button9:hover:before{
+    transform:  translateX(90%) rotate(-140deg);
+    
+}
+
+
+#button10{
+    text-decoration: none;
+    border: 2px solid aqua;
+    color: aqua;
+    font-size: 30px;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 800ms ease;
+}
+
+#button10:before{
+    content : 'Text Here';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    color: var(--color);
+    background-color: aqua;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: all 500ms ease;
+}
+
+#button10:hover:before{
+    transform: translateY(0);
+
+}
+
+
+#button11{
+    text-decoration: none;
+    border: 2px solid aqua;
+    color: var(--color);
+    padding: 10px;
+    font-size: 30px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 800ms ease;
+}
+
+#button11:after{
+    font-size: 30px;
+    content: 'Hover Me !';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    columns: var(--color);
+    background-color: aqua;
+    transform: translate(-100% , 100%);
+    transition: all 800ms ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#button11:before{
+    font-size: 30px;
+    content: 'Hover Me !';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    columns: var(--color);
+    background-color: aqua;
+    transition: all 800ms ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#button11:hover:after{
+    transform: translate(0,0);
+}
+
+#button11:hover:before{
+    transform: translate(100%,-100%);
+}
+
+
+#button12{
+    text-decoration: none;
+    border: 2px solid aqua;
+    color: var(--color);
+    padding: 10px;
+    font-size: 30px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 800ms ease;
+}
+
+#button12:after{
+    font-size: 30px;
+    content: 'Hover Me !';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    columns: var(--color);
+    background-color: aqua;
+    transform: translate(100% , 100%);
+    transition: all 800ms ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#button12:before{
+    font-size: 30px;
+    content: 'Hover Me !';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    columns: var(--color);
+    background-color: aqua;
+    transition: all 800ms ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#button12:hover:after{
+    transform: translate(0,0);
+}
+
+#button12:hover:before{
+    transform: translate(-100%,-100%);
+}

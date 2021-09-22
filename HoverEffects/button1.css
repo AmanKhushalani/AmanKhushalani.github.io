@@ -1,0 +1,147 @@
+:root{
+    --color : rgb(3, 3, 21);
+}
+
+#button1{
+    text-decoration: none;
+    color: aqua;
+    border: 2px solid aqua;
+    font-size: 30px;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 500ms ease;
+}
+
+#button1::before{
+    content: '';
+    position: absolute;
+    background-color: aqua;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    transition: all 500ms ease;
+}
+
+#button1:hover::before{
+    transform: translateX(0);
+}
+#button1:hover{
+    color: var(--color);
+}
+
+
+
+
+
+
+#button2{
+    text-decoration: none;
+    color: aqua;
+    border: 2px solid aqua;
+    font-size: 30px;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 500ms ease;
+}
+
+#button2::after{
+    content: '';
+    position: absolute;
+    background-color: aqua;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(100%);
+    transition: all 500ms ease;
+}
+
+#button2:hover::after{
+    transform: translateX(0);
+}
+#button2:hover{
+    color: var(--color);
+}
+
+
+
+
+
+
+
+#button3{
+    text-decoration: none;
+    color: aqua;
+    border: 2px solid aqua;
+    font-size: 30px;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 500ms ease;
+}
+
+#button3::after{
+    content: '';
+    position: absolute;
+    background-color: aqua;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-100%);
+    transition: all 500ms ease;
+}
+
+#button3:hover::after{
+    transform: translateY(0);
+}
+#button3:hover{
+    color: var(--color);
+}
+
+
+
+
+
+
+#button4{
+    text-decoration: none;
+    color: aqua;
+    border: 2px solid aqua;
+    font-size: 30px;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 500ms ease;
+}
+
+#button4::after{
+    content: '';
+    position: absolute;
+    background-color: aqua;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    transition: all 500ms ease;
+}
+
+#button4:hover::after{
+    transform: translateY(0);
+}
+#button4:hover{
+    color: var(--color);
+}
