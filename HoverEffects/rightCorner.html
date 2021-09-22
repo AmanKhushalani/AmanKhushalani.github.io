@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rightCornerButton</title>
+</head>
+
+<body>
+
+    <style>
+        :root {
+            --color: rgb(4, 4, 28);
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(4, 4, 28);
+        }
+
+        #button12 {
+            text-decoration: none;
+            border: 2px solid aqua;
+            color: var(--color);
+            padding: 10px;
+            font-size: 30px;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 800ms ease;
+        }
+
+        #button12:after {
+            font-size: 30px;
+            content: 'Hover Me !';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            columns: var(--color);
+            background-color: aqua;
+            transform: translate(100%, 100%);
+            transition: all 800ms ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #button12:before {
+            font-size: 30px;
+            content: 'Hover Me !';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            columns: var(--color);
+            background-color: aqua;
+            transition: all 800ms ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #button12:hover:after {
+            transform: translate(0, 0);
+        }
+
+        #button12:hover:before {
+            transform: translate(-100%, -100%);
+        }
+    </style>
+
+    <a id="button12">Hover Me !</a>
+
+</body>
+
+</html>

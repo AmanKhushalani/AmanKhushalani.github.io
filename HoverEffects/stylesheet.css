@@ -65,8 +65,12 @@ header{
     justify-content: center;
     align-items: center;
 }
+.box a{
+    font-weight: 200;
+}
 
 .names{
+    font-weight: 400;
     margin: 0; 
     transform: translateY(-20px);
 }

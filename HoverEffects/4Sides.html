@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4SidesButtons</title>
+</head>
+
+<body>
+
+    <style>
+        :root {
+            --color: rgb(4, 4, 28);
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(4, 4, 28);
+        }
+
+        #button8 {
+            text-decoration: none;
+            border: 2px solid aqua;
+            color: aqua;
+            font-size: 30px;
+            padding: 10px;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 800ms ease;
+        }
+
+        #button8:before,
+        #button8:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            color: var(--color);
+            background-color: aqua;
+            transition: all 800ms ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #button8:before {
+            transform: rotateX(90deg);
+        }
+
+        #button8:after {
+            transform: rotateY(90deg);
+        }
+
+
+        #button8:hover:before {
+            transform: rotateX(0);
+        }
+
+        #button8:hover:after {
+            transform: rotateY(0);
+        }
+
+        #button8:hover {
+            color: var(--color);
+        }
+    </style>
+
+    <a id="button8">Hover Me !</a>
+
+</body>
+
+</html>

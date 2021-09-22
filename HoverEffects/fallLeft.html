@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fallLeftButton</title>
+</head>
+
+<body>
+
+    <style>
+        :root {
+            --color: rgb(4, 4, 28);
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(4, 4, 28);
+        }
+
+        #button18 {
+            text-decoration: none;
+            border: 2px solid aqua;
+            color: aqua;
+            font-size: 30px;
+            padding: 10px;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            perspective: 700px;
+            transition: all 800ms ease;
+            display: flex;
+            flex-direction: column;
+            transition: all 700ms;
+        }
+
+        #button18 span {
+            position: absolute;
+            width: 100%;
+            height: 25%;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            background-color: aqua;
+            transition: all 0.5s;
+            transform-origin: right;
+            transform: scaleX(0);
+        }
+
+        #button18 span:nth-child(2) {
+            top: 25%;
+            transition-delay: 0.15s;
+        }
+
+        #button18 span:nth-child(3) {
+            top: 50%;
+            transition-delay: 0.30s;
+        }
+
+        #button18 span:nth-child(4) {
+            top: 75%;
+            transition-delay: 0.45s;
+        }
+
+        #button18:hover {
+            color: var(--color);
+        }
+
+        #button18:hover span {
+            transform: scaleX(1);
+        }
+    </style>
+
+    <a id="button18">Hover Me !
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
+
+</body>
+
+</html>

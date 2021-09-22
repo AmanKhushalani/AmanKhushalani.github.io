@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fallUpButton</title>
+</head>
+
+<body>
+
+    <style>
+        :root {
+            --color: rgb(4, 4, 28);
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(4, 4, 28);
+        }
+
+        #button16 {
+            text-decoration: none;
+            border: 2px solid aqua;
+            color: aqua;
+            font-size: 30px;
+            padding: 10px;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            perspective: 700px;
+            transition: all 800ms ease;
+            display: flex;
+            flex-direction: column;
+            transition: all 700ms;
+        }
+
+        .fallup {
+            position: absolute;
+            z-index: -1;
+            width: 25%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: aqua;
+            transform: translateY(100%);
+            transition: all 500ms;
+        }
+
+
+        .fallup:nth-child(2) {
+            left: 25%;
+            transition-delay: 0.2s;
+        }
+
+        .fallup:nth-child(3) {
+            left: 50%;
+            transition-delay: 0.4s;
+        }
+
+        .fallup:nth-child(4) {
+            left: 75%;
+            transition-delay: 0.6s;
+        }
+
+        #button16:hover .fallup {
+            transform: translate(0);
+        }
+
+        #button16:hover {
+            color: var(--color);
+        }
+    </style>
+
+    <a id="button16">Hover Me !
+        <span class="fallup"></span>
+        <span class="fallup"></span>
+        <span class="fallup"></span>
+        <span class="fallup"></span>
+    </a>
+
+</body>
+
+</html>

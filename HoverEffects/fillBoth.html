@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fillBothButton</title>
+</head>
+
+<body>
+
+    <style>
+        :root {
+            --color: rgb(4, 4, 28);
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(4, 4, 28);
+        }
+
+        #button7 {
+            text-decoration: none;
+            color: aqua;
+            border: 2px solid aqua;
+            font-size: 30px;
+            padding: 10px;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 500ms ease;
+        }
+
+        #button7::before,
+        #button7::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            z-index: -1;
+            background-color: aqua;
+            transition: all 700ms ease;
+        }
+
+        #button7::before {
+            left: 0;
+            transform-origin: bottom left;
+            transform: rotateZ(-90deg);
+        }
+
+        #button7::after {
+            right: 0;
+            transform-origin: bottom right;
+            transform: rotateZ(90deg);
+        }
+
+        #button7:hover:before,
+        #button7:hover::after {
+            transform: rotateZ(0);
+        }
+
+        #button7:hover {
+            color: var(--color);
+        }
+    </style>
+
+    <a id="button7">Hover Me !</a>
+
+</body>
+
+</html>

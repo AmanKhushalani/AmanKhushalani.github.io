@@ -29,11 +29,11 @@
     transition: all 700ms;
 }
 #button19:after{
-    transform: translate(-150%) rotateY(360deg) scale(0.5);
+    transform: translate(-150%) rotateY(360deg) scale(0);
     opacity: 0;
 }
 #button19:hover:before{
-    transform: translate(150%) rotateY(360deg) scale(0.5);
+    transform: translate(150%) rotateY(360deg) scale(0);
     opacity: 0;
 }
 

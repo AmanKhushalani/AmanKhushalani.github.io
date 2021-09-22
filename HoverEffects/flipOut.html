@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flipOutButton</title>
+</head>
+
+<body>
+
+    <style>
+        :root {
+            --color: rgb(4, 4, 28);
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(4, 4, 28);
+        }
+
+        #button19 {
+            text-decoration: none;
+            border: 2px solid aqua;
+            color: var(--color);
+            font-size: 30px;
+            padding: 10px;
+            position: relative;
+            cursor: pointer;
+            perspective: 700px;
+            transition: all 800ms ease;
+        }
+
+        #button19:before,
+        #button19:after {
+            content: 'Hover Me !';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: var(--color);
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 700ms;
+        }
+
+        #button19:after {
+            transform: translate(-150%) rotateY(360deg) scale(0);
+            opacity: 0;
+        }
+
+        #button19:hover:before {
+            transform: translate(150%) rotateY(360deg) scale(0);
+            opacity: 0;
+        }
+        
+        #button19:hover:after {
+            transform: translate(0%) rotateY(0deg) scale(1);
+            opacity: 1;
+        }
+    </style>
+
+    <a id="button19">Hover Me !</a>
+
+</body>
+
+</html>

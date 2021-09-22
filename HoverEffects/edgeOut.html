@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edgeOutButton</title>
+</head>
+
+<body>
+
+    <style>
+        :root {
+            --color: rgb(4, 4, 28);
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(4, 4, 28);
+        }
+
+        #button20 {
+            text-decoration: none;
+            border: 2px solid aqua;
+            color: aqua;
+            font-size: 30px;
+            padding: 10px;
+            position: relative;
+            cursor: pointer;
+            perspective: 700px;
+            transition: all 400ms ease;
+        }
+
+        #button20:before {
+            content: '';
+            position: absolute;
+            opacity: 0;
+            bottom: 20px;
+            left: 20px;
+            width: 20px;
+            height: 20px;
+            border: solid aqua;
+            border-width: 0 0 2px 2px;
+            transition: all 200ms ease;
+        }
+
+        #button20:after {
+            content: '';
+            position: absolute;
+            opacity: 0;
+            top: 20px;
+            right: 20px;
+            width: 20px;
+            height: 20px;
+            border: solid aqua;
+            border-width: 2px 2px 0 0;
+            transition: all 200ms ease;
+
+        }
+
+        #button20:hover:before {
+            opacity: 1;
+            bottom: -10px;
+            left: -10px;
+        }
+
+        #button20:hover:after {
+            opacity: 1;
+            top: -10px;
+            right: -10px;
+        }
+
+        #button20:hover {
+            background-color: aqua;
+            color: var(--color);
+        }
+    </style>
+
+    <a id="button20">Hover Me !</a>
+
+</body>
+
+</html>

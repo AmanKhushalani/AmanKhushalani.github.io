@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fillRightButton</title>
+</head>
+
+<body>
+
+    <style>
+        :root {
+            --color: rgb(4, 4, 28);
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(4, 4, 28);
+        }
+
+        #button6 {
+            text-decoration: none;
+            color: aqua;
+            border: 2px solid aqua;
+            font-size: 30px;
+            padding: 10px;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 500ms ease;
+        }
+
+        #button6::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-color: aqua;
+            transform-origin: bottom right;
+            transform: rotateZ(90deg);
+            transition: all 700ms ease;
+        }
+
+        #button6:hover:before {
+            transform: rotateZ(0);
+        }
+
+        #button6:hover {
+            color: var(--color);
+        }
+    </style>
+
+    <a id="button6">Hover Me !</a>
+
+</body>
+
+</html>

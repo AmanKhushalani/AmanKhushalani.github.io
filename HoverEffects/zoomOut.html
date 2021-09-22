@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zoomOutButton</title>
+</head>
+
+<body>
+
+    <style>
+        :root {
+            --color: rgb(4, 4, 28);
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(4, 4, 28);
+        }
+
+        #button13 {
+            text-decoration: none;
+            border: 2px solid aqua;
+            color: aqua;
+            font-size: 30px;
+            padding: 10px;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            perspective: 700px;
+            transition: all 800ms ease;
+        }
+
+        #button13:before {
+            content: 'Text Here';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: aqua;
+            opacity: 0;
+            color: var(--color);
+            transform: translateZ(900px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 800ms ease;
+        }
+
+        #button13:hover:before {
+            opacity: 1;
+            transform: translateZ(0px);
+        }
+    </style>
+
+    <a id="button13">Hover Me !</a>
+
+</body>
+
+</html>
