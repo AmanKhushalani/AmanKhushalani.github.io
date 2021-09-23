@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>automatedShineEffect</title>
+</head>
+
+<body>
+
+    <style>
+        :root {
+            --color: rgb(4, 4, 28);
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(4, 4, 28);
+        }
+
+        #button22{
+            text-decoration: none;
+            border: 2px solid aqua;
+            color: aqua;
+            font-size: 30px;
+            padding: 10px;
+            position: relative;
+            cursor: pointer;
+            perspective: 700px;
+            overflow: hidden;
+            transition: all 400ms ease;
+        }
+
+        #button22:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -25%;
+            width: 10%;
+            height: 100%;
+            z-index: -1;
+            background-color: aqua;
+            transform: skew(-20deg);
+            transition: all 500ms;
+            animation: shine 1500ms linear infinite;
+        }
+
+        #button22:hover{
+            color: var(--color);
+        }
+        #button22:hover:before{
+            width: 100%;
+            transform: skew(0deg);
+            left: 0;
+            animation: none;
+        }
+        
+        @keyframes shine{
+            0%{    
+                left: -25%;
+            }
+            100%{
+                left: 110%;
+            }
+        }
+    </style>
+
+    <a id="button22">Hover Me !</a>
+
+</body>
+
+</html>

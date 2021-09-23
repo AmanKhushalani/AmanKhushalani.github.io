@@ -98,3 +98,120 @@
     background-color: aqua;
     color: var(--color);
 }
+
+
+
+#button21{
+    text-decoration: none;
+    border: 2px solid aqua;
+    color: aqua;
+    font-size: 30px;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    perspective: 700px;
+    transition: all 400ms ease;
+}
+#button21:hover{
+    animation: shake 300ms ;
+}
+
+@keyframes shake{
+    33%{
+        transform: rotate(10deg);
+    }
+    66%{
+        transform: rotate(-10deg);
+    }
+    99%{
+        transform: rotate(10deg);
+    }
+}
+
+
+
+
+
+
+
+#button22{
+    text-decoration: none;
+    border: 2px solid aqua;
+    color: aqua;
+    font-size: 30px;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    perspective: 700px;
+    overflow: hidden;
+    transition: all 400ms ease;
+}
+
+#button22:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -25%;
+    width: 10%;
+    height: 100%;
+    z-index: -1;
+    background-color: aqua;
+    transform: skew(-20deg);
+    transition: all 500ms;
+    animation: shine 1500ms linear infinite;
+}
+
+#button22:hover{
+    color: var(--color);
+}
+#button22:hover:before{
+    width: 100%;
+    transform: skew(0deg);
+    left: 0;
+    animation: none;
+}
+
+@keyframes shine{
+    0%{    
+        left: -25%;
+    }
+    100%{
+        left: 110%;
+    }
+}
+
+
+
+
+#button23{
+    text-decoration: none;
+    color: aqua;
+    font-size: 30px;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    perspective: 700px;
+    overflow: hidden;
+    transition: all 400ms ease;
+}
+
+#button23::before , #button23::after{
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2%;
+    background-color: aqua;
+    transition: all 500ms;
+}
+#button23::before{
+    top: 0;
+    left: 0;
+}  
+#button23::after{
+    bottom: 0;
+    right: 0;
+}
+
+#button23:hover::before,#button23:hover::after{
+    width: 100%;
+}

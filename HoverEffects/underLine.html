@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>underlineEffect</title>
+</head>
+
+<body>
+
+    <style>
+        :root {
+            --color: rgb(4, 4, 28);
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(4, 4, 28);
+        }
+
+        #button23{
+            text-decoration: none;
+            color: aqua;
+            font-size: 30px;
+            padding: 10px;
+            position: relative;
+            cursor: pointer;
+            perspective: 700px;
+            overflow: hidden;
+            transition: all 400ms ease;
+        }
+
+        #button23::before , #button23::after{
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2%;
+            background-color: aqua;
+            transition: all 500ms;
+        }
+        #button23::before{
+            top: 0;
+            left: 0;
+        }  
+        #button23::after{
+            bottom: 0;
+            right: 0;
+        }
+
+        #button23:hover::before,#button23:hover::after{
+            width: 100%;
+        }
+
+
+
+
+    </style>
+        <a id="button23">Hover Me !</a>
+</body>
+
+</html>

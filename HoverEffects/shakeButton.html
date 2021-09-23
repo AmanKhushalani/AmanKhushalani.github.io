@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shakeButton</title>
+</head>
+
+<body>
+
+    <style>
+        :root {
+            --color: rgb(4, 4, 28);
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(4, 4, 28);
+        }
+
+        #button21{
+            text-decoration: none;
+            border: 2px solid aqua;
+            color: aqua;
+            font-size: 30px;
+            padding: 10px;
+            position: relative;
+            cursor: pointer;
+            perspective: 700px;
+            transition: all 400ms ease;
+        }
+        #button21:hover{
+            animation: shake 300ms ;
+        }
+
+        @keyframes shake{
+            33%{
+                transform: rotate(10deg);
+            }
+            66%{
+                transform: rotate(-10deg);
+            }
+            99%{
+                transform: rotate(10deg);
+            }
+        }
+    </style>
+
+    <a id="button21">Hover Me !</a>
+
+</body>
+
+</html>
