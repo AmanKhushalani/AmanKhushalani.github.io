@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edgeOutButton</title>
+</head>
+
+<body>
+
+    <style>
+        :root {
+            --color: rgb(4, 4, 28);
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(4, 4, 28);
+        }
+
+        #button24 {
+            text-decoration: none;
+            border: 2px solid aqua;
+            color: aqua;
+            font-size: 30px;
+            padding: 10px;
+            position: relative;
+            cursor: pointer;
+            perspective: 700px;
+            background-color: var(--color);
+            transition: all 400ms ease;
+        }
+
+        #button24::after , #button24::before{
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: 100%;
+            height: 100%;
+            border: 1px solid aqua;
+            transition: all 500ms ease;
+        }
+        #button24::after{
+            z-index: -2;
+        }
+        #button24::before{
+            z-index: -1;
+        }
+
+        #button24:hover{
+            color: var(--color);
+            background-color: aqua;
+        }
+        #button24:hover:after{
+            transform: rotate(45deg);
+        }
+        #button24:hover::before{
+            transform: rotate(-45deg);
+        }
+
+    </style>
+
+    <a id="button24">Hover Me !</a>
+
+</body>
+
+</html>
