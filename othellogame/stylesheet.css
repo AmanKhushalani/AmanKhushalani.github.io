@@ -45,6 +45,8 @@ body {
     gap: 1px;
     position: relative;
     background-color: green;
+    margin-bottom: 10px;
+    /* margin-top: 10px; */
 }
 
 .blocks {
@@ -82,4 +84,27 @@ body {
 .playercontenttext {
     color: yellow;
     text-shadow: -2px 2px 0 #000, 2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000;
+}
+
+#box2{
+    position: relative;
+    left: 100%;
+
+}
+#box1{
+    position: relative;
+    right: 100%;
+}
+
+
+@keyframes activePlayer {
+        0%{
+            transform: translateY(0);
+        }
+        50%{
+            transform: translateY(20px);
+        }
+        100%{
+            transform: translateY(0);
+        }
 }

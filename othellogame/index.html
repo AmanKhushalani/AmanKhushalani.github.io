@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet"     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
 
     <title>Document</title>
@@ -25,14 +26,14 @@
 
 
 
-    <div class="container-fluid pt-3" style="font-family: 'Dancing Script', cursive; text-align: center; text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;">
+    <div class="container-fluid pt-3 animate__animated animate__backInDown" style="font-family: 'Dancing Script', cursive; text-align: center; text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;">
         <h1 style="color: yellow; font-size:40px; font-weight: bolder;">Ot Hello Game !</h1>
         <h3 style="color: yellow; font-size:35px; font-weight: 500; ">Let's Play !</h3>
     </div>
 
-    <div class="container-fluid p-3 pt-1 row" id="container1">
+    <div class="container-fluid p-3 pt-1 row " id="container1">
 
-        <div id="box1" class=" container-fluid col-md-12 col-lg-6 mb-3  p-md-3 p-2 bg-dark "
+        <div id="box1" class="animate__animated  container-fluid col-md-12 col-lg-6 mb-3  p-md-3 p-2 bg-dark "
                 style="border: 4px solid yellow;">
 
             <form class="row g-3 text-light mt-2">
@@ -70,16 +71,16 @@
             </form>
         </div>
 
-        <div id="box2" class="container col-md-12 col-lg-6  text-center">
+        <div id="box2" class="container col-md-12 col-lg-6  text-center animate__animated ">
             <img id="backgroundImage" src="./img1.jpg" alt="Gameimg" class="img-fluid">
         </div>
 
     </div>
 
 
-    <div id="maincontainer2">
+    <div id="maincontainer2" >
 
-        <div class="playerContent">
+        <div class="playerContent" id="activeplayer1">
             <h3 id="player1contentname" class="playercontenttext"></h3>
             <h3 class="playercontenttext">x<span id="player1contentscore"></span></h3>
         </div>
@@ -278,7 +279,7 @@
             </div>
         </div>
 
-        <div class="playerContent">
+        <div class="playerContent" id="activeplayer2">
             <h3 id="player2contentname" class="playercontenttext"></h3>
             <h3 class="playercontenttext">x<span id="player2contentscore"></span></h3>
         </div>
@@ -291,11 +292,6 @@
 <script src="jquery-3.6.0.js"></script>
 
 <script>
-
-    var aman = [1,2,3,4,3,2,1]
-    console.log(aman)
-    aman = [...new Set(aman)];
-    console.log(aman)
 
     function setup() {
         var children = $("#container2").children();
@@ -342,7 +338,7 @@
                 }
             if(somethingLeft == false)
             {
-                alert("game over !");
+
             }
             console.log("to be changed = "+nums)
             playerobj.total_checks += (nums.length);
@@ -364,7 +360,7 @@
                         temp += 1;
                     }
                 }
-                if (getPoints.length > 1 && this.blocks[temp] == color && temp >= 0 && temp < 64) {
+                if (getPoints.length > 1 && this.blocks[temp] == color  && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
                     finalPoints = finalPoints.concat(getPoints);
                 }
             }
@@ -376,7 +372,7 @@
                     getPoints.push(temp);
                     temp -= 1;
                 }
-                if (getPoints.length > 1 && this.blocks[temp] == color && temp >= 0 && temp < 64) {
+                if (getPoints.length > 1 && this.blocks[temp] == color  && this.blocks[temp] != ""&& temp >= 0 && temp < 64) {
                     finalPoints = finalPoints.concat(getPoints);
                 }
             }
@@ -388,7 +384,7 @@
                     getPoints.push(temp);
                     temp += 8;
                 }
-                if (getPoints.length > 1 && this.blocks[temp] == color && temp >= 0 && temp < 64) {
+                if (getPoints.length > 1 && this.blocks[temp] == color  && this.blocks[temp] != ""&& temp >= 0 && temp < 64) {
                     finalPoints = finalPoints.concat(getPoints);
                 }
             }
@@ -400,7 +396,7 @@
                     getPoints.push(temp);
                     temp -= 8;
                 }
-                if (getPoints.length > 1 && this.blocks[temp] == color && temp >= 0 && temp < 64) {
+                if (getPoints.length > 1 && this.blocks[temp] == color  && this.blocks[temp] != ""&& temp >= 0 && temp < 64) {
                     finalPoints = finalPoints.concat(getPoints);
                 }
             }
@@ -413,7 +409,7 @@
                     getPoints.push(temp);
                     temp += 7;
                 }
-                if (getPoints.length > 1 && this.blocks[temp] == color && temp >= 0 && temp < 64) {
+                if (getPoints.length > 1 && this.blocks[temp] == color  && this.blocks[temp] != ""&& temp >= 0 && temp < 64) {
                     finalPoints = finalPoints.concat(getPoints);
                 }
                 
@@ -426,7 +422,7 @@
                     getPoints.push(temp);
                     temp -= 7;
                 }
-                if (getPoints.length > 1 && this.blocks[temp] == color && temp >= 0 && temp < 64) {
+                if (getPoints.length > 1 && this.blocks[temp] == color  && this.blocks[temp] != ""&& temp >= 0 && temp < 64) {
                     finalPoints = finalPoints.concat(getPoints);
                 }
             }
@@ -438,7 +434,7 @@
                     getPoints.push(temp);
                     temp += 9;
                 }
-                if (getPoints.length > 1 && this.blocks[temp] == color && temp >= 0 && temp < 64) {
+                if (getPoints.length > 1 && this.blocks[temp] == color  && this.blocks[temp] != ""&& temp >= 0 && temp < 64) {
                     finalPoints = finalPoints.concat(getPoints);
                 }
             }
@@ -449,7 +445,7 @@
                     getPoints.push(temp);
                     temp -= 9;
                 }
-                if (getPoints.length > 1 && this.blocks[temp] == color && temp >= 0 && temp < 64) {
+                if (getPoints.length > 1 && this.blocks[temp] == color  && this.blocks[temp] != ""&& temp >= 0 && temp < 64) {
                     finalPoints = finalPoints.concat(getPoints);
                 }
             }
@@ -497,25 +493,33 @@
             player1 = new Player();
             player2 = new Player();
             firstPlayer = true;
-
+            
             Setup(player1, $("#player1name").val(), player2, $("#player2name").val(), boardObj)
 
-            $("#container1").css({
-                "display": "none"
-            })
-            $("#maincontainer2").css({
-                "display": "flex"
-            })
-            $("#container2").css({
-                "display": "grid",
-                "width": "400px"
-            })
-            $(".blocks").css({
-                "width": "100%",
-                "height": "50px"
-            })
-            $(".blocks").height($(".blocks").width());
+            $("#container1").fadeOut(500)
+            setTimeout(function(){
+                $("#maincontainer2").fadeIn(500)
+                
+                $("#maincontainer2").css({
+                    "display": "flex"
+                })
+                $("#container2").css({
+                    "display": "grid",
+                    "width": "400px"
+                })
+                $(".blocks").css({
+                    "width": "100%",
+                    "height": "50px"
+                })
 
+                $(".blocks").height($(".blocks").width());
+                $("#activeplayer1").css({"animation":  "activePlayer 1s infinite ease both normal running"})
+            } , 650)
+
+        }
+        else
+        {
+            alert("Enter player names !");
         }
     }
 
@@ -530,6 +534,12 @@
         $(".blocks").height($(".blocks").width())
     })
 
+    setTimeout(function(){
+        $("#box1").animate({"right" : "0%"},1000)
+        $("#box2").animate({"left" : "0%"} ,1000)
+
+    },1000)
+    
 
     document.onclick = function (e) {
         if ($(e.target).parent()[0]["id"] == "container2") {
@@ -539,6 +549,9 @@
                         $("#player1contentscore").text(player1.total_checks);
                         $("#player2contentscore").text(player2.total_checks);
                         firstPlayer = false
+                        $("#activeplayer1").css({"animation":  "none"})
+                        $("#activeplayer2").css({"animation":  "activePlayer 1s infinite ease both normal running"})
+                        
                     }
                 }
                 else {
@@ -546,6 +559,8 @@
                         $("#player1contentscore").text(player1.total_checks);
                         $("#player2contentscore").text(player2.total_checks);
                         firstPlayer = true
+                        $("#activeplayer2").css({"animation":  "none"})
+                        $("#activeplayer1").css({"animation":  "activePlayer 1s infinite ease both normal running"})
 
                     }
                 }
