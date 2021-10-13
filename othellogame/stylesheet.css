@@ -12,7 +12,7 @@ body {
     #maincontainer2{
         width: 100%;
         padding: 10px;
-        border: 20px solid red;
+        border: 20px solid green;
         justify-content: space-evenly;
         align-items: center;
         flex-wrap: wrap;
@@ -26,7 +26,7 @@ body {
     #maincontainer2{
         width: 100%;
         padding: 10px;
-        border: 20px solid blue;
+        border: 20px solid green;
         justify-content: space-evenly;
         align-items: center;
         flex-wrap: wrap;
@@ -80,6 +80,6 @@ body {
 }
 
 .playercontenttext {
-    color: rgb(201, 201, 13);
+    color: yellow;
     text-shadow: -2px 2px 0 #000, 2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000;
 }
