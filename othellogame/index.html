@@ -16,25 +16,77 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-    <link rel="stylesheet"     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+            integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
     <title>Document</title>
 </head>
 
-<body class="bg-dark" style="background-image: url('./background.jpeg');">
+<body class="bg-dark" style=" background: url('./newback.png'); width: 100%; height: 100%; background-repeat: no-repeat;">
+    
+
+    <nav id="navbar" class="container-fluid navbar navbar-expand navbar-light " style="display: none;">
+        
+        <a id="iconbutton">
+            <span onclick="restartGame()" class="sub small"><i class="bi bi-flag-fill"></i></span>
+            <span onclick="toggleMusic()" class="sub small"><i id="musicIcon" class="bi  bi-volume-up-fill"></i></span>
+            <span onclick="restartGame()" class="sub small"><i class="bi bi-arrow-clockwise"></i></span>
+        </a>
+    </nav>
+        <!-- <i id="iconholder" class="bi bi-flag-fill">
+
+            <span class="active nav-itemicons"><i class="bi bi-flag-fill"></i></span>
+            <span class="active nav-itemicons"><i class="bi bi-flag-fill"></i></span>
+            <span class="active nav-itemicons"><i class="bi bi-flag-fill"></i></span>
+
+        </i> -->
+        <!-- <div id="" >
+            <div class="" style="display: flex; overflow: hidden;">
+                <ul class="navbar-nav" id="iconbutton">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-flag-fill"></i></a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav " id="iconholder" style="z-index: -1;">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-flag-fill"></i></a>
+                    </li>
+                    <a onclick="toggleMusic()" class="nav-link active" aria-current="page" href="#"><i id="musicIcon" class="bi  bi-volume-up-fill"></i></a>
+                    <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
+                        <a onclick="restartGame()" class="nav-link active" aria-current="page" href="#"><i class="bi bi-arrow-clockwise"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div> -->
+    
 
 
 
-    <div class="container-fluid pt-3 animate__animated animate__backInDown" style="font-family: 'Dancing Script', cursive; text-align: center; text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;">
+    <div id="gameheading" class="container-fluid  animate__animated animate__backInDown mt-5"
+            style="font-family: 'Dancing Script', cursive; text-align: center; text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;">
         <h1 style="color: yellow; font-size:40px; font-weight: bolder;">Ot Hello Game !</h1>
         <h3 style="color: yellow; font-size:35px; font-weight: 500; ">Let's Play !</h3>
     </div>
+    <div id="playercontainer" class="container-fluid" style="display: none;">
+        
+        <div class="playerContent" id="activeplayer1">
+            <h3 id="player1contentname"></h3>
+            <h3>x<span id="player1contentscore"></span></h3>
+        </div>
+        <div class="playerContent" id="activeplayer2">
+            <h3 id="player2contentname"></h3>
+            <h3>x<span id="player2contentscore"></span></h3>
+        </div>
+        
+    </div>
 
-    <div class="container-fluid p-3 pt-1 row " id="container1">
+    <div class="container p-3 pt-1 row " id="container1">
 
-        <div id="box1" class="animate__animated  container-fluid col-md-12 col-lg-6 mb-3  p-md-3 p-2 bg-dark "
-                style="border: 4px solid yellow;">
+        <div id="box1" class="animate__animated  container-fluid col-lg-6 col-md-8 mb-3  p-md-3 p-2 ">
 
             <form class="row g-3 text-light mt-2">
 
@@ -71,19 +123,21 @@
             </form>
         </div>
 
-        <div id="box2" class="container col-md-12 col-lg-6  text-center animate__animated ">
-            <img id="backgroundImage" src="./img1.jpg" alt="Gameimg" class="img-fluid">
-        </div>
+
 
     </div>
 
 
-    <div id="maincontainer2" >
-
-        <div class="playerContent" id="activeplayer1">
-            <h3 id="player1contentname" class="playercontenttext"></h3>
-            <h3 class="playercontenttext">x<span id="player1contentscore"></span></h3>
+    <div id="middlecontainer" class=" container-fluid">
+        <div>
+            <h1 id="matchstatus" class="mt-5">Congratulations !</h1>
+            <h2 class="mt-4" id="winnertag" > <span id="winnername"></span>&nbsp;<i class="bi bi-trophy-fill"></i></h2>
+            <button id="restartbutton" type="button" class="mt-5 container-fluid btn" style="background-color: yellow;"
+                    onclick="reloadGame()">Restart Game</button>
         </div>
+    </div>
+    <div id="maincontainer2">
+
         <div id="container2">
             <div id="" class="blocks">
                 <div class="innerBlock"></div>
@@ -279,10 +333,6 @@
             </div>
         </div>
 
-        <div class="playerContent" id="activeplayer2">
-            <h3 id="player2contentname" class="playercontenttext"></h3>
-            <h3 class="playercontenttext">x<span id="player2contentscore"></span></h3>
-        </div>
     </div>
 
 </body>
@@ -293,9 +343,12 @@
 
 <script>
 
+    
+
     function setup() {
         var children = $("#container2").children();
         for (var i = 0; i < 64; i++) {
+            // $(children[i]).text(i)
             $(children[i]).attr("id", "a" + i)
         }
     }
@@ -320,59 +373,61 @@
             return this.blocks[choice] == "";
         }
 
-        updateBoard(nums, color, playerobj , oppositePlayer) {
-            console.log("nums = "+nums)
+        updateBoard(nums, color, playerobj, oppositePlayer) {
+            var shadow = "white -3px 6px 9px -6px inset";
+            if(color == "white")
+                shadow = "black -2px 5px 10px inset";
+            // console.log("nums = " + nums)
             nums = [...new Set(nums)];
-            console.log("now nums = "+nums)
+            // console.log("now nums = " + nums)
             var allBlocks = $("#container2").children().children();
             for (var i = 0; i <= nums.length; i++) {
                 this.blocks[nums[i]] = color;
-                $(allBlocks[nums[i]]).css({"display": "block" ,"background-color": color})
+                $(allBlocks[nums[i]]).css({ "display": "block", "background-color": color , "box-shadow" : shadow})
             }
             var somethingLeft = false
-            for(var i=0 ; i<64 ; i++)
-                if(this.blocks[i] == "")
-                {
+            for (var i = 0; i < 64; i++)
+                if (this.blocks[i] == "") {
                     somethingLeft = true;
                     break;
                 }
-            if(somethingLeft == false)
-            {
+            if (somethingLeft == false) {
 
             }
-            console.log("to be changed = "+nums)
+            // console.log("to be changed = " + nums)
             playerobj.total_checks += (nums.length);
-            oppositePlayer.total_checks -= (nums.length-1);
+            oppositePlayer.total_checks -= (nums.length - 1);
         }
 
-        getAvail(choice, color, playerobj , oppositePlayer) {
+        getAvail(choice, color, playerobj, oppositePlayer) {
             choice = Number(choice);
             var finalPoints = []
 
-
-            if (!this.isAvail(choice + 1)) {
+            var choice22 = [0, 8, 16, 24, 32, 40, 48, 56]
+            var choice11 = [7, 15, 23, 31, 39, 47, 55, 63]
+            if (!this.isAvail(choice + 1) && !choice11.includes(choice)) {
                 var getPoints = [choice,];
                 var temp = choice + 1;
-                
+
                 if (temp >= 0 && temp < 64) {
                     while (this.blocks[temp] != color && this.blocks[temp] != "") {
                         getPoints.push(temp);
                         temp += 1;
                     }
                 }
-                if (getPoints.length > 1 && this.blocks[temp] == color  && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
+                if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
                     finalPoints = finalPoints.concat(getPoints);
                 }
             }
 
-            if (!this.isAvail(choice - 1)) {
+            if (!this.isAvail(choice - 1) && !choice22.includes(choice)) {
                 var getPoints = [choice,];
                 var temp = choice - 1;
                 while (this.blocks[temp] != color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
                     getPoints.push(temp);
                     temp -= 1;
                 }
-                if (getPoints.length > 1 && this.blocks[temp] == color  && this.blocks[temp] != ""&& temp >= 0 && temp < 64) {
+                if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
                     finalPoints = finalPoints.concat(getPoints);
                 }
             }
@@ -384,7 +439,7 @@
                     getPoints.push(temp);
                     temp += 8;
                 }
-                if (getPoints.length > 1 && this.blocks[temp] == color  && this.blocks[temp] != ""&& temp >= 0 && temp < 64) {
+                if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
                     finalPoints = finalPoints.concat(getPoints);
                 }
             }
@@ -396,7 +451,7 @@
                     getPoints.push(temp);
                     temp -= 8;
                 }
-                if (getPoints.length > 1 && this.blocks[temp] == color  && this.blocks[temp] != ""&& temp >= 0 && temp < 64) {
+                if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
                     finalPoints = finalPoints.concat(getPoints);
                 }
             }
@@ -409,10 +464,10 @@
                     getPoints.push(temp);
                     temp += 7;
                 }
-                if (getPoints.length > 1 && this.blocks[temp] == color  && this.blocks[temp] != ""&& temp >= 0 && temp < 64) {
+                if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
                     finalPoints = finalPoints.concat(getPoints);
                 }
-                
+
             }
 
             if (!this.isAvail(choice - 7)) {
@@ -422,7 +477,7 @@
                     getPoints.push(temp);
                     temp -= 7;
                 }
-                if (getPoints.length > 1 && this.blocks[temp] == color  && this.blocks[temp] != ""&& temp >= 0 && temp < 64) {
+                if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
                     finalPoints = finalPoints.concat(getPoints);
                 }
             }
@@ -434,7 +489,7 @@
                     getPoints.push(temp);
                     temp += 9;
                 }
-                if (getPoints.length > 1 && this.blocks[temp] == color  && this.blocks[temp] != ""&& temp >= 0 && temp < 64) {
+                if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
                     finalPoints = finalPoints.concat(getPoints);
                 }
             }
@@ -445,7 +500,7 @@
                     getPoints.push(temp);
                     temp -= 9;
                 }
-                if (getPoints.length > 1 && this.blocks[temp] == color  && this.blocks[temp] != ""&& temp >= 0 && temp < 64) {
+                if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
                     finalPoints = finalPoints.concat(getPoints);
                 }
             }
@@ -453,7 +508,7 @@
             if (finalPoints.length <= 0)
                 return false;
 
-            this.updateBoard(finalPoints, color, playerobj , oppositePlayer);
+            this.updateBoard(finalPoints, color, playerobj, oppositePlayer);
             return true;
         }
     }
@@ -479,11 +534,18 @@
 
 
         var allBlocks = $("#container2").children().children();
-        $(allBlocks[18]).css({ "background-color": pl1.color, "display": "block" })
-        $(allBlocks[27]).css({ "background-color": pl1.color, "display": "block" })
-        $(allBlocks[19]).css({ "background-color": pl2.color, "display": "block" })
-        $(allBlocks[26]).css({ "background-color": pl2.color, "display": "block" })
+        var shadow1 = "black -2px 5px 10px inset";
+        var shadow2 = "white -3px 6px 9px -6px inset";
 
+        $(allBlocks[18]).css({ "background-color": pl1.color, "display": "block","box-shadow":  shadow2})
+        $(allBlocks[27]).css({ "background-color": pl1.color, "display": "block","box-shadow":  shadow2})
+        $(allBlocks[19]).css({ "background-color": pl2.color, "display": "block" ,"box-shadow":  shadow1 })
+        $(allBlocks[26]).css({ "background-color": pl2.color, "display": "block" ,"box-shadow":  shadow1 })
+
+    }
+
+    function reloadGame() {
+        window.location.reload("true")
     }
 
     function startGame() {
@@ -492,41 +554,108 @@
             boardObj = new Board();
             player1 = new Player();
             player2 = new Player();
-            firstPlayer = true;
-            
-            Setup(player1, $("#player1name").val(), player2, $("#player2name").val(), boardObj)
+            firstPlayer = true; {
 
-            $("#container1").fadeOut(500)
-            setTimeout(function(){
-                $("#maincontainer2").fadeIn(500)
-                
-                $("#maincontainer2").css({
-                    "display": "flex"
-                })
-                $("#container2").css({
-                    "display": "grid",
-                    "width": "400px"
-                })
-                $(".blocks").css({
-                    "width": "100%",
-                    "height": "50px"
-                })
+                Setup(player1, $("#player1name").val(), player2, $("#player2name").val(), boardObj)
+                // Setup(player1, "Aman Ji", player2, "Aman Ji", boardObj)
 
-                $(".blocks").height($(".blocks").width());
-                $("#activeplayer1").css({"animation":  "activePlayer 1s infinite ease both normal running"})
-            } , 650)
+                $("#container1").fadeOut(500)
+                setTimeout(function () {
+                    $("#maincontainer2").fadeIn(500)
 
+                    $("#maincontainer2").css({
+                        "display": "flex"
+                    })
+                    $("#container2").css({
+                        "display": "grid",
+                        "width": "400px"
+                    })
+                    $(".blocks").css({
+                        "width": "100%",
+                        "height": "50px"
+                    })
+
+                    $(".blocks").height($(".blocks").width());
+                    $("#activeplayer1").css({ "animation": "shine 0.6s infinite alternate" })
+                }, 650)
+                music.play();
+                allowMusic = true;
+                $("#gameheading").css({
+                    "display" : "none"
+                })
+                $("#playercontainer").css({
+                    "display" : "flex"
+                })
+                $("#navbar").css("display" , "block");
+            }
         }
-        else
-        {
+        else {
             alert("Enter player names !");
+        }
+    }
+
+    function restartGame() {
+
+        if (allowMusic == true) {
+            var answer = window.confirm("Sure you want to Restart Game ?");
+            if (answer) {
+                let white=0 , black = 0;
+                for(let i = 0 ; i<64 ; i++)
+                {
+                    if(boardObj.blocks[i] == "black")
+                        black++;
+                    else if(boardObj.blocks[i] == "white")
+                        white++;
+                }
+                if(black>white)
+                {
+                    $("#matchstatus").text("Congratulations !");
+                    $("#winnername").text(player1.name+" is Winner ");
+                }
+                else if(black<white)
+                {
+                    $("#matchstatus").text("Congratulations !");
+                    $("#winnername").text(player2.name+" is Winner ");
+                }
+                else
+                {
+                    $("#matchstatus").text("Match Tied..!");
+                    $("#winnertag").css({"display" : "none"});
+                }
+
+                $("#middlecontainer").height($(window).height())
+                $("#middlecontainer").css({
+                    "display" : "block",
+                    "z-index" : "100",
+                    "opacity": "1",
+                    "transform": "translateZ(0px)",
+                })
+            }
+        }
+    }
+    function toggleMusic() {
+        if (allowMusic == true) {
+            if (musicStatus) {
+                music.pause()
+                $("#musicIcon").removeClass("bi-volume-up-fill")
+                $("#musicIcon").addClass("bi-volume-mute-fill")
+            }
+            else {
+                music.play()
+                $("#musicIcon").addClass("bi-volume-up-fill")
+                $("#musicIcon").removeClass("bi-volume-mute-fill")
+            }
+            musicStatus = !musicStatus
         }
     }
 
 
 
 
+
     var boardObj, player1, player2, firstPlayer;
+    var music = new Audio('back.mp3');
+    var allowMusic = false, musicStatus = true;
     setup()
     // startGame()
     $(".blocks").height($(".blocks").width())
@@ -534,42 +663,42 @@
         $(".blocks").height($(".blocks").width())
     })
 
-    setTimeout(function(){
-        $("#box1").animate({"right" : "0%"},1000)
-        $("#box2").animate({"left" : "0%"} ,1000)
+    setTimeout(function () {
+        $("#box1").animate({ "right": "0%" }, 1000)
 
-    },1000)
-    
+    }, 1000)
 
     document.onclick = function (e) {
         if ($(e.target).parent()[0]["id"] == "container2") {
             if (boardObj.isAvail($(e.target).attr("id").split("a")[1])) {
                 if (firstPlayer) {
-                    if (boardObj.getAvail($(e.target).attr("id").split("a")[1], player1.color, player1 , player2)) {
+                    if (boardObj.getAvail($(e.target).attr("id").split("a")[1], player1.color, player1, player2)) {
                         $("#player1contentscore").text(player1.total_checks);
                         $("#player2contentscore").text(player2.total_checks);
                         firstPlayer = false
-                        $("#activeplayer1").css({"animation":  "none"})
-                        $("#activeplayer2").css({"animation":  "activePlayer 1s infinite ease both normal running"})
-                        
+                        $("#activeplayer1").css({  "animation": "none","border":"none" , "box-shadow":"none"  })
+                        // $("#activeplayer2").css({ "animation": "activePlayer 1s infinite ease both normal running" })
+                        // $("#activeplayer2").css({ "border":"3px solid green" , "box-shadow":"0 0 10px #26bf47" })
+                        $("#activeplayer2").css({  "animation": "0.6s shine infinite alternate"  })
+
                     }
                 }
                 else {
-                    if (boardObj.getAvail($(e.target).attr("id").split("a")[1], player2.color, player2 , player1)) {
+                    if (boardObj.getAvail($(e.target).attr("id").split("a")[1], player2.color, player2, player1)) {
                         $("#player1contentscore").text(player1.total_checks);
                         $("#player2contentscore").text(player2.total_checks);
                         firstPlayer = true
-                        $("#activeplayer2").css({"animation":  "none"})
-                        $("#activeplayer1").css({"animation":  "activePlayer 1s infinite ease both normal running"})
+                        $("#activeplayer2").css({ "animation": "none","border":"none" , "box-shadow":"none"  })
+                        // $("#activeplayer1").css({ "animation": "activePlayer 1s infinite ease both normal running" })
+                        // $("#activeplayer1").css({ "border":"3px solid green" , "box-shadow":"0 0 10px #26bf47" })
+                        $("#activeplayer1").css({ "animation": "0.6s shine infinite alternate" })
 
                     }
                 }
             }
-            
+
         }
     }
 
 
 </script>
-
-
