@@ -21,7 +21,8 @@
             href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
             integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
-    <title>Document</title>
+    <link rel="icon" href="./game_icon.png" type="image/icon type">
+    <title>OtHello Game !</title>
 </head>
 
 <body class="bg-dark" style=" background: url('./newback.png'); width: 100%; height: 100%; background-repeat: no-repeat;">
@@ -30,40 +31,11 @@
     <nav id="navbar" class="container-fluid navbar navbar-expand navbar-light " style="display: none;">
         
         <a id="iconbutton">
-            <span onclick="restartGame()" class="sub small"><i class="bi bi-flag-fill"></i></span>
+            <span onclick="openrulebook()" class="sub small"><i class="bi bi-flag-fill"></i></span>
             <span onclick="toggleMusic()" class="sub small"><i id="musicIcon" class="bi  bi-volume-up-fill"></i></span>
             <span onclick="restartGame()" class="sub small"><i class="bi bi-arrow-clockwise"></i></span>
         </a>
     </nav>
-        <!-- <i id="iconholder" class="bi bi-flag-fill">
-
-            <span class="active nav-itemicons"><i class="bi bi-flag-fill"></i></span>
-            <span class="active nav-itemicons"><i class="bi bi-flag-fill"></i></span>
-            <span class="active nav-itemicons"><i class="bi bi-flag-fill"></i></span>
-
-        </i> -->
-        <!-- <div id="" >
-            <div class="" style="display: flex; overflow: hidden;">
-                <ul class="navbar-nav" id="iconbutton">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-flag-fill"></i></a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav " id="iconholder" style="z-index: -1;">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-flag-fill"></i></a>
-                    </li>
-                    <a onclick="toggleMusic()" class="nav-link active" aria-current="page" href="#"><i id="musicIcon" class="bi  bi-volume-up-fill"></i></a>
-                    <li class="nav-item">
-                    </li>
-                    <li class="nav-item">
-                        <a onclick="restartGame()" class="nav-link active" aria-current="page" href="#"><i class="bi bi-arrow-clockwise"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </div> -->
-    
-
 
 
     <div id="gameheading" class="container-fluid  animate__animated animate__backInDown mt-5"
@@ -129,13 +101,39 @@
 
 
     <div id="middlecontainer" class=" container-fluid">
-        <div>
+        <div id="scorediv">
             <h1 id="matchstatus" class="mt-5">Congratulations !</h1>
             <h2 class="mt-4" id="winnertag" > <span id="winnername"></span>&nbsp;<i class="bi bi-trophy-fill"></i></h2>
             <button id="restartbutton" type="button" class="mt-5 container-fluid btn" style="background-color: yellow;"
                     onclick="reloadGame()">Restart Game</button>
         </div>
+
+        <div id="rulediv" style="height: 100%; padding: 10px; display: none;">
+            <h1 id="ruleheading" class="mt-5">Rules and Game Play !</h1>
+            <ul style="text-align: left;">
+                <li>
+                    Black places two black discs and White places two white discs as shown in here. The game always begins with this setup.
+                </li>
+                <li>
+                    Make a move, create a line (horizontal , vertical or cross) with starting and ending point of your disc.
+                </li>
+                <li>
+                    Both starting and ending point must only contain opposition disc between them !
+
+                </li>
+                <li style="position: relative;">
+                    Here's one example: White disc A was already in place on the board. The placement of white dísc B outflanks the row of three black discs.
+                    <br><img src="example1.png" alt="" style="width: 50%;">
+                </li>
+                <li>
+                    If a user is not getting any valid place on board, He/She can click on Restart Game button and it will announce the name of winner !
+                </li>
+            </ul>
+            <button id="closebutton" type="button" class=" container-fluid btn mb-4" style="background-color: yellow;"
+                onclick="closemiddle()">Close !</button>
+        </div>
     </div>
+
     <div id="maincontainer2">
 
         <div id="container2">
@@ -335,6 +333,16 @@
 
     </div>
 
+    <div style="margin:10px;padding: 5px; border-radius: 10px; background-color: rgba(0, 0, 0, 0.857);">
+       <a style="text-decoration: none;
+        color: yellow;
+       " href="https://www.linkedin.com/in/aman-khushalani-1b774818b/">
+        <span style="font-size: 20px; margin: 5px; font-weight: 600;
+            font-family: 'Dancing Script', cursive; text-align: center; text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;"
+         class="lead"><i class="bi bi-at"></i>Aman Khushalani</span>
+    </a>
+    </div>
+
 </body>
 
 </html>
@@ -392,7 +400,7 @@
                     break;
                 }
             if (somethingLeft == false) {
-
+                announceWinner()
             }
             // console.log("to be changed = " + nums)
             playerobj.total_checks += (nums.length);
@@ -432,78 +440,24 @@
                 }
             }
 
-            if (!this.isAvail(choice + 8)) {
-                var getPoints = [choice,];
-                var temp = choice + 8;
-                while (this.blocks[temp] != color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
-                    getPoints.push(temp);
-                    temp += 8;
-                }
-                if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
-                    finalPoints = finalPoints.concat(getPoints);
-                }
-            }
-
-            if (!this.isAvail(choice - 8)) {
-                var getPoints = [choice,];
-                var temp = choice - 8;
-                while (this.blocks[temp] != color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
-                    getPoints.push(temp);
-                    temp -= 8;
-                }
-                if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
-                    finalPoints = finalPoints.concat(getPoints);
+            var nextnums = [8,-8,7,-7,9,-9]
+            for(var i=0 ; i<6 ; i++)
+            {
+                if (!this.isAvail(choice + nextnums[i]))
+                {
+                    var getPoints = [choice,];
+                    var temp = choice + nextnums[i];
+                    while (this.blocks[temp] != color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
+                        getPoints.push(temp);
+                        temp += nextnums[i];
+                    }
+                    if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
+                        finalPoints = finalPoints.concat(getPoints);
+                    }
                 }
             }
 
-            if (!this.isAvail(choice + 7)) {
-
-                var getPoints = [choice,];
-                var temp = choice + 7;
-                while (this.blocks[temp] != color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
-                    getPoints.push(temp);
-                    temp += 7;
-                }
-                if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
-                    finalPoints = finalPoints.concat(getPoints);
-                }
-
-            }
-
-            if (!this.isAvail(choice - 7)) {
-                var getPoints = [choice,];
-                var temp = choice - 7;
-                while (this.blocks[temp] != color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
-                    getPoints.push(temp);
-                    temp -= 7;
-                }
-                if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
-                    finalPoints = finalPoints.concat(getPoints);
-                }
-            }
-
-            if (!this.isAvail(choice + 9)) {
-                var getPoints = [choice,];
-                var temp = choice + 9;
-                while (this.blocks[temp] != color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
-                    getPoints.push(temp);
-                    temp += 9;
-                }
-                if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
-                    finalPoints = finalPoints.concat(getPoints);
-                }
-            }
-            if (!this.isAvail(choice - 9)) {
-                var getPoints = [choice,];
-                var temp = choice - 9;
-                while (this.blocks[temp] != color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
-                    getPoints.push(temp);
-                    temp -= 9;
-                }
-                if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
-                    finalPoints = finalPoints.concat(getPoints);
-                }
-            }
+            // 
 
             if (finalPoints.length <= 0)
                 return false;
@@ -594,44 +548,96 @@
         }
     }
 
+    function announceWinner(){
+        let white=0 , black = 0;
+        for(let i = 0 ; i<64 ; i++)
+        {
+            if(boardObj.blocks[i] == "black")
+                black++;
+            else if(boardObj.blocks[i] == "white")
+                white++;
+        }
+        if(black>white)
+        {
+            $("#matchstatus").text("Congratulations !");
+            $("#winnername").text(player1.name+" is Winner ");
+        }
+        else if(black<white)
+        {
+            $("#matchstatus").text("Congratulations !");
+            $("#winnername").text(player2.name+" is Winner ");
+        }
+        else
+        {
+            $("#matchstatus").text("Match Tied..!");
+            $("#winnertag").css({"display" : "none"});
+        }
+
+        $("#middlecontainer").height($(window).height())
+        $("#middlecontainer").css({
+            "display" : "block",
+            "z-index" : "100",
+            "opacity": "1",
+            "transform": "translateZ(0px)",
+            "width" : "100%",
+            "height" : "100%,"
+        })
+        $("#scorediv").css({"display":"block"})
+
+    }
+
     function restartGame() {
 
         if (allowMusic == true) {
             var answer = window.confirm("Sure you want to Restart Game ?");
             if (answer) {
-                let white=0 , black = 0;
-                for(let i = 0 ; i<64 ; i++)
-                {
-                    if(boardObj.blocks[i] == "black")
-                        black++;
-                    else if(boardObj.blocks[i] == "white")
-                        white++;
-                }
-                if(black>white)
-                {
-                    $("#matchstatus").text("Congratulations !");
-                    $("#winnername").text(player1.name+" is Winner ");
-                }
-                else if(black<white)
-                {
-                    $("#matchstatus").text("Congratulations !");
-                    $("#winnername").text(player2.name+" is Winner ");
-                }
-                else
-                {
-                    $("#matchstatus").text("Match Tied..!");
-                    $("#winnertag").css({"display" : "none"});
-                }
-
-                $("#middlecontainer").height($(window).height())
-                $("#middlecontainer").css({
-                    "display" : "block",
-                    "z-index" : "100",
-                    "opacity": "1",
-                    "transform": "translateZ(0px)",
-                })
+                announceWinner()   
             }
         }
+    }
+    function openrulebook() {
+
+        $("#middlecontainer").height($(window).height())
+        $("#middlecontainer").css({
+            "display" : "block",
+            "z-index" : "100",
+            "opacity": "1",
+            "transform": "translateZ(0px)",
+            "width" : "100%",
+            "height" : "100%,"
+        })
+        $("#scorediv").css({"display":"none"})
+        $("#rulediv").css({"display":"block"})
+    }
+    function closemiddle(){
+        /*
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: scroll;
+        background: white;
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: all 800ms ease;
+        */
+        $("#middlecontainer").height($(window).height())
+        $("#middlecontainer").css({
+            "display" : "flex",
+            "z-index" : "-2",
+            "opacity": "0",
+            "transform": "translateZ(0px)",
+            "width" : "100%",
+            "height" : "100%,"
+        })
+        $("#scorediv").css({"display":"none"})
+        $("#rulediv").css({"display":"none"})
+
     }
     function toggleMusic() {
         if (allowMusic == true) {
@@ -667,6 +673,13 @@
         $("#box1").animate({ "right": "0%" }, 1000)
 
     }, 1000)
+    music.addEventListener('ended', function() {
+        if(allowMusic == true)
+        {
+            this.currentTime = 0;
+            this.play();
+        }
+    }, false);
 
     document.onclick = function (e) {
         if ($(e.target).parent()[0]["id"] == "container2") {
@@ -701,4 +714,77 @@
     }
 
 
+
+    // if (!this.isAvail(choice + 8)) {
+            //     var getPoints = [choice,];
+            //     var temp = choice + 8;
+            //     while (this.blocks[temp] != color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
+            //         getPoints.push(temp);
+            //         temp += 8;
+            //     }
+            //     if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
+            //         finalPoints = finalPoints.concat(getPoints);
+            //     }
+            // }
+
+            // if (!this.isAvail(choice - 8)) {
+            //     var getPoints = [choice,];
+            //     var temp = choice - 8;
+            //     while (this.blocks[temp] != color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
+            //         getPoints.push(temp);
+            //         temp -= 8;
+            //     }
+            //     if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
+            //         finalPoints = finalPoints.concat(getPoints);
+            //     }
+            // }
+
+            // if (!this.isAvail(choice + 7)) {
+
+            //     var getPoints = [choice,];
+            //     var temp = choice + 7;
+            //     while (this.blocks[temp] != color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
+            //         getPoints.push(temp);
+            //         temp += 7;
+            //     }
+            //     if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
+            //         finalPoints = finalPoints.concat(getPoints);
+            //     }
+
+            // }
+
+            // if (!this.isAvail(choice - 7)) {
+            //     var getPoints = [choice,];
+            //     var temp = choice - 7;
+            //     while (this.blocks[temp] != color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
+            //         getPoints.push(temp);
+            //         temp -= 7;
+            //     }
+            //     if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
+            //         finalPoints = finalPoints.concat(getPoints);
+            //     }
+            // }
+
+            // if (!this.isAvail(choice + 9)) {
+            //     var getPoints = [choice,];
+            //     var temp = choice + 9;
+            //     while (this.blocks[temp] != color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
+            //         getPoints.push(temp);
+            //         temp += 9;
+            //     }
+            //     if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
+            //         finalPoints = finalPoints.concat(getPoints);
+            //     }
+            // }
+            // if (!this.isAvail(choice - 9)) {
+            //     var getPoints = [choice,];
+            //     var temp = choice - 9;
+            //     while (this.blocks[temp] != color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
+            //         getPoints.push(temp);
+            //         temp -= 9;
+            //     }
+            //     if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
+            //         finalPoints = finalPoints.concat(getPoints);
+            //     }
+            // }
 </script>
