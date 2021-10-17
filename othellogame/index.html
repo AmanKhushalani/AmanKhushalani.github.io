@@ -17,11 +17,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
-            integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
     <link rel="icon" href="./game_icon.png" type="image/icon type">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>OtHello Game !</title>
 </head>
 
@@ -109,23 +107,29 @@
         </div>
 
         <div id="rulediv" style="height: 100%; padding: 10px; display: none;">
-            <h1 id="ruleheading" class="mt-5">Rules and Game Play !</h1>
+            <h1 id="ruleheading" class="mt-3 mb-3">Rules and Game Play !</h1>
             <ul style="text-align: left;">
-                <li>
+                <li class="m-3 p-2">
                     Black places two black discs and White places two white discs as shown in here. The game always begins with this setup.
+                    <br><img src="./setupimage.jpeg" alt="" style="width: 100%; max-width:300px;">
                 </li>
-                <li>
+                <li class="m-3 p-2">
                     Make a move, create a line (horizontal , vertical or cross) with starting and ending point of your disc.
                 </li>
-                <li>
+                <li class="m-3 p-2">
                     Both starting and ending point must only contain opposition disc between them !
-
                 </li>
-                <li style="position: relative;">
+                <li style="position: relative;" class="m-3 p-2">
                     Here's one example: White disc A was already in place on the board. The placement of white dísc B outflanks the row of three black discs.
-                    <br><img src="example1.png" alt="" style="width: 50%;">
+                    <br><img src="./example1.png" alt="" style="width: 100%; max-width:300px;">
                 </li>
-                <li>
+                <li class="m-3 p-2">
+                    Here's a beginner guide video...! <br><br>
+                    <video controls style="max-width: 300px; width: 100%;">
+                        <source src="./example.mp4" type="video/mp4">
+                    </video>
+                </li>
+                <li class="m-3 p-2">
                     If a user is not getting any valid place on board, He/She can click on Restart Game button and it will announce the name of winner !
                 </li>
             </ul>
@@ -339,7 +343,7 @@
        " href="https://www.linkedin.com/in/aman-khushalani-1b774818b/">
         <span style="font-size: 20px; margin: 5px; font-weight: 600;
             font-family: 'Dancing Script', cursive; text-align: center; text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;"
-         class="lead"><i class="bi bi-at"></i>Aman Khushalani</span>
+         class="lead">Developed by ~ Aman Khushalani</span>
     </a>
     </div>
 
@@ -353,89 +357,135 @@
 
     
 
-    function setup() {
+    function setup() 
+    {
         var children = $("#container2").children();
-        for (var i = 0; i < 64; i++) {
-            // $(children[i]).text(i)
+        for (var i = 0; i < 64; i++) 
+        {
             $(children[i]).attr("id", "a" + i)
         }
     }
 
-    class Player {
-        constructor() {
+    class Player 
+    {
+        constructor() 
+        {
             this.name, this.color;
             this.total_checks = 0;
+            this.mychecks = []
         }
     };
 
-    class Board {
-        constructor() {
+
+    class Board 
+    {
+        constructor() 
+        {
             this.blocks = {};
 
-            for (var i = 0; i < 64; i++) {
+            for (var i = 0; i < 64; i++) 
+            {
                 this.blocks[i] = "";
             }
         }
 
-        isAvail(choice) {
+        isAvail(choice) 
+        {
             return this.blocks[choice] == "";
         }
 
-        updateBoard(nums, color, playerobj, oppositePlayer) {
+        updateBoard(nums, color, playerobj, oppositePlayer) 
+        {
             var shadow = "white -3px 6px 9px -6px inset";
             if(color == "white")
+            {
                 shadow = "black -2px 5px 10px inset";
-            // console.log("nums = " + nums)
-            nums = [...new Set(nums)];
-            // console.log("now nums = " + nums)
-            var allBlocks = $("#container2").children().children();
-            for (var i = 0; i <= nums.length; i++) {
-                this.blocks[nums[i]] = color;
-                $(allBlocks[nums[i]]).css({ "display": "block", "background-color": color , "box-shadow" : shadow})
             }
+
+            nums = [...new Set(nums)];
+            var allBlocks = $("#container2").children();
+            
+            for (var i = 0; i <= nums.length; i++) 
+            {
+                this.blocks[nums[i]] = color;
+                $(allBlocks[nums[i]]).children().css({ "display": "block", "background-color": color , "box-shadow" : shadow , "animation" : "flip 500ms 1"});
+                
+                playerobj.mychecks.push(nums[i]);
+                
+                if(oppositePlayer.mychecks.includes(nums[i]))
+                {
+                    oppositePlayer.mychecks.splice(oppositePlayer.mychecks.indexOf(nums[i]),1);
+                }
+            }
+
             var somethingLeft = false
             for (var i = 0; i < 64; i++)
-                if (this.blocks[i] == "") {
+            {
+                if (this.blocks[i] == "") 
+                {
                     somethingLeft = true;
                     break;
                 }
-            if (somethingLeft == false) {
+            }
+
+            if (somethingLeft == false) 
+            {
                 announceWinner()
             }
-            // console.log("to be changed = " + nums)
+            
             playerobj.total_checks += (nums.length);
             oppositePlayer.total_checks -= (nums.length - 1);
+            playerobj.mychecks.sort()
+
+                       
+            setTimeout(function()
+            {
+                $(".innerBlock").css({"animation" : "none"})
+                $(".blocks").css({"animation" : "none"})
+            } , 600)
         }
 
-        getAvail(choice, color, playerobj, oppositePlayer) {
+        
+        getAvail(choice, color, playerobj, oppositePlayer) 
+        {
             choice = Number(choice);
             var finalPoints = []
 
             var choice22 = [0, 8, 16, 24, 32, 40, 48, 56]
             var choice11 = [7, 15, 23, 31, 39, 47, 55, 63]
-            if (!this.isAvail(choice + 1) && !choice11.includes(choice)) {
+            if (!this.isAvail(choice + 1) && !choice11.includes(choice)) 
+            {
                 var getPoints = [choice,];
                 var temp = choice + 1;
 
-                if (temp >= 0 && temp < 64) {
-                    while (this.blocks[temp] != color && this.blocks[temp] != "") {
+                if (temp >= 0 && temp < 64) 
+                {
+                    while (this.blocks[temp] != color && this.blocks[temp] != "") 
+                    {
                         getPoints.push(temp);
                         temp += 1;
                     }
                 }
-                if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
+                
+                if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) 
+                {
                     finalPoints = finalPoints.concat(getPoints);
                 }
             }
 
-            if (!this.isAvail(choice - 1) && !choice22.includes(choice)) {
+            
+            if (!this.isAvail(choice - 1) && !choice22.includes(choice)) 
+            {
                 var getPoints = [choice,];
                 var temp = choice - 1;
-                while (this.blocks[temp] != color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
+                while (this.blocks[temp] != color && this.blocks[temp] != "" && temp >= 0 && temp < 64) 
+                {
                     getPoints.push(temp);
                     temp -= 1;
                 }
-                if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
+                
+                if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) 
+                {
                     finalPoints = finalPoints.concat(getPoints);
                 }
             }
@@ -447,21 +497,24 @@
                 {
                     var getPoints = [choice,];
                     var temp = choice + nextnums[i];
-                    while (this.blocks[temp] != color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
+                    
+                    while (this.blocks[temp] != color && this.blocks[temp] != "" && temp >= 0 && temp < 64) 
+                    {
                         getPoints.push(temp);
                         temp += nextnums[i];
                     }
-                    if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
+                    if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) 
+                    {
                         finalPoints = finalPoints.concat(getPoints);
                     }
                 }
             }
 
-            // 
 
             if (finalPoints.length <= 0)
+            {
                 return false;
-
+            }
             this.updateBoard(finalPoints, color, playerobj, oppositePlayer);
             return true;
         }
@@ -471,6 +524,8 @@
 
 
     function Setup(pl1, name1, pl2, name2, obj) {
+
+
         pl1.name = name1;
         $("#player1contentname").text(name1);
         pl1.color = "black";
@@ -483,56 +538,68 @@
         pl2.total_checks = 2;
         $("#player2contentscore").text(pl2.total_checks);
 
-        obj.blocks[18] = obj.blocks[27] = pl1.color;
-        obj.blocks[19] = obj.blocks[26] = pl2.color;
+        obj.blocks[27] = obj.blocks[36] = pl1.color;
+        obj.blocks[28] = obj.blocks[35] = pl2.color;
 
+        pl1.mychecks.push(27);
+        pl1.mychecks.push(36);
+        pl2.mychecks.push(28);
+        pl2.mychecks.push(35);
 
         var allBlocks = $("#container2").children().children();
-        var shadow1 = "black -2px 5px 10px inset";
-        var shadow2 = "white -3px 6px 9px -6px inset";
+        
 
-        $(allBlocks[18]).css({ "background-color": pl1.color, "display": "block","box-shadow":  shadow2})
-        $(allBlocks[27]).css({ "background-color": pl1.color, "display": "block","box-shadow":  shadow2})
-        $(allBlocks[19]).css({ "background-color": pl2.color, "display": "block" ,"box-shadow":  shadow1 })
-        $(allBlocks[26]).css({ "background-color": pl2.color, "display": "block" ,"box-shadow":  shadow1 })
+        $(allBlocks[27]).css({ "background-color": pl1.color, "display": "block", "box-shadow":  "white -3px 6px 9px -6px inset"})
+        $(allBlocks[36]).css({ "background-color": pl1.color, "display": "block", "box-shadow":  "white -3px 6px 9px -6px inset"})
+        $(allBlocks[28]).css({ "background-color": pl2.color, "display": "block" ,"box-shadow":  "black -2px 5px 10px inset" })
+        $(allBlocks[35]).css({ "background-color": pl2.color, "display": "block" ,"box-shadow":  "black -2px 5px 10px inset" })
 
     }
 
-    function reloadGame() {
+    function reloadGame() 
+    {
         window.location.reload("true")
     }
 
     function startGame() {
+
         if ($("#player1name").val() != "" && $("#player2name").val() != "") 
         {
             boardObj = new Board();
             player1 = new Player();
             player2 = new Player();
-            firstPlayer = true; {
+            firstPlayer = true; 
+            
+            {
 
                 Setup(player1, $("#player1name").val(), player2, $("#player2name").val(), boardObj)
-                // Setup(player1, "Aman Ji", player2, "Aman Ji", boardObj)
-
+                
                 $("#container1").fadeOut(500)
-                setTimeout(function () {
+                
+                setTimeout(function () 
+                {
                     $("#maincontainer2").fadeIn(500)
 
-                    $("#maincontainer2").css({
-                        "display": "flex"
-                    })
-                    $("#container2").css({
+                    $("#maincontainer2").css({"display": "flex"})
+
+                    $("#container2").css
+                    ({
                         "display": "grid",
                         "width": "400px"
                     })
-                    $(".blocks").css({
+
+                    $(".blocks").css
+                    ({
                         "width": "100%",
                         "height": "50px"
                     })
 
                     $(".blocks").height($(".blocks").width());
                     $("#activeplayer1").css({ "animation": "shine 0.6s infinite alternate" })
+
                 }, 650)
                 music.play();
+                music.volume = 0.2;
                 allowMusic = true;
                 $("#gameheading").css({
                     "display" : "none"
@@ -542,14 +609,18 @@
                 })
                 $("#navbar").css("display" , "block");
             }
+
         }
-        else {
+        else 
+        {
             alert("Enter player names !");
         }
     }
 
-    function announceWinner(){
+    function announceWinner()
+    {
         let white=0 , black = 0;
+
         for(let i = 0 ; i<64 ; i++)
         {
             if(boardObj.blocks[i] == "black")
@@ -574,7 +645,9 @@
         }
 
         $("#middlecontainer").height($(window).height())
-        $("#middlecontainer").css({
+        
+        $("#middlecontainer").css
+        ({
             "display" : "block",
             "z-index" : "100",
             "opacity": "1",
@@ -582,71 +655,73 @@
             "width" : "100%",
             "height" : "100%,"
         })
+        
         $("#scorediv").css({"display":"block"})
 
     }
 
-    function restartGame() {
-
-        if (allowMusic == true) {
+    function restartGame() 
+    {
+        if (allowMusic == true) 
+        {
             var answer = window.confirm("Sure you want to Restart Game ?");
-            if (answer) {
+            if (answer) 
+            {
                 announceWinner()   
             }
         }
     }
-    function openrulebook() {
+
+    function openrulebook() 
+    {
 
         $("#middlecontainer").height($(window).height())
-        $("#middlecontainer").css({
+        
+        $("#middlecontainer").css
+        ({
             "display" : "block",
             "z-index" : "100",
             "opacity": "1",
-            "transform": "translateZ(0px)",
             "width" : "100%",
-            "height" : "100%,"
+            "height" : "100%",
+            "overflow" : "scroll"
         })
+        
         $("#scorediv").css({"display":"none"})
         $("#rulediv").css({"display":"block"})
     }
-    function closemiddle(){
-        /*
-        position: absolute;
-        z-index: -2;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: scroll;
-        background: white;
-        opacity: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        transition: all 800ms ease;
-        */
+
+    function closemiddle()
+    {
         $("#middlecontainer").height($(window).height())
-        $("#middlecontainer").css({
+        
+        $("#middlecontainer").css
+        ({
             "display" : "flex",
             "z-index" : "-2",
             "opacity": "0",
-            "transform": "translateZ(0px)",
             "width" : "100%",
             "height" : "100%,"
         })
+        
         $("#scorediv").css({"display":"none"})
         $("#rulediv").css({"display":"none"})
 
     }
-    function toggleMusic() {
-        if (allowMusic == true) {
-            if (musicStatus) {
+
+
+    function toggleMusic() 
+    {
+        if (allowMusic == true) 
+        {
+            if (musicStatus) 
+            {
                 music.pause()
                 $("#musicIcon").removeClass("bi-volume-up-fill")
                 $("#musicIcon").addClass("bi-volume-mute-fill")
             }
-            else {
+            else 
+            {
                 music.play()
                 $("#musicIcon").addClass("bi-volume-up-fill")
                 $("#musicIcon").removeClass("bi-volume-mute-fill")
@@ -655,25 +730,24 @@
         }
     }
 
-
-
-
-
+    
     var boardObj, player1, player2, firstPlayer;
     var music = new Audio('back.mp3');
     var allowMusic = false, musicStatus = true;
+    
     setup()
-    // startGame()
+    
     $(".blocks").height($(".blocks").width())
-    $(window).resize(function () {
-        $(".blocks").height($(".blocks").width())
-    })
+    $(window).resize(function () {$(".blocks").height($(".blocks").width())})
 
-    setTimeout(function () {
+    setTimeout(function () 
+    {
         $("#box1").animate({ "right": "0%" }, 1000)
-
     }, 1000)
-    music.addEventListener('ended', function() {
+    
+    
+    music.addEventListener('ended', function() 
+    {
         if(allowMusic == true)
         {
             this.currentTime = 0;
@@ -681,110 +755,41 @@
         }
     }, false);
 
-    document.onclick = function (e) {
-        if ($(e.target).parent()[0]["id"] == "container2") {
-            if (boardObj.isAvail($(e.target).attr("id").split("a")[1])) {
-                if (firstPlayer) {
-                    if (boardObj.getAvail($(e.target).attr("id").split("a")[1], player1.color, player1, player2)) {
+    document.onclick = function (e) 
+    {
+        if ($(e.target).parent()[0]["id"] == "container2") 
+        {
+            if (boardObj.isAvail($(e.target).attr("id").split("a")[1])) 
+            {
+                if (firstPlayer) 
+                {
+                    if (boardObj.getAvail($(e.target).attr("id").split("a")[1], player1.color, player1, player2)) 
+                    {
                         $("#player1contentscore").text(player1.total_checks);
                         $("#player2contentscore").text(player2.total_checks);
                         firstPlayer = false
                         $("#activeplayer1").css({  "animation": "none","border":"none" , "box-shadow":"none"  })
-                        // $("#activeplayer2").css({ "animation": "activePlayer 1s infinite ease both normal running" })
-                        // $("#activeplayer2").css({ "border":"3px solid green" , "box-shadow":"0 0 10px #26bf47" })
                         $("#activeplayer2").css({  "animation": "0.6s shine infinite alternate"  })
 
                     }
                 }
-                else {
-                    if (boardObj.getAvail($(e.target).attr("id").split("a")[1], player2.color, player2, player1)) {
+                else 
+                {
+                    if (boardObj.getAvail($(e.target).attr("id").split("a")[1], player2.color, player2, player1)) 
+                    {
                         $("#player1contentscore").text(player1.total_checks);
                         $("#player2contentscore").text(player2.total_checks);
                         firstPlayer = true
                         $("#activeplayer2").css({ "animation": "none","border":"none" , "box-shadow":"none"  })
-                        // $("#activeplayer1").css({ "animation": "activePlayer 1s infinite ease both normal running" })
-                        // $("#activeplayer1").css({ "border":"3px solid green" , "box-shadow":"0 0 10px #26bf47" })
                         $("#activeplayer1").css({ "animation": "0.6s shine infinite alternate" })
 
                     }
                 }
+                var tempMusic = new Audio('./click1.mp3');
+                tempMusic.play();
+            
             }
-
         }
     }
 
-
-
-    // if (!this.isAvail(choice + 8)) {
-            //     var getPoints = [choice,];
-            //     var temp = choice + 8;
-            //     while (this.blocks[temp] != color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
-            //         getPoints.push(temp);
-            //         temp += 8;
-            //     }
-            //     if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
-            //         finalPoints = finalPoints.concat(getPoints);
-            //     }
-            // }
-
-            // if (!this.isAvail(choice - 8)) {
-            //     var getPoints = [choice,];
-            //     var temp = choice - 8;
-            //     while (this.blocks[temp] != color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
-            //         getPoints.push(temp);
-            //         temp -= 8;
-            //     }
-            //     if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
-            //         finalPoints = finalPoints.concat(getPoints);
-            //     }
-            // }
-
-            // if (!this.isAvail(choice + 7)) {
-
-            //     var getPoints = [choice,];
-            //     var temp = choice + 7;
-            //     while (this.blocks[temp] != color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
-            //         getPoints.push(temp);
-            //         temp += 7;
-            //     }
-            //     if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
-            //         finalPoints = finalPoints.concat(getPoints);
-            //     }
-
-            // }
-
-            // if (!this.isAvail(choice - 7)) {
-            //     var getPoints = [choice,];
-            //     var temp = choice - 7;
-            //     while (this.blocks[temp] != color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
-            //         getPoints.push(temp);
-            //         temp -= 7;
-            //     }
-            //     if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
-            //         finalPoints = finalPoints.concat(getPoints);
-            //     }
-            // }
-
-            // if (!this.isAvail(choice + 9)) {
-            //     var getPoints = [choice,];
-            //     var temp = choice + 9;
-            //     while (this.blocks[temp] != color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
-            //         getPoints.push(temp);
-            //         temp += 9;
-            //     }
-            //     if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
-            //         finalPoints = finalPoints.concat(getPoints);
-            //     }
-            // }
-            // if (!this.isAvail(choice - 9)) {
-            //     var getPoints = [choice,];
-            //     var temp = choice - 9;
-            //     while (this.blocks[temp] != color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
-            //         getPoints.push(temp);
-            //         temp -= 9;
-            //     }
-            //     if (getPoints.length > 1 && this.blocks[temp] == color && this.blocks[temp] != "" && temp >= 0 && temp < 64) {
-            //         finalPoints = finalPoints.concat(getPoints);
-            //     }
-            // }
 </script>
