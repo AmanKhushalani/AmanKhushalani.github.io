@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Nav bar started ! -->
+    <nav id="navbar">
+
+        <!-- Logo and Hamburger Container -->
+        <div id="leftThing">
+
+            <!-- Hamburger ! -->
+            <div class="btn" onclick="change()">
+                <div class="menu"></div>
+            </div>
+
+            <!-- Logo Image -->
+            <img src="logo.png" alt="" width="70px">
+
+        </div>
+
+        <!-- Icons Container -->
+        <div id="ulContainer">
+            
+            <ul class="navTabsContainer">
+                <li>
+                    <a onclick="changeTheme()" class="navItem"><i id="themeButton" class='bx bxs-moon'></i></a>
+                </li>
+                <li>
+                    <a class="navItem"><i class='bx bx-exit'></i></a>
+                </li>
+                <li>
+                    <a class="navItem"><img id="profileImage" src="profile.jpg" alt="profile"></a>
+                </li>
+            </ul>
+        </div>
+        <!-- Navbar Ended ! -->
+    </nav>
+
+
+
+    <!-- Main Container Started ! -->
+
+    <style>
+        #mainContainer{
+            position: relative;
+            display: flex;
+        }
+        #sideBar{
+            position:absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            overflow: hidden;
+            border: 2px solid red;
+            transition: all 300ms ease;
+        }
+        
+        #sideBar ul{
+            padding-left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items:flex-start;
+            transition: all 300ms ease;
+            overflow-y: scroll;
+        }
+        
+        #sideBar ul li{
+            color: rgb(83, 96, 112);
+            cursor: pointer;
+            padding: 5px;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: 10px;
+            transition: all 300ms ease;
+        }
+        #sideBar ul li:hover{
+            color : #232e3c;
+        }
+        .space{
+            height: 500px;
+        }
+    </style>
+
+    <div id="mainContainer">
+
+        <!-- Side bar for icons ! -->
+        <aside id="sideBar" >
+            
+            <ul id="liContainer">
+                <li>
+                    <i class='bx bxs-home'></i>
+                    <span class="tabName">Dashboard</span>
+                </li>
+                <li>
+                    <i class='bx bx-laptop' ></i>
+                    <span class="tabName">Live Classes</span>
+                </li>
+                <li>
+                    <i class='bx bx-file-blank' ></i>
+                    <span class="tabName">Assignments</span>
+                </li>
+                <li>
+                    <i class='bx bxs-user' ></i>
+                    <span class="tabName">Profile</span>
+                </li>
+                <li>
+                    <i class='bx bxs-home'></i>
+                    <span class="tabName">Dashboard</span>
+                </li>
+                <li>
+                    <i class='bx bx-laptop' ></i>
+                    <span class="tabName">Live Classes</span>
+                </li>
+                <li>
+                    <i class='bx bxs-home'></i>
+                    <span class="tabName">Dashboard</span>
+                </li>
+                <li>
+                    <i class='bx bx-laptop' ></i>
+                    <span class="tabName">Live Classes</span>
+                </li>
+                <li>
+                    <i class='bx bx-file-blank' ></i>
+                    <span class="tabName">Assignments</span>
+                </li>
+                <li>
+                    <i class='bx bxs-user' ></i>
+                    <span class="tabName">Profile</span>
+                </li>
+                
+            </ul>
+        </aside>
+
+    </div>
+
+    <!-- <button onclick="change()">click</button> -->
+    <!-- <div class="space"></div>
+    <div class="space"></div>
+    <div class="space"></div>
+    <div class="space"></div>
+    <div class="space"></div> -->
+
+</body>
+
+</html>
+
+<script src="jquery.js"></script>
+<script>
+
+    $("#liContainer").css("height",screen.height+"px");
+    console.log(screen.availHeight);
+    function change()
+    {
+        if($(".tabName").css("opacity") == "0")
+        {
+            $(".tabName").css({"display" : "block"});
+            $("#sideBar").css({"width" : "200px"});
+            setTimeout(function(){
+                $(".tabName").animate({"opacity" : "1"},200);
+            } , 200);
+            
+        }
+        else
+        {
+            $(".tabName").animate({"opacity" : "0"},200);
+            setTimeout(function(){
+                $("#sideBar").css({"width" : "50px"});
+                $(".tabName").css({"display" : "none"});
+            } , 230);
+        }
+
+    }
+
+    $(".btn").click(function () 
+    {
+        if ($(".btn").hasClass("open") == false) 
+        {
+            $(".btn").addClass('open')
+            setTimeout(function () { $(".btn").addClass('cross') }, 200);
+
+        }
+        else {
+            $(".btn").removeClass('cross')
+            setTimeout(function () { $(".btn").removeClass('open') }, 200);
+        }
+    })
+
+
+
+    function changeTheme() {
+        // var color = 'rgba(11, 23, 39, 0.96)';
+        // var elements = $(".navItem");
+
+        // if ($("#navbar").css("backgroundColor") == color) {
+        //     $("#navbar").css("backgroundColor", "rgba(237, 242, 249 , 1)");
+
+        //     for (var i = 0; i < elements.length; i++) {
+        //         $(elements[i]).css("color", "rgb(93 , 93 , 93)");
+        //         $(elements[i]).removeClass("active");
+        //     }
+
+        //     $("#themeButton").removeClass("bxs-sun");
+        //     $("#themeButton").addClass("bxs-moon");
+        // }
+        // else {
+        //     $("#navbar").css("backgroundColor", color);
+
+        //     for (var i = 0; i < elements.length; i++) {
+        //         $(elements[i]).css("color", "rgb(93 , 93 , 93)");
+        //         $(elements[i]).addClass("active");
+        //     }
+
+        //     $("#themeButton").removeClass("bxs-moon");
+        //     $("#themeButton").addClass("bxs-sun");
+
+        // }
+    }
+
+    $(".navItem").hover(
+        function () {
+            if ($(this).hasClass("active"))
+                $(this).css("color", "white");
+            else
+                $(this).css("color", "#232e3c");
+        },
+        function () {
+            if ($(this).hasClass("active"))
+                $(this).css("color", "rgb(93 , 93 , 93)");
+            else
+                $(this).css("color", "rgb(93 , 93 , 93)");
+        });
+
+
+    
+
+</script>
