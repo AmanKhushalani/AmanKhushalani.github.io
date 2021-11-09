@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="./SignUp_page.css">
+</head>
+<style>
+    body{
+        background-color: #0b1727;
+
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 90vh;
+    }
+
+    #mainContainer{
+        padding: 20px;
+        border-radius: 5px;
+        background-color: rgb(35 ,46 ,60);
+
+        display: grid;
+        /* grid-template-columns: 1fr 2fr; */
+    }
+</style>
+<body>
+    <!--     
+        Userid
+        password
+        Institute name
+        Institue - Email -->
+    <div id="mainContainer">
+
+        <div id="formContainer">
+            
+            <form id="form" action="#" method="post" >
+                
+                <span class="inputItem" style="display: none;">
+                    <input class="inputTag" autocomplete="off" required type="text" name="UserId" placeholder="UserId" id="">
+                </span>
+                <span class="inputItem">
+                    <input class="inputTag" autocomplete="off" required type="text" name="LoginId" placeholder="LoginId" id="">
+                </span>
+                <span class="inputItem">
+                    <input class="inputTag" autocomplete="off" required type="password" name="Password" placeholder="Password" id="">
+                </span>
+                <span class="inputItem" style="display: none;">
+                    <input class="inputTag" autocomplete="off" required type="text" name="InstitueName" placeholder="Institute Name" id="">
+                </span>
+                <span class="inputItem" style="display: none;">
+                    <input class="inputTag" autocomplete="off" required type="email" name="InstitueEmail" placeholder="Institute Email" id="">
+                </span>
+    
+            </form>
+
+        </div>
+
+        
+
+    </div>
+    
+</body>
+</html>
+
+<script src="jquery.js"></script>
+
+<script>
+    // $("body").height($(window).height());
+</script>

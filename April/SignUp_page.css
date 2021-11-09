@@ -1,0 +1,25 @@
+#form{
+    border: 2px solid red;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.inputItem{
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    padding: 5px;
+}
+.inputTag{
+    border: none;
+    background-color: transparent;
+    caret-color: white;
+    color: white;
+
+    
+}
+.inputTag:focus {
+   outline: none;
+}
