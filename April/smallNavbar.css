@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    --backgroundColor : rgb(237, 242, 249);
+    --navigationBarColor : rgb(209, 225, 248);
+    --hoverDarkColor : rgb(35, 43, 53);
+}
+body {
+    background-color: var(--backgroundColor);
+    margin: 0;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    width: 100%;
+    display: flex;
+    background-color: var(--backgroundColor);
+    justify-content: space-between;
+}
+
+#navLeft {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    margin-left: 1%;
+}
+
+
+.nav-shadow{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.900);
+}
+
+
+
+
+
+
+/* Toggle Button ! */
+
+#toggleButton {
+    width: 38px;
+    height: 38px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 200ms ease-in-out;
+}
+
+#toggleButton:hover {
+    background-color: rgba(186, 212, 247, 0.898);
+}
+
+#bar {
+    width: 20px;
+    height: 2px;
+    transition: all 100ms ease-in-out;
+    background-color: rgb(94, 110, 130);
+    border-radius: 5px;
+}
+
+#bar::after, #bar::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    transition: all 100ms linear;
+    background-color: rgb(94, 110, 130);
+    border-radius: 5px;
+}
+
+#bar::after {
+    transform: translateY(-400%);
+}
+
+#bar::before {
+    transform: translateY(400%);
+}
+
+#toggleButton:hover #bar::after, #toggleButton:hover #bar::before, #toggleButton:hover #bar {
+    background-color: var(--hoverDarkColor);
+}
+
+#toggleButton.open #bar {
+    transform: rotate(90deg);
+    background: transparent;
+}
+
+#toggleButton.open #bar::before, #toggleButton.open #bar::after {
+    transform: translate(0);
+    position: block;
+}
+
+#toggleButton.cross #bar::before {
+    transform: rotate(45deg);
+}
+
+#toggleButton.cross #bar::after {
+    transform: rotate(-45deg);
+}
+
+
+/* Toggle Button End ! */
+
+
+
+
+
+
+
+/* NavBar LEft and Right */
+#navLeft img {
+    width: 80px;
+}
+
+#navRight {
+    display: flex;
+    align-items: center;
+    margin-right: 2%;
+}
+
+#navRight ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    font-size: 20px;
+    column-gap: 10px;
+}
+
+.navIcons {
+    color: rgb(94, 110, 130);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+}
+
+.navIcons:hover {
+    color: var(--hoverDarkColor);
+    background-color: rgba(186, 212, 247, 0.898);
+}
+
+#navRight ul li img {
+    width: 30px;
+    border-radius: 50%;
+}
+
+/* NavBar LEft and Right End*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Dashboard Css */
+
+
+
+#dashboardContainer{
+    background-color: var(--backgroundColor);
+    position: relative;
+    padding-left: 10px;
+    display: flex;
+    column-gap: 10px;
+    position: sticky;
+    left: 0;
+}
+
+#navigationBar{
+    position: fixed;
+    z-index: 1000;
+    padding: 5px;
+    margin-left: 10px;
+    transform: translateY(20px);
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    background-color: var(--navigationBarColor);
+    border-radius: 10px;
+    transition: all 300ms ease;
+    overflow: hidden;
+}
+
+.navigationItem{
+    display: flex;
+    align-items:stretch;
+    justify-content: flex-start;
+    column-gap: 5px;
+    cursor: pointer;
+    text-align: left;
+}
+
+
+
+.navigationItemIcon{
+    color: rgb(94, 110, 130);
+    background-color: var(--navigationBarColor);
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 50%;
+    
+    position: relative;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    
+    transition: all 200ms ease;
+}
+
+.navigationItemIcon:hover {
+    color: var(--hoverDarkColor);
+    background-color: rgb(174, 206, 248);
+}
+
+
+
+.navigationItemName{       
+    display: flex;
+    position: relative;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    margin-right: 20px;
+    z-index: 3;
+    padding: 5px;
+    color: rgb(94, 110, 130);
+    
+    opacity: 0;
+    left: -150%;
+    
+    transition: all linear 300ms;
+}
+
+.navigationItemName:hover{
+    color: var(--hoverDarkColor)
+}
+
+
+
+
+
+
+
+/* Small DEvices Nav bAr */
+@media screen and (max-width: 899px) 
+{
+
+    #dashboardContainer{
+        background-color: var(--backgroundColor);
+        position:initial;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    #navigationBar{
+        position:absolute;
+        z-index: 300;
+        
+        left: 0;
+        width: 100%;
+        height: 0px;
+        top: 0px;
+        margin: 0;
+        
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+        padding-top: 10px;
+        padding-left: 10px;
+        
+        border-radius: 0;
+        
+        overflow-y: hidden;
+        transform-origin: top;
+        transition: all 300ms ease;
+        overflow: hidden;
+    }
+    
+    .navigationItem{
+        position: initial;
+        display: flex;
+        align-items:center;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 5px;
+        cursor: pointer;
+        text-align: left;
+    }
+    
+    
+    
+    .navigationItemIcon{
+        color: rgb(94, 110, 130);
+        background-color: var(--navigationBarColor);
+        padding: 5px;
+        margin-bottom: 5px;
+        border-radius: 50%;
+        
+        position: relative;
+        z-index: 4;
+        display: flex;
+        font-size: 20px;
+
+        transition: all 200ms ease;
+    }
+    
+    .navigationItemIcon:hover {
+        color: var(--hoverDarkColor);
+        background-color: rgb(174, 206, 248);
+    }
+    
+    
+    
+    .navigationItemName{       
+        display: flex;
+        position: relative;
+        text-align: left;
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+        margin-right: 20px;
+        z-index: 3;
+        padding: 5px;
+        color: rgb(94, 110, 130);
+
+        opacity: 1;
+        left: 0%;
+        
+        transition: all linear 300ms;
+    }
+
+    .navigationItemName:hover{
+        color: var(--hoverDarkColor)
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media Queries for Small Devices ! */
+@media screen and (max-width: 400px) {
+    #navLeft {
+        column-gap: 5px;
+    }
+    #navLeft img {
+        width: 60px;
+    }
+    #bar {
+        width: 18px;
+        height: 2px;
+        transition: all 100ms ease-in-out;
+        background-color: black;
+        border-radius: 5px;
+    }
+    #bar::after, #bar::before {
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 2px;
+        transition: all 100ms linear;
+        background-color: black;
+        border-radius: 5px;
+    }
+    #bar::after {
+        transform: translateY(-300%);
+    }
+    #bar::before {
+        transform: translateY(300%);
+    }
+    #navRight {
+        display: flex;
+        align-items: center;
+        margin-right: 2%;
+    }
+    #navRight ul {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        column-gap: 8px;
+    }
+    .navIcons {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .navIcons:hover {
+        background-color: rgba(186, 212, 247, 0.898);
+    }
+    #navRight ul li img {
+        width: 22px;
+        border-radius: 50%;
+    }
+
+
+    /* Navigation bar for small devices */
+
+    #navigationBar{
+        position:absolute;
+        z-index: 300;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        height: 0px;
+        top: 0px;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items:flex-start;
+        transform-origin: top;
+        /* border: 2px solid red; */
+        border-radius: 0;
+        transition: all 300ms ease;
+    }
+}
