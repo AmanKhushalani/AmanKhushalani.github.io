@@ -1,74 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="./SignUp_page.css">
+    <link rel="stylesheet" href="SignUp_page.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Sign-up Page</title>
 </head>
-<style>
-    body{
-        background-color: #0b1727;
 
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        height: 90vh;
-    }
-
-    #mainContainer{
-        padding: 20px;
-        border-radius: 5px;
-        background-color: rgb(35 ,46 ,60);
-
-        display: grid;
-        /* grid-template-columns: 1fr 2fr; */
-    }
-</style>
 <body>
-    <!--     
-        Userid
-        password
-        Institute name
-        Institue - Email -->
-    <div id="mainContainer">
 
-        <div id="formContainer">
-            
-            <form id="form" action="#" method="post" >
-                
-                <span class="inputItem" style="display: none;">
-                    <input class="inputTag" autocomplete="off" required type="text" name="UserId" placeholder="UserId" id="">
-                </span>
-                <span class="inputItem">
-                    <input class="inputTag" autocomplete="off" required type="text" name="LoginId" placeholder="LoginId" id="">
-                </span>
-                <span class="inputItem">
-                    <input class="inputTag" autocomplete="off" required type="password" name="Password" placeholder="Password" id="">
-                </span>
-                <span class="inputItem" style="display: none;">
-                    <input class="inputTag" autocomplete="off" required type="text" name="InstitueName" placeholder="Institute Name" id="">
-                </span>
-                <span class="inputItem" style="display: none;">
-                    <input class="inputTag" autocomplete="off" required type="email" name="InstitueEmail" placeholder="Institute Email" id="">
-                </span>
-    
-            </form>
-
-        </div>
-
+    <style>
         
 
+    </style>
+
+    <div>
+        <h1 id="heading1" style="display: flex; align-items: center; justify-content: center;"><i class='bx bxs-graduation bx-tada'></i>&nbsp;Welcome to My Institute !</h1>
+        <div id="formContainer">
+            <h1 id="heading2"><i class='bx bxs-graduation bx-tada'></i>&nbsp;Welcome to My Institute !</h1>
+
+            <div>
+                <form action="" id="form">
+                    <input class="formInput" type="text" placeholder="Institute Id">
+                    <br>
+                    <input class="formInput" type="text" placeholder="Institute Name">
+                    <br>
+                    <input class="formInput" type="email" placeholder="Institute Email">
+                    <br>
+                    <input class="formInput" type="password" placeholder="Password">
+                    <br>
+                    <div id="btnContainer">
+                        <button type="submit">Sign-up</button>
+                        <button type="submit">Login</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="formSvg">
+                <img src="./SVGs/signup.svg" alt="">
+            </div>
+
+
+        </div>
     </div>
-    
+
 </body>
+
 </html>
 
-<script src="jquery.js"></script>
-
-<script>
-    // $("body").height($(window).height());
-</script>

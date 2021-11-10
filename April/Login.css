@@ -18,6 +18,11 @@ body {
 }
 
 
+#btnContainer{
+    width: 100%;
+    display: flex;
+}
+
 
 @media screen and (min-width:750px) 
 {
