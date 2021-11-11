@@ -169,7 +169,7 @@ body {
     body {
         background-color: rgb(210, 227, 252);;
         padding: 0;
-        /* margin: 0; */
+
     }
 
     #heading1 {
@@ -178,17 +178,20 @@ body {
 
     
     #mainContainer {
-        /* border: 2px solid red; */
         width: 100%;
         column-gap: 0px;
         padding:  3rem 0.2rem ;
         margin: 0;
     }
 
+    #mainContainer:active , #mainContainer:hover{
+        box-shadow: none;
+    }
+    
+
     #formContainer {
         display: flex;
         justify-content: center;
-        /* border: 2px solid red; */
         width: 100%;
         column-gap: 0px;
         padding: 0px;
@@ -196,7 +199,6 @@ body {
     }
 
     #form {
-        /* border: 2px solid red; */
         width: 100%;
         padding: 0.2rem;
         margin: 0;
