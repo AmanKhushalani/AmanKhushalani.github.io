@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
-
 *, *:before, *:after {
+    /* border: 2px solid red; */
     box-sizing: border-box;
-    
 }
 
 body {
@@ -10,82 +9,142 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px;
-}
-#heading2{
-    font-family: 'Poppins', sans-serif;
-    display: none;
+    padding: 1.8rem;
 }
 
-#btnContainer{
+#heading1 {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#mainContainer {
+    display: flex;
+    flex-direction: column;
+    column-gap: 40px;
+    background-color: rgb(210, 227, 252);
+    padding: 1.5rem;
+    border-radius: 30px;
+    transition: all 300ms ease;
+}
+
+
+#mainContainer:active , #mainContainer:hover{
+    box-shadow: 5px 10px 15px #888888;
+}
+
+#formContainer {
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 1rem;
+}
+
+#form {
+    width: 100%;
+    /* border: 2px solid red; */
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.8rem;
+}
+
+#form input {
+    font-size: 15px;
+    border: none;
+    border-bottom: 1px solid grey;
+    background-color: transparent;
+    color: black;
+    padding: 5px 0px;
+    width: 100%;
+    transition: all 300ms ease;
+}
+
+#form button {
+    cursor: pointer;
+    border: none;
+    background-color: #2d78fae0;
+    color: white;
+    padding: 8px;
+    margin: 0.3rem 0px;
+    width: 100%;
+    border-radius: 5px;
+    transition: all 300ms ease;
+}
+
+#form button:hover {
+    background-color: #2d78fa;
+}
+
+#btnContainer {
     width: 100%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    row-gap: 0.3rem;
 }
 
-@media screen and (min-width:750px) 
-{
-    #heading1{
-        font-family: 'Poppins', sans-serif;
-        text-align: center;
-    }
-    
-    #formContainer {
-        height: 70vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        column-gap: 40px;
-        background-color: rgb(210, 227, 252);
-        padding: 30px;
-        border-radius: 30px;
-    }
-    
-    #form {
-        font-family: 'Poppins', sans-serif;
-        padding: 20px;
-    }
-    
-    #form input {
-        font-size: 15px;
-        border: none;
-        border-bottom: 1px solid grey;
-        background-color: transparent;
-        color: black;
-        padding: 10px 0px;
-        margin: 10px 10px;
-        width: 100%;
-        transition: all 300ms ease;
-    }
-    
-    #form button {
-        cursor: pointer;
-        border: none;        background-color: red;
-        background-color: #2d56f8a1;
-        color: white;
-        padding: 10px 0px;
-        margin: 20px 10px;
-        width: 100%;
-        border-radius: 5px;
-        transition: all 300ms ease;
-    }
-    
-    #form button:hover {
-        background-color: #2650f8;
-    }
-    
-    #form textarea:focus, #form input:focus {
-        outline: none;
-        transform: scale(1.1);
-        /* border-bottom: 2px solid red; */
-    }
+#form button:focus {
+    outline: none;
+    background-color: #2d78fa;
+}
 
+#form textarea:focus, #form input:focus {
+    outline: none;
+    transform: scale(1.1);
+}
+
+
+
+#askAnchor {
+    font-size: 0.9rem;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(65, 70, 77);
+    transition: all 200ms ease;
+}
+#anchorContainer{
+    margin-top: 1rem;
     
-    
-    
-    #formSvg img {
-        width: 350px;
-    }    
-    
+}
+
+#askAnchor:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+#askAnchor:focus {
+    outline: none;
+    text-decoration: underline;
+    color: black;
+}
+#or{
+    position: relative;
+    font-size: 0.8rem;
+}
+#or::after , #or::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 5rem;
+    height: 1px;
+    background-color: rgb(90, 91, 94);
+}
+
+#or::after{
+    left: 120%;
+}
+#or::before{
+    right: 120%;
+}
+
+#formSvg img {
+    width: 20rem;
+    margin: 1rem;
 }
 
 
@@ -98,216 +157,132 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (min-width:580px)  and (max-width : 749px)
-{
-    body{
-        height: 90vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+@media screen and (max-width: 800px) and (min-width: 600px) {
+    body {
+        background-color: rgb(237, 242, 249);
+        padding: 0.3rem;
     }
-    #heading1{
-        font-family: 'Poppins', sans-serif;
-        text-align: center;
+    #heading1 {
+        font-size: 1.5rem;
     }
-    
+    #mainContainer {
+        column-gap: 0;
+        padding: 10px;
+        border-radius: 25px;
+    }
     #formContainer {
-        height: 50vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        column-gap: 20px;
-        background-color: rgb(210, 227, 252);
-        padding: 20px;
-        border-radius: 30px;
-    }
-    
-    #form {
-        font-family: 'Poppins', sans-serif;
+        column-gap: 1rem;
         padding: 10px;
     }
-    
-    #form input {
-        font-size: 10px;
-        border: none;
-        border-bottom: 1px solid grey;
-        background-color: transparent;
-        color: black;
-        padding: 5px 0px;
-        margin: 5px 5px;
-        width: 100%;
+    #form {
+        padding: 15px;
     }
-    
-    #form button {
-        cursor: pointer;
-        border: none;
-        background-color: #2d56f8a1;
-        color: white;
-        padding: 5px 4px;
-        margin: 20px 3px;
-        width: 100%;
-        border-radius: 5px;
-        transition: all 300ms ease;
-    }
-    
-    #form button:hover {
-        background-color: #2650f8;
-    }
-    
-    textarea:focus, input:focus {
-        outline: none;
-        font-size: 13px;
-    }
-    
     #formSvg img {
-        width: 210px;
-    }    
-    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (min-width:50px)  and (max-width : 579px)
-{
-
-    body{
-        padding: 10px;
+        width: 17rem;
         margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 90vh;
     }
+
+
+    #or{
+        font-size: 0.5rem;
+    }
+
+    #askAnchor{
+        font-size: 0.7rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 599px) and (min-width: 10px) 
+{
+
+
+
+    body {
+        background-color: rgb(210, 227, 252);
+        padding: 0;
+
+    }
+
+    #heading1 {
+        font-size: 1.1rem;
+        padding: 0.2rem;
+    }
+
     
-    #heading1{visibility: hidden;}
-    
-    
-    #formContainer {
-        margin-top: 5px;
-        vertical-align: center;
-        height: 70vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
+    #mainContainer {
+        /* border: 2px solid rgb(210, 227, 252); */
+        width: 100%;
         column-gap: 0px;
-        row-gap: 0px;
-        background-color: rgb(210, 227, 252);
-        padding: 10px;
-        border-radius: 30px;
-    }
-
-    #heading2{
+        padding:  0.4rem 0.2rem ;
         margin: 0;
-        font-family: 'Poppins', sans-serif;
-        font-size: 120%;
-        display:flex;
-        text-align: center;
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+        box-shadow: 5px 10px 15px #888888;
     }
     
+    
+    
+
+    #formContainer {
+        
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        column-gap: 0px;
+        padding: 5px;
+        margin: 0;
+    }
+
     #form {
-        position: relative;
+        width: 100%;
+        padding: 0.4rem;
+        margin: 0;
+    }
+
+    #form input {
+        width: 100%;
+        padding: 0.2rem 0px;
+        margin-top: 0.6rem;
+    }
+
+    #break1 , #forgetButton{
+        display: none;
+    }
+
+    #form button {
+        padding: 10px;
+        margin-top: 0px;
+    }
+
+    #forgetAnchor{
+        display: flex;
+        justify-content: center;
+    }
+    #askAnchor{
+        margin-top: 5px;
+    }
+    #anchorContainer{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-        font-family: 'Poppins', sans-serif;
-        padding: 10px;
-    }
-    
-    #form input {
-        font-size: 15px;
-        border: none;
-        border-bottom: 1px solid grey;
-        background-color: transparent;
-        color: black;
-        padding: 5px;
-        margin: 2px;
+        align-items: center ;
+        row-gap: -5px;
         width: 100%;
+        margin-top: 1rem;
     }
-    
-    #form button {
 
-        cursor: pointer;
-        border: none;
-        background-color: #2d56f8a1;
-        color: white;
-        padding: 8px;
-        margin: 20px 5px;
-        width: 100%;
-        border-radius: 5px;
-        transition: all 300ms ease;
-    }
-    
-    #form button:hover {
-        background-color: #2650f8;
-    }
-    
-    textarea:focus, input:focus {
-        outline: none;
-    }
-    
-    #formSvg {display: none;}    
-    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (min-width:50px)  and (max-width : 300px)
-{
-    #heading2{
-        margin: 0;
-        font-family: 'Poppins', sans-serif;
-        font-size: 90%;
-        display:flex;
-        text-align: center;
+    #formSvg img {
+        display: none;
     }
 }
-
-
-
-

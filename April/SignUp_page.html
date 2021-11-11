@@ -1,56 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="SignUp_page.css">
+    <link rel="stylesheet" href="./SignUp_page.css">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-
-    <title>Sign-up Page</title>
+    <title>SignUp Page</title>
 </head>
 
 <body>
+    
+    <div id="mainContainer">
 
-    <style>
-        
-
-    </style>
-
-    <div>
-        <h1 id="heading1" style="display: flex; align-items: center; justify-content: center;"><i class='bx bxs-graduation bx-tada'></i>&nbsp;Welcome to My Institute !</h1>
+        <h1 id="heading1"><i class='bx bxs-graduation bx-tada'></i>&nbsp;Welcome To My Institute !</h1>
         <div id="formContainer">
-            <h1 id="heading2"><i class='bx bxs-graduation bx-tada'></i>&nbsp;Welcome to My Institute !</h1>
-
             <div>
                 <form action="" id="form">
-                    <input class="formInput" type="text" placeholder="Institute Id">
-                    <br>
+                    <input class="formInput" type="text" placeholder="Institute ID">
                     <input class="formInput" type="text" placeholder="Institute Name">
-                    <br>
                     <input class="formInput" type="email" placeholder="Institute Email">
-                    <br>
                     <input class="formInput" type="password" placeholder="Password">
-                    <br>
+
                     <div id="btnContainer">
-                        <button type="submit">Sign-up</button>
-                        <button type="submit">Login</button>
+                        <button type="submit">Sign-Up</button>
+                        <span id="or">OR</span>
+                        <a id="askAnchor" href="">Already have an account ? Log In !</a>
                     </div>
                 </form>
             </div>
-
+    
             <div id="formSvg">
                 <img src="./SVGs/signup.svg" alt="">
             </div>
-
-
         </div>
+
+
     </div>
 
 </body>
 
 </html>
 
+
+<script src="./jquery.js"></script>
+
+<script>
+    $(document).ready(function(){
+
+        $("body").height($(window).height() - ($(window).height()*10/100));
+
+    })
+</script>
