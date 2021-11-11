@@ -55,7 +55,7 @@ body {
     border-bottom: 1px solid grey;
     background-color: transparent;
     color: black;
-    padding: 10px 0px;
+    padding: 5px 0px;
     width: 100%;
     transition: all 300ms ease;
 }
@@ -65,7 +65,7 @@ body {
     border: none;
     background-color: #2d78fae0;
     color: white;
-    padding: 5px 0px;
+    padding: 8px;
     margin: 0.3rem 0px;
     width: 100%;
     border-radius: 5px;
@@ -93,25 +93,34 @@ body {
     transform: scale(1.1);
 }
 
-#askAnchor {
+
+
+#askAnchor , #forgetAnchor{
     font-size: 0.8rem;
     margin-top: 0.8rem;
+    text-align: center;
     text-decoration: none;
     color: rgb(65, 70, 77);
     transition: all 200ms ease;
 }
+#anchorContainer{
+    margin-top: 1rem;
+    
+}
 
-#askAnchor:hover {
+#askAnchor:hover , #forgetAnchor:hover{
     text-decoration: underline;
     color: black;
 }
 
-#askAnchor:focus {
+#askAnchor:focus , #forgetAnchor:focus{
     outline: none;
     text-decoration: underline;
     color: black;
 }
-
+#forgetAnchor{
+    display: none;
+}
 #formSvg img {
     width: 20rem;
 }
@@ -167,7 +176,7 @@ body {
 
 
     body {
-        background-color: rgb(210, 227, 252);;
+        background-color: rgb(210, 227, 252);
         padding: 0;
 
     }
@@ -178,18 +187,22 @@ body {
 
     
     #mainContainer {
+        /* border: 2px solid rgb(210, 227, 252); */
         width: 100%;
         column-gap: 0px;
-        padding:  3rem 0.2rem ;
+        padding:  2rem 0.2rem ;
         margin: 0;
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+        box-shadow: 5px 10px 15px #888888;
     }
-
-    #mainContainer:active , #mainContainer:hover{
-        box-shadow: none;
-    }
+    
+    
     
 
     #formContainer {
+        
         display: flex;
         justify-content: center;
         width: 100%;
@@ -207,11 +220,33 @@ body {
     #form input {
         width: 100%;
         padding: 0.4rem 0px;
+        margin-top: 0.8rem;
+    }
+
+    #break1 , #forgetButton{
+        display: none;
     }
 
     #form button {
-        padding: 5px 0px;
-        margin: 0.3rem 0px;
+        padding: 10px;
+        margin-top: 0px;
+    }
+
+    #forgetAnchor{
+        display: flex;
+        justify-content: center;
+    }
+    #askAnchor{
+        margin-top: 5px;
+    }
+    #anchorContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center ;
+        row-gap: -5px;
+        width: 100%;
+        margin-top: 1rem;
     }
 
     #formSvg img {
