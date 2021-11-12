@@ -49,6 +49,9 @@ body {
     flex-direction: column;
 }
 
+::placeholder{
+    font-size: smaller;
+}
 #form input {
     font-size: 15px;
     border: none;
@@ -91,6 +94,7 @@ body {
 #form textarea:focus, #form input:focus {
     outline: none;
     transform: scale(1.1);
+
 }
 
 
@@ -104,8 +108,14 @@ body {
     transition: all 200ms ease;
 }
 #anchorContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+    row-gap: -5px;
+    width: 100%;
     margin-top: 1rem;
-    
+
 }
 
 #askAnchor:hover , #forgetAnchor:hover{
@@ -118,9 +128,7 @@ body {
     text-decoration: underline;
     color: black;
 }
-#forgetAnchor{
-    display: none;
-}
+
 #formSvg img {
     width: 20rem;
 }

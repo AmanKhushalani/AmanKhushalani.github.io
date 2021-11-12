@@ -52,6 +52,10 @@ body {
     row-gap: 0.8rem;
 }
 
+::placeholder{
+    font-size: smaller;
+}
+
 #form input {
     font-size: 15px;
     border: none;
@@ -101,7 +105,8 @@ body {
 
 
 #askAnchor {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
+    margin: 0PX 0.4rem;
     text-align: center;
     text-decoration: none;
     color: rgb(65, 70, 77);
@@ -227,6 +232,8 @@ body {
         margin: 0;
         display: flex;
         flex-direction: column;
+        justify-self: center;
+        align-self: center;
         row-gap: 8px;
         box-shadow: 5px 10px 15px #888888;
     }

@@ -25,7 +25,7 @@
                     <br>
                     <div id="btnContainer">
                         <button type="submit">Login</button>
-                        <button id="forgetButton" type="submit">Forget Password</button>
+                        <!-- <button id="forgetButton" type="submit">Forget Password</button> -->
                         <!-- <button type="submit">Sign-up</button> -->
                     </div>
                     <div id="anchorContainer">
@@ -54,6 +54,13 @@
     $(document).ready(function(){
 
         $("body").height($(window).height() - ($(window).height()*10/100));
+
+        $('input,textarea').focus(function () {
+            $(this).data('placeholder', $(this).attr('placeholder'))
+                .attr('placeholder', '');
+        }).blur(function () {
+            $(this).attr('placeholder', $(this).data('placeholder'));
+        });
 
     })
 </script>
