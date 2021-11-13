@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./mainPage.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <title>Dashboard</title>
+</head>
+
+<body>
+
+    <nav id="mynavbar">
+
+        <div id="mynavLeft">
+            <div id="mytoggleButton">
+                <div id="mybar"></div>
+            </div>
+            <img src="./logo.png" alt="">
+        </div>
+
+        <div id="mynavRight">
+            <ul id="mynavUl">
+                <li class="navIcons bx-tada-hover"><i class='bx bxs-moon '></i></li>
+                <li class="navIcons bx-tada-hover"><i class='bx bxs-bell '></i></li>
+                <li class="navIcons bx-tada-hover"><i class='bx bx-exit  '></i></li>
+                <li class="navIcons"><img src="./profile.jpg" alt=""></li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+
+    <div id="mydashboardContainer">
+
+        <div id="mynavigationBar">
+            <div class="mynavigationItem activeItem" id="item1">
+                <i class='mynavigationItemIcon bx bx-home'></i>
+                <span class="mynavigationItemName">Dashboard</span>
+            </div>
+            <div class="mynavigationItem">
+                <i class='mynavigationItemIcon bx bxs-user'></i>
+                <span class="mynavigationItemName">Profile</span>
+            </div>
+            <div class="mynavigationItem">
+                <i class='mynavigationItemIcon bx bx-list-ol'></i>
+                <span class="mynavigationItemName">Schedules</span>
+            </div>
+            <div class="mynavigationItem">
+                <i class='mynavigationItemIcon bx bx-laptop'></i>
+                <span class="mynavigationItemName">Live_Classes</span>
+            </div>
+            <div class="mynavigationItem">
+                <i class='mynavigationItemIcon bx bx-download'></i>
+                <span class="mynavigationItemName">Download</span>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        
+        
+    </div>
+
+
+
+
+
+</body>
+
+</html>
+
+
+
+<script src="./jquery.js"></script>
+
+<script>
+
+
+
+
+
+
+
+
+
+    let reloaded = false;
+    $(window).scroll(function () {
+        var y = $(window).scrollTop();
+        if (y > 0) {
+            $("#mynavbar").addClass('nav-shadow');
+        }
+        else {
+            $("#mynavbar").removeClass('nav-shadow');
+        }
+    });
+    $(window).resize(function () 
+    {
+        if($(window).width() <= 700)
+        {
+            setTimeout(function(){
+                $("#mynavigationBar").css({"height" : "0px"});
+            },50);
+
+            if(reloaded == true)
+            {
+                console.log("2");
+                window.location.reload("true");
+                reloaded = false;
+            }
+        }
+        else
+        {
+            $("#mynavigationBar").css("width" ,"13rem");
+            $("#mynavigationBar").css({"height" : $(window).height()+20+"px"});
+            reloaded = true;
+
+        }
+
+        
+    });
+
+    // $("#mynavigationBar").height( $(window).height() - $(window).height() * 14/100 );
+    
+    
+    let lastActiveItem = $("#item1");
+    $(".mynavigationItem").click(function(){
+        $(lastActiveItem).removeClass("activeItem");
+        $(this).addClass("activeItem");
+        lastActiveItem = $(this);
+    });
+
+
+
+    let position = false;
+    let navBarWidth = $("#mynavigationBar").css("width");
+    let btn = document.querySelector('#mytoggleButton');
+    
+    $("#mytoggleButton").click(function()
+    {      
+        
+        if(position)
+        {
+
+            btn.classList.remove('cross');
+            setTimeout(function () { btn.classList.remove('open') }, 200);
+
+            
+            if($(window).width()<=700)
+            {
+                $("#mynavigationBar").css({"height" : "0px"});
+
+            }
+            else
+            {
+                
+                $("#mynavigationBar").animate({"width" : navBarWidth },10);
+
+
+                setTimeout(function()
+                {
+                    $(".mynavigationItemName").css("display" , "flex" );
+                }, 200);
+                
+                setTimeout(function()
+                {
+                    $(".mynavigationItemName").css({
+                        "transform" : "translateX(0%)",
+                        "opacity" : "1"
+                    });
+                } , 300);
+
+            }
+
+            position = false;
+
+
+        }
+        else
+        {
+            console.log("opened");
+            btn.classList.add('open');
+            setTimeout(function () { btn.classList.add('cross') }, 200);
+
+            if($(window).width()<=700)
+            {
+                setTimeout(function(){
+                    // $("#mynavigationBar").animate({"height" : $(window).height()+20+"px"},800);
+                    $("#mynavigationBar").css({"height" : $(window).height()+20+"px"});
+                },50);
+            }
+            else
+            {
+                navBarWidth = $("#mynavigationBar").css("width");
+
+
+                $(".mynavigationItemName").css({
+                    "transform" : "translateX(-300%)",
+                    "opacity" : "0"
+                });
+
+                setTimeout(function(){
+                    $(".mynavigationItemName").css("display" , "none" );
+                    $("#mynavigationBar").css("width" , "max-content" );
+
+                } , 320);
+            }
+
+            position = true;            
+        }
+
+    });
+    
+
+
+</script>
