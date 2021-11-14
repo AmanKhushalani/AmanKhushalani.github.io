@@ -46,8 +46,8 @@
                 <span class="mynavigationItemName">Profile</span>
             </div>
             <div class="mynavigationItem">
-                <i class='mynavigationItemIcon bx bx-list-ol'></i>
-                <span class="mynavigationItemName">Schedules</span>
+                <i class='mynavigationItemIcon bx bxs-user-plus '></i>
+                <span class="mynavigationItemName">Add Teacher</span>
             </div>
             <div class="mynavigationItem">
                 <i class='mynavigationItemIcon bx bx-laptop'></i>
@@ -59,8 +59,37 @@
             </div>
         </div>
 
+        <style>
+        </style>
+        
+        
 
-
+        <div id="div3" about="addTeacher">
+            <div class="boxHeadingDiv">
+                <h3 class="boxHeading">Add Teacher Pannel</h3>
+            </div>
+            <form id="addteacherform" action="" method="post" class="forms">
+                <input disabled required autocomplete="off" type="text" placeholder="Institute Name">
+                <input required autocomplete="off" type="text" placeholder="Teacher ID">
+                <input required autocomplete="off" type="text" placeholder="Teacher Name">
+                <input required autocomplete="off" type="password" placeholder="Password">
+                <input required autocomplete="off" type="email" placeholder="Email">
+                <input required autocomplete="off" type="number" placeholder="Phone No.">
+                <button type="submit" name="submitTeacher">Submit Details</button>
+            </form>
+        </div>
+        <!-- <div id="div3" about="addTeacher">
+            <h3 class="boxHeading">Add Teacher Pannel</h3>
+            <form id="addteacherform" action="" method="post" class="forms">
+                <input disabled required autocomplete="off" type="text" placeholder="Institute Name">
+                <input required autocomplete="off" type="text" placeholder="Teacher ID">
+                <input required autocomplete="off" type="text" placeholder="Teacher Name">
+                <input required autocomplete="off" type="password" placeholder="Password">
+                <input required autocomplete="off" type="email" placeholder="Email">
+                <input required autocomplete="off" type="number" placeholder="Phone No.">
+                <button type="submit" name="submitTeacher">Submit Details</button>
+            </form>
+        </div> -->
 
 
 
@@ -127,7 +156,8 @@
         
     });
 
-    // $("#mynavigationBar").height( $(window).height() - $(window).height() * 14/100 );
+    $("#mynavigationBar").height( $(window).height() - $(window).height() * 14/100 );
+    
     
     
     let lastActiveItem = $("#item1");
