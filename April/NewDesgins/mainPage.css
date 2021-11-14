@@ -276,7 +276,9 @@ nav {
 
 
 
-
+#div3{
+    display: none;
+}
 
 
 
@@ -286,10 +288,10 @@ nav {
 
 /* Forms */
 
-#div3 *{
+.formsDiv *{
     font-family: var(--fontFamily);
 }
-#div3 {
+.formsDiv {
     /* border: 2px solid red; */
     box-shadow:  var(--boxShadow);
     padding: 0.6rem;
@@ -320,11 +322,26 @@ nav {
 }
 .forms input{
     padding: 0.6rem ;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    font-weight: 700;
     border: 1px solid var(--formBorder);
     background-color: #fff;
     border-radius: 0.25rem;
 
+}
+.forms select {
+    padding: 0.6rem;
+    border: 1px solid var(--formBorder);
+    background-color: #fff;
+    border-radius: 0.25rem;
+    text-transform: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    
+}
+.forms .options{
+    padding: 0px 2px 1px;
+    font-size: 1rem;
 }
 .forms button{
     padding: 0.6rem;
@@ -342,7 +359,7 @@ nav {
 .forms button:hover{
     background-color: var(--buttonHover);
 }
-.forms input:active , .forms input:focus{
+.forms input:active , .forms input:focus , .forms select:active , .forms select:focus{
     outline: none;
 }
 
@@ -355,20 +372,20 @@ nav {
 
 @media screen and (max-width : 1000px) and (min-width : 850px) 
 {
-    #div3 {
+    .formsDiv {
         width: 40rem;
     }    
 
 }
 @media screen and (max-width : 849px) and (min-width : 750px) 
 {
-    #div3 {
+    .formsDiv {
         width: 35rem;
     }    
 }
 @media screen and (max-width : 749px) and (min-width : 701px) 
 {
-    #div3 {
+    .formsDiv {
         width: 30rem;
     }    
 }

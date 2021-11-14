@@ -64,32 +64,49 @@
         
         
 
-        <div id="div3" about="addTeacher">
+        <!-- <div id="div3" about="addTeacher" class="formsDiv">
             <div class="boxHeadingDiv">
                 <h3 class="boxHeading">Add Teacher Pannel</h3>
             </div>
             <form id="addteacherform" action="" method="post" class="forms">
-                <input disabled required autocomplete="off" type="text" placeholder="Institute Name">
-                <input required autocomplete="off" type="text" placeholder="Teacher ID">
-                <input required autocomplete="off" type="text" placeholder="Teacher Name">
-                <input required autocomplete="off" type="password" placeholder="Password">
-                <input required autocomplete="off" type="email" placeholder="Email">
-                <input required autocomplete="off" type="number" placeholder="Phone No.">
-                <button type="submit" name="submitTeacher">Submit Details</button>
-            </form>
-        </div>
-        <!-- <div id="div3" about="addTeacher">
-            <h3 class="boxHeading">Add Teacher Pannel</h3>
-            <form id="addteacherform" action="" method="post" class="forms">
-                <input disabled required autocomplete="off" type="text" placeholder="Institute Name">
-                <input required autocomplete="off" type="text" placeholder="Teacher ID">
-                <input required autocomplete="off" type="text" placeholder="Teacher Name">
-                <input required autocomplete="off" type="password" placeholder="Password">
-                <input required autocomplete="off" type="email" placeholder="Email">
-                <input required autocomplete="off" type="number" placeholder="Phone No.">
+                <input disabled required autocomplete="off" type="text" placeholder="*Institute Name">
+                <input name="teacherId" required autocomplete="off" type="text" placeholder="*Teacher ID">
+                <input name="teacherName" required autocomplete="off" type="text" placeholder="*Teacher Name">
+                <input name="teacherPassword" required autocomplete="off" type="password" placeholder="*Password">
+                <input name="teacherEmail" required autocomplete="off" type="email" placeholder="*Email">
+                <input name="teacherPhone" required autocomplete="off" type="number" placeholder="*Phone No.">
                 <button type="submit" name="submitTeacher">Submit Details</button>
             </form>
         </div> -->
+
+
+        <div id="div4" about="addStudent" class="formsDiv">
+            <div class="boxHeadingDiv">
+                <h3 class="boxHeading">Add Student Pannel</h3>
+            </div>
+            <form id="addstudentform" action="" method="post" class="forms">
+                <!-- <input disabled required autocomplete="off" type="text" placeholder="*Institute Name"> -->
+                <input required autocomplete="off" name="studentId" type="text" placeholder="*Student ID">
+                <input required autocomplete="off" name="studentName" type="text" placeholder="*Student Name">
+                <input required autocomplete="off" name="studentPassword" type="password" placeholder="*Password">
+                <input required autocomplete="off" name="studentEmail" type="email" placeholder="*Student Email">
+                
+                <select id="gender" name="studentGender">
+                    <option class="options" value="male" selected="selected">Male</option>
+                    <option class="options" value="female">Female</option>
+                    <option class="options" value="other">Other</option>
+                </select>
+
+                <input required autocomplete="off" name="studentPhone" type="number" placeholder="*Phone No.">
+                <input required autocomplete="off" name="studentAddress" type="text" placeholder="*Address">
+                <input required autocomplete="off" name="studentCity" type="text" placeholder="*City">
+                <input required autocomplete="off" name="studentState" type="text" placeholder="*State">
+                <input required autocomplete="off" name="studentPin" type="number" placeholder="*PIN Code">
+                <button type="submit" name="submitTeacher">Submit Details</button>
+            </form>
+        </div>
+
+        
 
 
 
