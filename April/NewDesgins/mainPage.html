@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mynavbar.css">
+    <link rel="stylesheet" href="./mynavigationbar.css">
     <link rel="stylesheet" href="./mainPage.css">
+    <link rel="stylesheet" href="./formsCss.css">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <title>Dashboard</title>
 </head>
@@ -18,7 +21,7 @@
             <div id="mytoggleButton">
                 <div id="mybar"></div>
             </div>
-            <img src="./logo.png" alt="">
+            <img src="./loginlogo.svg" alt="">
         </div>
 
         <div id="mynavRight">
@@ -34,10 +37,10 @@
     </nav>
 
 
-    <div id="mydashboardContainer">
+    <div id="mydashboardContainer" >
 
         <div id="mynavigationBar">
-            <div class="mynavigationItem activeItem" id="item1">
+            <div class="mynavigationItem activeItem " id="item1">
                 <i class='mynavigationItemIcon bx bx-home'></i>
                 <span class="mynavigationItemName">Dashboard</span>
             </div>
@@ -45,9 +48,13 @@
                 <i class='mynavigationItemIcon bx bxs-user'></i>
                 <span class="mynavigationItemName">Profile</span>
             </div>
-            <div class="mynavigationItem">
+            <div class="mynavigationItem" value="#div3">
                 <i class='mynavigationItemIcon bx bxs-user-plus '></i>
                 <span class="mynavigationItemName">Add Teacher</span>
+            </div>
+            <div class="mynavigationItem" value="#div4">
+                <i class='mynavigationItemIcon bx bxs-user-rectangle '></i>
+                <span class="mynavigationItemName">Add Student</span>
             </div>
             <div class="mynavigationItem">
                 <i class='mynavigationItemIcon bx bx-laptop'></i>
@@ -59,12 +66,13 @@
             </div>
         </div>
 
-        <style>
-        </style>
         
         
-
-        <!-- <div id="div3" about="addTeacher" class="formsDiv">
+        
+        <!-- Add Teacher Div -->
+        
+        <div id="div3" about="addTeacher" class="formsDiv" style="display: none;">
+            
             <div class="boxHeadingDiv">
                 <h3 class="boxHeading">Add Teacher Pannel</h3>
             </div>
@@ -77,15 +85,17 @@
                 <input name="teacherPhone" required autocomplete="off" type="number" placeholder="*Phone No.">
                 <button type="submit" name="submitTeacher">Submit Details</button>
             </form>
-        </div> -->
-
-
-        <div id="div4" about="addStudent" class="formsDiv">
+            
+        </div>
+        <!-- Add Teacher Div End -->
+        
+        <!-- Add Student Div -->
+        
+        <div id="div4" about="addStudent" class="formsDiv" style="display: none;">
             <div class="boxHeadingDiv">
                 <h3 class="boxHeading">Add Student Pannel</h3>
             </div>
             <form id="addstudentform" action="" method="post" class="forms">
-                <!-- <input disabled required autocomplete="off" type="text" placeholder="*Institute Name"> -->
                 <input required autocomplete="off" name="studentId" type="text" placeholder="*Student ID">
                 <input required autocomplete="off" name="studentName" type="text" placeholder="*Student Name">
                 <input required autocomplete="off" name="studentPassword" type="password" placeholder="*Password">
@@ -96,7 +106,7 @@
                     <option class="options" value="female">Female</option>
                     <option class="options" value="other">Other</option>
                 </select>
-
+                
                 <input required autocomplete="off" name="studentPhone" type="number" placeholder="*Phone No.">
                 <input required autocomplete="off" name="studentAddress" type="text" placeholder="*Address">
                 <input required autocomplete="off" name="studentCity" type="text" placeholder="*City">
@@ -105,6 +115,13 @@
                 <button type="submit" name="submitTeacher">Submit Details</button>
             </form>
         </div>
+        
+        <!-- Add Student Div End -->
+
+    </div>
+        
+        
+        
 
         
 
@@ -133,20 +150,11 @@
 
 
 
-
+    $("#mynavigationBar").height( $(window).height() - 100);
 
 
 
     let reloaded = false;
-    $(window).scroll(function () {
-        var y = $(window).scrollTop();
-        if (y > 0) {
-            $("#mynavbar").addClass('nav-shadow');
-        }
-        else {
-            $("#mynavbar").removeClass('nav-shadow');
-        }
-    });
     $(window).resize(function () 
     {
         if($(window).width() <= 700)
@@ -164,7 +172,7 @@
         }
         else
         {
-            $("#mynavigationBar").css("width" ,"13rem");
+            $("#mynavigationBar").css("width" ,"10  rem");
             $("#mynavigationBar").css({"height" : $(window).height()+20+"px"});
             reloaded = true;
 
@@ -173,15 +181,21 @@
         
     });
 
-    $("#mynavigationBar").height( $(window).height() - $(window).height() * 14/100 );
-    
-    
+
     
     let lastActiveItem = $("#item1");
     $(".mynavigationItem").click(function(){
         $(lastActiveItem).removeClass("activeItem");
+        $($(lastActiveItem).attr("value")).css("display","none");
+        
+        
         $(this).addClass("activeItem");
+        $($(this).attr("value")).css("display","block");
+        
+        
         lastActiveItem = $(this);
+
+
     });
 
 
@@ -203,7 +217,9 @@
             if($(window).width()<=700)
             {
                 $("#mynavigationBar").css({"height" : "0px"});
-
+                setTimeout(function(){
+                    $("#mynavigationBar").css({"transform": "translateY(-100%)"});
+                },500);
             }
             else
             {
@@ -239,9 +255,10 @@
             if($(window).width()<=700)
             {
                 setTimeout(function(){
-                    // $("#mynavigationBar").animate({"height" : $(window).height()+20+"px"},800);
+                    $("#mynavigationBar").css({"transform": "translateY(0%)"});
                     $("#mynavigationBar").css({"height" : $(window).height()+20+"px"});
                 },50);
+
             }
             else
             {
