@@ -30,6 +30,8 @@ nav {
 
 #mynavbar{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.900); 
+    padding: 0;
+    margin: 0;
     
 }
 
@@ -39,6 +41,9 @@ nav {
     column-gap: 20px;
     margin-left: 1%;
 }
+
+
+
 
 
 /* .nav-shadow{
@@ -134,8 +139,13 @@ nav {
 
 
 /* NavBar LEft and Right */
+#mynavLeft *{
+    font-family: var(--fontFamily);
+    font-weight: bolder;
+    font-size: 1.4rem;
+}
 #mynavLeft img {
-    width: 4.5rem;
+    width: 3.8rem;
 }
 
 #mynavRight {
@@ -204,6 +214,10 @@ nav {
 
     #mynavLeft {
         column-gap: 0.4rem;
+        /* width: 48rem; */
+    }
+    #instituteName{
+        display: none;
     }
 
 

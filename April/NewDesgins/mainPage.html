@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./mynavigationbar.css">
     <link rel="stylesheet" href="./mainPage.css">
     <link rel="stylesheet" href="./formsCss.css">
+    <link rel="stylesheet" href="./progress.css">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <title>Dashboard</title>
 </head>
@@ -21,7 +22,10 @@
             <div id="mytoggleButton">
                 <div id="mybar"></div>
             </div>
-            <img src="./loginlogo.svg" alt="">
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <img src="./loginlogo.svg" alt="">
+                <span class="boxHeading">My Institute</span>
+            </div>
         </div>
 
         <div id="mynavRight">
@@ -37,7 +41,7 @@
     </nav>
 
 
-    <div id="mydashboardContainer" >
+    <div id="mydashboardContainer">
 
         <div id="mynavigationBar">
             <div class="mynavigationItem activeItem " id="item1">
@@ -67,7 +71,82 @@
         </div>
 
         
+        <!-- Dash Board of Student -->
         
+
+        <div id="div1">
+
+            <div class="card">
+                <div id="progressHeading">Student Attendance</div>
+                <div id="progressBack"></div>
+                <div id="progressAmount">70%</div>
+                <div id="progressAmountSeperate">
+                    <div>Total = 200 Days</div>
+                </div>
+                <div id="progressOptionContainer">
+                    <form action="" method="post">
+                        <select name="months">
+                            <option value="all" selected>All Time</option>
+                            <option value="Jan">January</option>
+                            <option value="Feb">February</option>
+                            <option value="Mar">March</option>
+                            <option value="Apr">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="Aug">August</option>
+                            <option value="Sept">September</option>
+                            <option value="Oct">October</option>
+                            <option value="Nov">November</option>
+                            <option value="Dec">December</option>
+                        </select>
+                        <button type="submit" name="submitMonth">Show</button>
+                    </form>
+                </div>
+
+            </div>
+            <div class="card">
+                
+                <div id="progressHeading">Student Fees Details</div>
+                <div id="progressBackForFees"></div>
+                <div style="display: flex; justify-content: space-between; width: 100%; padding: 0.6rem;">
+                    <div id="progressAmount"> Submitted = ₹10K</div>
+                    <div id="progressAmount">Remaining = ₹30K</div>
+                </div>
+                <div id="feesBlock">
+                    <button name="getRecipt">Get Reciept</button>
+                    <!-- <div class="feesBlocks" id="totalSubmitted">
+                        <div class="feesText">Total Submitted</div>
+                        <div class="amount">₹10K</div>
+                    </div>
+                    <div class="feesBlocks" id="remainingFees">
+                        <div class="feesText">Remaining Fees</div>
+                        <div class="amount">₹10K</div>
+                    </div> -->
+                
+                </div>
+
+
+                <!-- <div id="progressHeading">Student Attendance</div>
+                <div id="progressBack"></div>
+                <div id="progressAmount">90%</div>
+                <div id="feesBlock">
+                    <div class="feesBlocks" id="totalSubmitted">
+                        <div class="feesText">Total Submitted</div>
+                        <div class="amount">₹10K</div>
+                    </div>
+                    <div class="feesBlocks" id="remainingFees">
+                        <div class="feesText">Remaining Fees</div>
+                        <div class="amount">₹10K</div>
+                    </div>
+                </div> -->
+            </div>
+            
+
+
+        </div>
+        
+        <!-- Dash Board of Student End-->
         
         <!-- Add Teacher Div -->
         
