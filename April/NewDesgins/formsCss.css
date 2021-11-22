@@ -33,10 +33,12 @@
     /* border: 2px solid red; */
     box-shadow:  var(--boxShadow);
     padding: 0.6rem;
+
     margin-top: 1.2rem;
     margin-left: 0.5rem;
-    /* height: max-content; */
-    width: max-content;
+    margin: 1.2rem auto 0 auto;
+    height: max-content;
+    width: 80%;
     background-color: #fff;
     border-radius: 0.5rem;
     
@@ -46,6 +48,13 @@
     font-size:x-large;
     color: var(--littleHeadings);
 }
+
+
+
+
+
+
+
 
 .boxHeadingDiv{
     text-align: center;
@@ -113,8 +122,145 @@
 
 
 
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+.selectedFormsDiv *{
+    font-family: var(--fontFamily);
+}
+.selectedFormsDiv{
+    padding: 0.6rem;    
+    margin-top: 1.2rem;
+    margin-left: 0.5rem;
+    margin: 1.2rem auto 0 auto;
+    height: max-content;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    overflow-y: scroll;
+}
+.selectedFormsDiv::-webkit-scrollbar {
+    display: none;
+}
+
+#selectedImg{
+    width: 4.7rem; 
+    border-radius: 50%;
+}
+
+#selectedProfileFrom input , #selectedProfileFrom select {
+    font-size: 0.8rem;
+    padding: 0.4rem ;
+    /* font-size: 0.9rem; */
+    /* font-weight: 700; */
+    border: 1px solid var(--formBorder);
+    /* background-color: #fff; */
+    /* border-radius: 0.25rem; */
+    transition: 200ms ease;
+}
+
+#selectedProfileFrom input:focus{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 2px var(--activeTextColor);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 2px var(--activeTextColor);
+}
+
+#selectedProfileFrom button{
+    padding: 0.5rem;
+    font-size: 0.6rem;
+    transition: all 300ms ease;
+
+}
+#selectedProfileFrom button:hover{
+    background-color: var(--buttonHover);
+}
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+
+/* <div id="selectedPersonProfile"  class="selectedFormsDiv"> */
+
+
+
+
 
 @media screen and (max-width : 6000px) and (min-width : 1200px) 
+{
+    .forms{
+        grid-template-columns: repeat(2, minmax( 3rem  , auto));
+    }
+}
+@media screen and (max-width : 1199px) and (min-width : 1001px) 
+{
+    .formsDiv{
+        width: 70%;
+    }
+    .forms{
+        grid-template-columns: repeat(2, minmax( 3rem  , auto));
+    }
+}
+
+@media screen and (max-width : 1000px) and (min-width : 850px) 
+{
+    .formsDiv{
+        width: 70%;
+    }
+    .forms{
+        grid-template-columns: repeat(2, minmax( 3rem  , auto));
+    }    
+
+    #selectedImg{
+        width: 3rem;
+    }
+
+}
+@media screen and (max-width : 849px) and (min-width : 750px) 
+{
+    .formsDiv{
+        width: 70%;
+    }
+    .forms{
+        grid-template-columns: repeat(2, minmax( 3rem  , auto));
+    }    
+    #selectedImg{
+        width: 3rem;
+    }
+}
+@media screen and (max-width : 749px) and (min-width : 701px) 
+{
+    .formsDiv{
+        width: 70%;
+    }
+    .forms{
+        grid-template-columns: repeat(2, minmax( 3rem  , auto));
+    }    
+    #selectedImg{
+        width: 2.7rem;
+    }
+}
+
+
+
+
+
+@media screen and (max-width : 700px) and (min-width:80px) 
+{
+
+    .formsDiv {
+        padding: 0.6rem;
+        margin-top: 1.2rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;        
+        width: 100%;
+    }
+
+    .forms{
+        grid-template-columns: repeat(1, minmax( 3rem  , auto));
+    }    
+    
+    #profileimgdiv{
+        display: flex;
+        justify-content: center;
+        /* text-align: center; */
+    }
+}
+/* @media screen and (max-width : 6000px) and (min-width : 1200px) 
 {
     .forms{
         grid-template-columns: repeat(2, minmax( 3rem  , 22rem));
@@ -166,4 +312,4 @@
         grid-template-columns: repeat(1, minmax( 3rem  , auto));
     }    
     
-}
+} */

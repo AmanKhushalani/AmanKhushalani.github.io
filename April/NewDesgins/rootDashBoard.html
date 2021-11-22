@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="./mainPage.css">
     <link rel="stylesheet" href="./searchBar.css">
     <link rel="stylesheet" href="./progress.css">
+    <link rel="stylesheet" href="./formsCss.css">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <title>Dashboard</title>
+    <title>Root Dashboard</title>
 </head>
 
 <body>
@@ -44,11 +45,11 @@
     <div id="mydashboardContainer">
 
         <div id="mynavigationBar">
-            <div class="mynavigationItem activeItem " id="item1">
+            <div class="mynavigationItem  " >
                 <i class='mynavigationItemIcon bx bx-home'></i>
                 <span class="mynavigationItemName">Dashboard</span>
             </div>
-            <div class="mynavigationItem" value="#div2">
+            <div class="mynavigationItem activeItem" value="#div2" id="item1">
                 <i class='mynavigationItemIcon bx bx-search'></i>
                 <span class="mynavigationItemName">Search Person</span>
             </div>
@@ -56,13 +57,9 @@
                 <i class='mynavigationItemIcon bx bxs-user'></i>
                 <span class="mynavigationItemName">Profile</span>
             </div>
-            <div class="mynavigationItem" value="#div3">
-                <i class='mynavigationItemIcon bx bxs-user-account '></i>
-                <span class="mynavigationItemName">Teacher</span>
-            </div>
             <div class="mynavigationItem" value="#div4">
-                <i class='mynavigationItemIcon bx bxs-user-rectangle '></i>
-                <span class="mynavigationItemName">Add Student</span>
+                <i class='mynavigationItemIcon bx bxs-user-rectangle'></i>
+                <span class="mynavigationItemName">Add Person</span>
             </div>
             <div class="mynavigationItem">
                 <i class='mynavigationItemIcon bx bx-laptop'></i>
@@ -75,31 +72,107 @@
             
         </div>
 
-        <div id="div2" style="display: none;">
+        <div id="div2" >
             <div id="searchDiv">
 
-                <form action="" method="POST" style="display: flex; column-gap: 0.2rem;">
+                <form id="searchForm" action="" method="POST" style="display: flex; column-gap: 0.2rem;">
                     <input type="search" name="search" id="" placeholder="Search person..." autocomplete="OFF">
                     <button type="submit"><i class='mynavigationItemIcon bx bx-search'></i></button>
                 </form>
                     
-                <div id="searchResults">
+                <div id="searchResults" style="display: none;">
                     
                     <!-- This is for when a person is found ! -->
-                    <!-- <div class="suggestedPerson">
+                    <div class="suggestedPerson">
                         <div class="suggestedPersonProfile"><img src="./profile.jpg" alt=""></div>
                         <div class="suggestedPersonDetails">
                             <span class="suggestedPersonID">1001</span>
                             <span class="suggestedPersonName">Aman Khushalani</span>
                             <span class="suggestedPersonDept">BCA 3rd. Yr. (Student)</span>
                         </div>
-                    </div> -->
+                    </div>
+
                     <!-- OR OR OR OR OR -->
+
                     <!-- This is for else part if could not found anything ! -->
-                    <!-- <div id="notFound" style="color: red;">Couldn't find anything ! (Try again using relevant keywords.)</div> -->
+                    <div id="notFound" style="color: red;">Couldn't find anything ! (Try again using relevant keywords.)</div>
                 </div>
+
+                <div id="selectedPersonProfile"  class="selectedFormsDiv formsDiv" style="width: 100%;">
+                    <div id="profileimgdiv">
+                        <img id="selectedImg" src="./profile.jpg" alt="" >
+                    </div>
+                    <form action="" method="post" class="forms" id="selectedProfileFrom">
+                        <input required autocomplete="off" name="personID" type="text" placeholder="*Person ID">
+                        <input required autocomplete="off" name="personName" type="text" placeholder="*Person Name">
+                        <!-- <input required autocomplete="off" name="personPassword" type="password" placeholder="*Password"> -->
+                        <input required autocomplete="off" name="personEmail" type="email" placeholder="*Person Email">
+                        <input required autocomplete="off" name="personEmail" type="text" placeholder="*Person Class">
+                        
+                        <select id="gender" name="personGender">
+                            <option class="options" value="" selected="selected">Gender</option>
+                            <option class="options" value="male">Male</option>
+                            <option class="options" value="female">Female</option>
+                            <option class="options" value="other">Other</option>
+                        </select>
+                        <select id="role" name="personRole">
+                            <option class="options" value="" selected="selected">Designation</option>
+                            <option class="options" value="female">Teacher</option>
+                            <option class="options" value="female">Student</option>
+                        </select>
+        
+                        <input required autocomplete="off" name="personPhone" type="number" placeholder="*Phone No.">
+                        <input required autocomplete="off" name="personAadhar" type="number" placeholder="*Aadhar Card No.">
+                        <input required autocomplete="off" name="personAddress" type="text" placeholder="*Address">
+                        <input required autocomplete="off" name="personCity" type="text" placeholder="*City">
+                        <input required autocomplete="off" name="personState" type="text" placeholder="*State">
+                        <input required autocomplete="off" name="personPin" type="number" placeholder="*PIN Code">
+                        <button type="submit" name="submitPerson">Update Details</button>
+                        <button type="submit" name="submitPerson">Go Back </button>
+                    </form>
+                </div>
+                
+
             </div>
+
         </div>
+
+                
+        <!-- Add Person Div -->
+        
+        <div id="div4" about="addStudent" class="formsDiv" style="display: none;">
+            <div class="boxHeadingDiv">
+                <h3 class="boxHeading">Add Person Pannel</h3>
+            </div>
+            <form id="addstudentform" action="" method="post" class="forms">
+                <input required autocomplete="off" name="personID" type="text" placeholder="*Person ID">
+                <input required autocomplete="off" name="personName" type="text" placeholder="*Person Name">
+                <input required autocomplete="off" name="personPassword" type="password" placeholder="*Password">
+                <input required autocomplete="off" name="personEmail" type="email" placeholder="*Person Email">
+                
+                <select id="gender" name="personGender">
+                    <option class="options" value="" selected="selected">Gender</option>
+                    <option class="options" value="male">Male</option>
+                    <option class="options" value="female">Female</option>
+                    <option class="options" value="other">Other</option>
+                </select>
+                <select id="role" name="personRole">
+                    <option class="options" value="" selected="selected">Designation</option>
+                    <option class="options" value="female">Teacher</option>
+                    <option class="options" value="female">Student</option>
+                </select>
+
+                <input required autocomplete="off" name="personPhone" type="number" placeholder="*Phone No.">
+                <input required autocomplete="off" name="personAadhar" type="number" placeholder="*Aadhar Card No.">
+                <input required autocomplete="off" name="personAddress" type="text" placeholder="*Address">
+                <input required autocomplete="off" name="personCity" type="text" placeholder="*City">
+                <input required autocomplete="off" name="personState" type="text" placeholder="*State">
+                <input required autocomplete="off" name="personPin" type="number" placeholder="*PIN Code">
+                <button type="submit" name="submitPerson">Submit Details</button>
+            </form>
+        </div>
+        
+        <!-- Add Person Div End -->
 
 
     </div>
@@ -124,9 +197,15 @@
 
     $("#mynavigationBar").height( $(window).height() - 100);
     if($(window).width() >= 701)
+    {
         $("#searchResults").height( $(window).height() * 65/100);
+        $("#selectedPersonProfile").height( $(window).height() * 65/100);
+    }
     else
+    {
         $("#searchResults").height( $(window).height()  * 80/100);
+        // $("#selectedPersonProfile").height( $(window).height()  * 80/100);
+    }
     
 
     
@@ -199,7 +278,7 @@
             {
                 $("#mynavigationBar").css({"height" : "0px"});
                 setTimeout(function(){
-                    $("#mynavigationBar").css({"transform": "translateY(-105%)"});
+                    $("#mynavigationBar").css({"transform": "translateY(-100%)"});
                 },500);
             }
             else

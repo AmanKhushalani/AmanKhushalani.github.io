@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
+
 *, *:before, *:after {
     box-sizing: border-box;
     --fontFamily : Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -34,20 +35,22 @@
     position: relative;
     padding: 0.2rem;
 }
-#searchDiv form{
-    border-radius: 0.3rem;
-    border: 2px solid var(--textColor);
+#searchForm {
+    border: none;
+    border-bottom: 2px solid var(--textColor);
+    
 }
+
 #searchDiv input:active , #searchDiv input:focus , #searchDiv button:active , #searchDiv button:focus{
     outline: none;
 }
 #searchDiv input{
     width: 100%;
     padding: 0.4rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     border: none;
 }
-#searchDiv button{
+#searchForm button{
     cursor: pointer;
     width: 3rem;
     font-size: 1.6rem;
@@ -57,11 +60,11 @@
     border: none;
     transition: all 300ms ease;
 }
-#searchDiv button i{
+#searchForm button i{
     transition: all 100ms ease;
 }
 
-#searchDiv button:hover{
+#searchForm button:hover{
     color: #fff;
     background-color: var(--buttonHover);
 
@@ -74,9 +77,9 @@
     width: 100%;
     top: 100%;
     left: 0;
-    margin-top: 0.4rem;
+    margin-top: 0.8rem;
     padding: 0.6rem;
-    background-color: var(--backgroundColor);
+    /* background-color: var(--backgroundColor); */
     border-radius: 0.6rem;
     overflow-y: scroll;
     display: flex;
@@ -94,19 +97,26 @@
     padding: 0.4rem;
     border-radius: 0.4rem;
     background-color: #fff;
-    border: 1px solid var(--textColor);
-    box-shadow: var(--boxShadow);
+    font-size: 0.8rem;
+    /* border: 1px solid var(--textColor); */
+    /* box-shadow: var(--boxShadow); */
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,0.40) ;
     display: flex;
     column-gap: 0.8rem;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.8rem;
     transition: all 300ms ease;
 }
-.suggestedPerson:hover{
+/* .suggestedPerson:hover{
     box-shadow: 0 .5rem 1rem rgba(0,0,0,0.40) ;
+} */
+
+
+.suggestedPersonID{
+    font-weight: bolder;
 }
 
-
 .suggestedPersonProfile {
+    margin-left: 0.4rem;
     display: flex;
     align-items: center;
 }
@@ -119,6 +129,20 @@
     flex-direction: column;
     align-items: flex-start;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
