@@ -16,5 +16,34 @@
     --backgroundDark : #0b1727;
     --boxShadow : 0 .5rem 1rem rgba(0,0,0,.15) ;
 }
+body {
+    background-color: var(--backgroundColor);
+    margin: 0;
+    overflow-y:scroll;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
 
 
+
+
+
+#mydashboardContainer
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+}
+
+
+
+#div1{
+    padding: 0.4rem;
+    /* border: 2px solid red;  */
+    width: 66rem; 
+    display: flex; 
+    column-gap: 4rem;
+}

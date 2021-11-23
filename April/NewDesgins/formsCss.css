@@ -65,9 +65,14 @@
     display: grid;
     grid-template-columns: repeat(2, minmax( 3rem  , 22rem));
     gap: 10px;
+    font-family: var(--fontFamily);
 }
 
+.forms *{
+    font-family: var(--fontFamily);
+}
 .forms ::placeholder{
+    font-family: var(--fontFamily);
     font-size: 0.8rem;
     font-weight: bold;
 }
@@ -260,56 +265,3 @@
         /* text-align: center; */
     }
 }
-/* @media screen and (max-width : 6000px) and (min-width : 1200px) 
-{
-    .forms{
-        grid-template-columns: repeat(2, minmax( 3rem  , 22rem));
-    }
-}
-@media screen and (max-width : 1199px) and (min-width : 1001px) 
-{
-    .forms{
-        grid-template-columns: repeat(2, minmax( 3rem  , 17rem));
-    }
-}
-
-@media screen and (max-width : 1000px) and (min-width : 850px) 
-{
-    .forms{
-        grid-template-columns: repeat(2, minmax( 3rem  , 17rem));
-    }    
-
-}
-@media screen and (max-width : 849px) and (min-width : 750px) 
-{
-    .forms{
-        grid-template-columns: repeat(2, minmax( 3rem  , 15rem));
-    }    
-}
-@media screen and (max-width : 749px) and (min-width : 701px) 
-{
-    .forms{
-        grid-template-columns: repeat(2, minmax( 3rem  , 13rem));
-    }    
-}
-
-
-
-
-
-@media screen and (max-width : 700px) and (min-width:80px) 
-{
-
-    .formsDiv {
-        padding: 0.6rem;
-        margin-top: 1.2rem;
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;        
-        width: 100%;
-    }
-
-    .forms{
-        grid-template-columns: repeat(1, minmax( 3rem  , auto));
-    }    
-    
-} */

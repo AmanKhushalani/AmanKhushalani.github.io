@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./searchBar.css">
     <link rel="stylesheet" href="./progress.css">
     <link rel="stylesheet" href="./formsCss.css">
+    <link rel="stylesheet" href="./downloads.css">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <title>Root Dashboard</title>
 </head>
@@ -45,11 +46,11 @@
     <div id="mydashboardContainer">
 
         <div id="mynavigationBar">
-            <div class="mynavigationItem  " >
+            <div class="mynavigationItem  activeItem" id="item1">
                 <i class='mynavigationItemIcon bx bx-home'></i>
                 <span class="mynavigationItemName">Dashboard</span>
             </div>
-            <div class="mynavigationItem activeItem" value="#div2" id="item1">
+            <div class="mynavigationItem" value="#div2" >
                 <i class='mynavigationItemIcon bx bx-search'></i>
                 <span class="mynavigationItemName">Search Person</span>
             </div>
@@ -65,14 +66,14 @@
                 <i class='mynavigationItemIcon bx bx-laptop'></i>
                 <span class="mynavigationItemName">Live_Classes</span>
             </div>
-            <div class="mynavigationItem">
+            <div class="mynavigationItem" value="#div6">
                 <i class='mynavigationItemIcon bx bx-download'></i>
                 <span class="mynavigationItemName">Download</span>
             </div>
             
         </div>
 
-        <div id="div2" >
+        <div id="div2" style="display: none;">
             <div id="searchDiv">
 
                 <form id="searchForm" action="" method="POST" style="display: flex; column-gap: 0.2rem;">
@@ -98,7 +99,7 @@
                     <div id="notFound" style="color: red;">Couldn't find anything ! (Try again using relevant keywords.)</div>
                 </div>
 
-                <div id="selectedPersonProfile"  class="selectedFormsDiv formsDiv" style="width: 100%;">
+                <div id="selectedPersonProfile"  class="selectedFormsDiv formsDiv" style="width: 100%; display: none;">
                     <div id="profileimgdiv">
                         <img id="selectedImg" src="./profile.jpg" alt="" >
                     </div>
@@ -173,6 +174,48 @@
         </div>
         
         <!-- Add Person Div End -->
+        
+        
+        <!-- Download Section Div -->
+        
+        <div id="div6" style="display: none;">
+            <div class="boxHeadingDiv">
+                <h3 class="boxHeading">Downloads</h3>
+            </div>
+            <div id="downloads">
+                <div id="downloadOptionContainer">
+                    <button id="addFileButton" class="downloadOptions">Add File</button>
+                    <button class="downloadOptions">Delete File</button>
+                </div>
+                <div id="downloadContainer">
+
+                    <form id="downloadFileForm" action="" method="post" >
+                        <div class="containerItem">
+                            <input type="checkbox" name="" id="">
+                            <a href="">File 1</a>
+                        </div>
+                    </form>
+
+                    <form id="addFileForm" action="" method="post" style="display: none;">
+
+                        <input required autocomplete="OFF" type="text" placeholder="File Title" >
+                        <input type="file">
+                        <select name="visibleTo" id="">
+                            <option selected value="all">Everyone</option>
+                            <option value="teachers">Only Teachers</option>
+                            <option value="students">Only Students</option>
+                        </select>
+                        <button type="submit">Upload File</button>
+
+                    </form>
+
+                </div>
+
+            </div>
+            
+        </div>
+        
+        <!-- Add Person Div End -->
 
 
     </div>
@@ -198,11 +241,13 @@
     $("#mynavigationBar").height( $(window).height() - 100);
     if($(window).width() >= 701)
     {
+        $("#downloads").height( $(window).height() * 65/100);
         $("#searchResults").height( $(window).height() * 65/100);
         $("#selectedPersonProfile").height( $(window).height() * 65/100);
     }
     else
     {
+        // $("#downloadContainer").height( $(window).height()  * 80/100);
         $("#searchResults").height( $(window).height()  * 80/100);
         // $("#selectedPersonProfile").height( $(window).height()  * 80/100);
     }
@@ -257,6 +302,19 @@
     $(".mynavigationItem").click(function(){
         manipulate($(this));
     });
+
+
+    // Download File Button Handeler
+
+    $("#addFileButton").click(function(){
+        // console.log(
+            $("#downloadFileForm").css("display" , "none");
+            $("#addFileForm").css("display" , "block");
+        // );
+    });
+
+    // Download File Button Handeler End
+
 
 
 
