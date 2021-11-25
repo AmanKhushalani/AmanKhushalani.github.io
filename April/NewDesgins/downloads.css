@@ -19,7 +19,7 @@
 }
 
 
-#div6{
+#div5 , #div6{
     font-family: var(--fontFamily);
     box-shadow:  var(--boxShadow);
     padding: 0.6rem;
@@ -29,9 +29,129 @@
     border-radius: 0.5rem;
     overflow-y: scroll;
 }
-#div6::-webkit-scrollbar {
+#div5::-webkit-scrollbar  , #div6::-webkit-scrollbar {
     display: none;
 }
+
+
+#liveClassContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 0.4rem;
+    padding: 0.4rem;
+}
+
+
+.classSelector{
+    display: flex;
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #fff;
+}
+
+.classHeading{
+    font-weight: bolder;
+    margin-left: 0.6rem;
+}
+
+.hostName{
+    font-size: 0.8rem;
+}
+
+
+
+
+.classItem{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.8rem;
+    width: 270px;
+    padding: 0.8rem;
+    border-radius: 0.4rem;
+    background-color: var(--backgroundColor);
+    transition: box-shadow 200ms ease;
+}
+
+.classItem:hover{
+    box-shadow: var(--boxShadow);
+}
+
+
+.classDescription{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* border: 2px solid red; */
+}
+
+.classTitle{
+    font-weight: 700;
+}
+
+.classSubtopics{
+    margin-top: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+    /* border: 2px solid red; */
+    list-style: none;
+}
+
+
+.classJoinButton{
+    width: 100%;
+    padding: 0.4rem;
+    border: none;
+    background-color: var(--buttonColor);
+    cursor: pointer;
+    color: white;
+    border-radius: 0.2rem;
+    transition: background-color 250ms ease;
+    text-decoration: none; 
+    font-weight: bolder;
+}
+
+.classJoinButton:hover{
+    background-color: var(--buttonHover);
+}
+
+
+
+
+
+
+
+
+
+
+.timeDiv{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #downloads{
     border-radius: 0.4rem;
@@ -128,35 +248,35 @@
 
 @media screen and (max-width : 6000px) and (min-width : 1701px) 
 {
-    #div6{
+    #div5 , #div6{
         width: 56rem;
     }
 }
 
 @media screen and (max-width : 1700px) and (min-width : 1501px) 
 {
-    #div6{
+    #div5 , #div6{
         width: 48rem;
     }
 }
 
 @media screen and (max-width : 1500px) and (min-width : 1251px) 
 {
-    #div6{
+    #div5 , #div6{
         width: 80%;
     }
 }
 
 @media screen and (max-width : 1250px) and (min-width : 901px) 
 {
-    #div6{
+    #div5 , #div6{
         width: 70%;
     }
 }
 
 @media screen and (max-width : 900px) and (min-width : 701px) 
 {
-    #div6{
+    #div5 , #div6{
         width: 30rem;
     }
 }
@@ -166,7 +286,7 @@
 @media screen and (max-width : 700px) and (min-width : 50px) 
 {
 
-    #div6{
+    #div5 , #div6{
         width: 100%;
         height: 100%;
         margin-left: 0.8rem;
