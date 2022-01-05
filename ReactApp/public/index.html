@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="theme-color" content="#000000" />
+	<meta name="description" content="Web site created using create-react-app" />
+	<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+	<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+	<title>React App</title>
+</head>
+
+<body>
+	<!-- <noscript>You need to enable JavaScript to run this app.</noscript> -->
+	<div id="root"></div>
+	<div id="aman"></div>
+	<button onclick="toggleFullScreen()">click</button>
+
+	<!-- <div style="border: 2px solid red; height: 400px; width: max-content;"> -->
+
+	<!-- </div> -->
+</body>
+
+</html>
+
+<script>
+	// document.onkeydown = function (e) {
+	// 	if (event.keyCode == 123) {
+	// 		console.log(event)
+	// 		alert('yes')
+	// 	}
+	// 	if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+	// 		e.preventDefault()
+	// 		// console.log(event)
+	// 		// return false;
+	// 	}
+	// 	if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+	// 		e.preventDefault()
+	// 		// console.log(event)
+	// 		// return false;
+	// 	}
+	// 	if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+	// 		e.preventDefault()
+	// 		// console.log(event)
+	// 		// return false;
+	// 	}
+	// 	if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+	// 		e.preventDefault()
+	// 		// console.log(event)
+	// 		//  return false;
+	// 	}
+	// }
+
+	// window.onload = function(){
+	//   maxWindow()
+	// };
+
+	function maxWindow() {
+		window.moveTo(0, 0);
+
+		if (document.all) {
+			top.window.resizeTo(screen.availWidth, screen.availHeight);
+		}
+
+		else if (document.layers || document.getElementById) {
+			if (top.window.outerHeight < screen.availHeight || top.window.outerWidth < screen.availWidth) {
+				top.window.outerHeight = screen.availHeight;
+				top.window.outerWidth = screen.availWidth;
+			}
+		}
+	}
+
+	// alert('yes')
+	//   const elem = document.getElementById('html');
+	//   if (elem.requestFullscreen) {elem.requestFullscreen()}
+	// window.open('https://www.google.com', 'google', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no');
+
+
+
+	function cancelFullScreen() {
+		var el = document;
+		var requestMethod = el.cancelFullScreen || el.webkitCancelFullScreen || el.mozCancelFullScreen || el.exitFullscreen || el.webkitExitFullscreen;
+		if (requestMethod) { // cancel full screen.
+			requestMethod.call(el);
+		} else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+			var wscript = new ActiveXObject("WScript.Shell");
+			if (wscript !== null) {
+				wscript.SendKeys("{F11}");
+			}
+		}
+	}
+
+	function requestFullScreen(el) {
+		const elem = document.documentElement;
+		if (elem.requestFullscreen) {elem.requestFullscreen()}
+		// Supports most browsers and their versions.
+		// var requestMethod = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullscreen;
+
+		// if (requestMethod) { // Native full screen.
+		// 	requestMethod.call(el);
+		// } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+		// 	var wscript = new ActiveXObject("WScript.Shell");
+		// 	if (wscript !== null) {
+		// 		wscript.SendKeys("{F11}");
+		// 	}
+		// }
+		// return false
+	}
+
+	window.onload = function () 
+	{
+
+		// addEventListener("click", function() {
+		var el = document.documentElement, 
+			rfs = el.requestFullscreen || el.webkitRequestFullScreen || el.mozRequestFullScreen;
+			rfs.call(el);
+		// });
+		// var el = document.body; // Make the body go full screen.	
+		// var isInFullScreen = (document.fullScreenElement && document.fullScreenElement !== null) || (document.mozFullScreen || document.webkitIsFullScreen);
+		// if(confirm("Enable Full screen mode for a better experience ?"))
+		// {
+			// requestFullScreen(el);
+		// 	const elem = document.documentElement;
+		// if (elem.requestFullscreen) {elem.requestFullscreen()}
+		// }
+
+		// if (isInFullScreen) {
+		// 	cancelFullScreen();
+		// } else {
+		// }
+		// alert('yes')
+	};
+
+	function toggleFullScreen(el) {
+		if (!el) {
+			el = document.body; // Make the body go full screen.
+		}
+		var isInFullScreen = (document.fullScreenElement && document.fullScreenElement !== null) || (document.mozFullScreen || document.webkitIsFullScreen);
+
+		if (isInFullScreen) {
+			cancelFullScreen();
+		} else {
+			requestFullScreen(el);
+		}
+		return false;
+	}
+
+</script>
