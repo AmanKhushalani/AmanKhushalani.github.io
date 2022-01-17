@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happiest Birthday</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body id="body">
+
+    <img src="./back.jpg" alt="" id="back">
+    
+    <div id="container" >
+        <div></div>
+    </div>
+    <div id="container2">
+        <div>
+            <div class="animate__animated animate__zoomInDown animate__slow" id="happyBirthday">Happiest Birthday Priyanka</div>
+            <!-- <div class="" id="happyBirthday">Happiest Birthday Priyanka</div> -->
+            <div class="animate__animated animate__zoomInDown animate__slow animate__delay-1s" id="date">15 Jan 💗</div>
+        </div>
+
+        <div id="t1" class="content1">
+            I'm so sorry, I know that my wishes are not on time !!
+            I didn’t really forget your special day... I just wanted the happiness to last a little longer 	&#128513;
+        </div>
+        <div id="t2" class="content1">
+            I still have a big place to our friendship in my HEART, doesn't matter what happen !
+            I'll always be there, and that's a promise !
+        </div>
+    </div>
+
+    
+</body>
+</html>
+
+<script src="./jquery.js"></script>
+
+<script>
+    $("#back").height($(window).height())
+    $("#back").width($(window).width())
+    $("#container2").height($(window).height()*70/100)
+    $("#container").height($("#container2").height())
+
+    $(window).resize(()=>{
+        window.location.reload(true);
+    })
+
+    $("#container2").click(()=>{
+
+    })
+</script>
